@@ -3,15 +3,105 @@
 <html>
     <head>
         <title>Admin | Star Tour</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/admin.css">
         <link rel="stylesheet" type="text/css" href="../CSS/acceuil.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/admin.css">
     </head>
 
     <body>
         <div class="horizontal">
             <div class="nomSite"> <a href="acceuil.html">Star Tour</a> </div>
+            <div class="recherche">
+                <form action="recherche" method="post">
+                    <input type="text" name="recherche" placeholder="Rechercher..." required>
+                </form>
+                </div>
             <div class="inscription"> <a href="inscription.html">S'inscrire</a> </div>
             <div class="connexion"> <a href="connexion.html">Se connecter</a> </div>
+        </div>
+        <div class="section">Page Administrateur</div>
+        <div class ="paragraph">
+            <h1>Bienvenue sur la page d'administrateur</h1>
+            <p>duilazbhdiqzhjdhlznlqZdbhiqZJDOnm,kl</p>
+            <h3>Voici la liste des utilisateurs VIP</h3>
+            <table class = "tableau">
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>adresse mail</th>
+                    <th>ID prochaine réservation</th>
+                </tr>
+                <tr>
+                    <td>Fulgori</td>
+                    <td>Enzo</td>
+                    <td>enzo.fulgori@email.com</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Mehanni</td>
+                    <td>Rayane</td>
+                    <td>rayane.mehanni@email.com</td>
+                    <td>#0001</td>
+                </tr>
+                <tr>
+                    <td>Nkundiyeze</td>
+                    <td>Hugo</td>
+                    <td>hugo.nkundiyeze@email.com</td>
+                    <td>#0002</td>
+                </tr>
+            </table>
+            <h3>Voici la liste des réservations disponibles</h3>
+            <table class = "tableau" id = "reservation">
+                <tr>
+                    <th>ID</th>
+                    <th>Pays</th>
+                    <th>Durée</th>
+                    <th>Prix</th>
+                    <th>Places disponibles</th>
+                    <th>Places restantes</th>
+                    <th>Places réservées</th>
+                </tr>
+                <tr>
+                    <td>#0001</td>
+                    <td>Tunisie</td>
+                    <td>7 jours</td>
+                    <td>800€</td>
+                    <td>56</td>
+                    <td>30</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td>#0002</td>
+                    <td>Italie</td>
+                    <td>10 jours</td>
+                    <td>580€</td>
+                    <td>32</td>
+                    <td>5</td>
+                    <td>27</td>
+                </tr>
+            </table>
+                <h3>Voici la liste des utilisateurs BANNIS</h3>
+            <table class = "tableau" id ="bannis">
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>adresse mail</th>
+                </tr>
+                <tr>
+                    <td>Amimi</td>
+                    <td>Ahmed</td>
+                    <td>ahmed.amimi@email.com</td>
+                </tr>
+                <tr>
+                    <td>Errabih</td>
+                    <td>Amine</td>
+                    <td>amine.errabih@email.com</td>
+                </tr>
+                <tr>
+                    <td>Chokri</td>
+                    <td>Anas</td>
+                    <td>anas.chokri@email.com</td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>
