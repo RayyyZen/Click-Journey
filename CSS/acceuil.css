@@ -1,6 +1,9 @@
 body {
     background-image:url("../Data/arriereplan.png");
     background-size:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .horizontal {
@@ -88,6 +91,28 @@ a[href="connexion.html"], a[href="inscription.html"] {
     margin-left:15px;
 }
 
+.cache {
+    display:none;
+}
+
+@media (max-width:800px) {
+    .cache {
+        display:block;
+        margin-right:2px;
+    }
+
+    .montre {
+        display:none;
+    }
+
+    .recherche input[type="text"] {
+        width:150px;
+    }
+    .recherche {
+        width:160px;
+    }
+}
+
 .section {
     display:flex;
     justify-content:center;
@@ -106,11 +131,16 @@ a[href="connexion.html"], a[href="inscription.html"] {
 }
 
 .paragraph {
-    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items: center; /* Centre le contenu horizontalement */
+    gap: 20px; /* Espacement entre les éléments */
+    padding-bottom: 20px; /* Ajoute de l'espace en bas */
+    /*min-height: 500px;*/ /* Ajuste selon la taille des images */
     background-color:#FFAAAA;
     width:80%;
     color:white;
-    height:900px;
+    height:auto;
     margin-left:auto;
     margin-right:auto;
     border-radius:10px 10px 10px 10px;
@@ -124,22 +154,16 @@ a[href="connexion.html"], a[href="inscription.html"] {
     font-weight:bold;
 }
 
-.image1 {
-    position:absolute;
-    width:30%;
-    height:200px;
-    bottom:5%;
-    left:15%;
-    border:2px solid #550000;
-    border-radius:20px;
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Écarte les images */
+    width: 70%; /* Prend toute la largeur du parent */
+    padding: 0 15%; /* Espacement par rapport aux bords */
 }
 
-.image2 {
-    position:absolute;
-    width:30%;
-    height:200px;
-    bottom:5%;
-    right:15%;
+.image1, .image2 {
+    width:22vw;
+    height:auto;
     border:2px solid #550000;
     border-radius:20px;
 }
@@ -152,9 +176,7 @@ a[href="connexion.html"], a[href="inscription.html"] {
 }
 
 .destination {
-    position:absolute;
-    left:3%;
-    bottom:9%;
+    display:flex;
     border-spacing:5px;
 }
 
@@ -170,10 +192,8 @@ a[href="connexion.html"], a[href="inscription.html"] {
 }
 
 .voirdestinations {
-    position:absolute;
-    bottom:3%;
-    left:50%;
-    transform:translateX(-50%);
+    display:flex;
+    justify-content: center;
 }
 
 a[href="destinations.html"] {
