@@ -1,3 +1,12 @@
+@font-face {
+    font-family: Star_Jedi;
+    src: url(../Data/Starjedi.ttf);
+  }
+
+.horizontal{
+    font-family: Star_Jedi;
+}
+
 .tableau{
     background-color: aquamarine;
     border : 3px solid;
@@ -60,4 +69,8 @@ a[href="connexion.html"], a[href="inscription.html"] {
 
 .paragraph{
     background-color: #e6ddc6 ;
+}
+
+body{
+    background-image:url("../Data/blue_sky.jpg");
 }
