@@ -3,25 +3,22 @@
 <html>
     <head>
         <title>Connexion | Star Tour</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/connexion.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/acceuil.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     </head>
 
     <body>
         <div class="horizontal">
             <div class="nomSite"> <a href="acceuil.html">Star Tour</a> </div>
         </div>
-        <div class="section">Connexion</div>
-        <br><br>
-        <div class="paragraph">
-            <form action="[...].php" method="POST">
-                <br><br><br><br><br><br>
+        <div class="section pageconnexion">Connexion</div>
+        <div class="paragraph pageconnexion">
+            <form action="../PHP/connexion.php" method="POST">
                 <div class="formulaire">
-                    <label for="idPersonne">Identifiant : </label>
-                    <input type="number" id='idPersonne' name="idPersonne" title="Entrez l'identifiant de la personne" placeholder="123" requiered><br><br><br>
+                    <label for="idPersonne">Adresse mail : </label>
+                    <input type="email" id='mail' name="mail" title="Entrez l'identifiant de la personne" placeholder="dark.vador@gmail.com" requiered>
                     <label for="password">Mot de passe : </label>
-                    <input type="password" id='password' name="password" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" requiered><br><br><br><br>
-                    <input type="submit" id='save' name="save" title="Engistrer la personne" value="Enregistrer" requiered>&nbsp;&nbsp;&nbsp;
+                    <input type="password" id='password' name="password" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" requiered>
+                    <input type="submit" id='save' name="save" title="Engistrer la personne" value="Se connecter" requiered>
                 </div>
             </form>
         </div>

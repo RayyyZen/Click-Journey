@@ -3,18 +3,16 @@
 <html>
     <head>
         <title>Inscription | Star Tour</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/acceuil.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/inscription.css">
-        
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css">        
     </head>
 
     <body>
         <div class="horizontal">
             <div class="nomSite"> <a href="acceuil.html">Star Tour</a> </div>
         </div>
-        <div class="section">Inscription</div>
-        <div class="paragraph">
-            <form action="[...].php" method="POST">
+        <div class="section pageinscription">Inscription</div>
+        <div class="paragraph pageinscription">
+            <form action="../PHP/inscription.php" method="POST">
                 <div class="formulaire">
                     <label for="lastname">Nom : </label>
                     <input type="text" id='lastname' name="lastname" title="Entrez le nom de la personne en majuscules" placeholder="DUPONT" pattern="[A-Z]{2,}" requiered>
@@ -28,7 +26,7 @@
                     <input type="password" id='password' name="password" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" requiered>
                     <label for="password">Confirmer mot de passe : </label>
                     <input type="password" id='cpassword' name="cpassword" title="Confirmer le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" requiered>
-                    <input type="submit" id='save' name="save" title="Enregistrer la personne" value="Enregistrer" requiered>
+                    <input type="submit" id='save' name="save" title="Enregistrer la personne" value="S'inscrire" requiered>
                 </div>
             </form>
         </div>

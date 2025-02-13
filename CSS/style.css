@@ -1,0 +1,467 @@
+/*DEBUT DE L'ENTETE*/
+
+@font-face {
+    font-family: Star_Jedi;
+    src: url(../Data/Starjedi.ttf);
+}
+
+body {
+    background-image: url("../Data/blue_sky.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.horizontal {
+    display: flex;
+    align-items: center;/*Pour centrer le contenu verticalement*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;/*Pour le mettre au premier plan*/
+    background-color: #37c2e1;
+}
+
+.nomSite {
+    display: flex;
+    justify-content: flex-start;/*Pour qu'il se positionne à gauche*/
+    align-items: center;
+    font-family: Star_Jedi;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0px 0px 7px 10px;
+    word-spacing: -13px;/*Pour coller un peu plus Star à Tour dans le nom du site*/
+}
+
+a[href="acceuil.html"] {
+    text-decoration: none;
+    color: black;
+}
+
+a[href="connexion.html"], a[href="inscription.html"] {
+    text-decoration: none;
+    color: black;
+}
+
+.recherche {
+    display: flex;
+    align-items: center;
+    width: 270px;
+    height: 30px;
+    margin-left: auto;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: #3095cb;
+}
+
+.recherche input[type="text"] {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: #3095cb;
+    color: white;
+    width: 260px;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.inscription {
+    display: flex;
+    justify-content: flex-end;/*Pour le mettre tout à droite*/
+    align-items: center;
+    height: 25px;
+    margin-left: auto;
+    padding: 7px;
+    border-radius: 10px 10px 10px 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    background-color: #3095cb;
+}
+
+.connexion {
+    display: flex;
+    justify-content: flex-end;/*Pour le mettre tout à droite*/
+    align-items: center;
+    height: 25px;
+    margin: 0px 15px 0px 15px;
+    padding: 7px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    background-color: #3095cb;
+}
+
+/*Pour cacher des éléments en fonction de la largeur de l'écran*/
+.cache {
+    display: none;/*Pour ne pas afficher un élément*/
+}
+
+/*Remplace "S'inscrire" et "Se connecter" de l'entête par une îcone si la largeur de l'écran est inférieure à 800px*/
+@media (max-width:800px) {
+    .cache {
+        display: block;/*Pour afficher l'élément caché*/
+        margin-right: 2px;
+        border-radius: 90px;
+    }
+
+    .montre {
+        display: none;/*Pour ne pas afficher un élément*/
+    }
+
+    .recherche input[type="text"] {
+        width: 150px;
+    }
+
+    .recherche {
+        width: 160px;
+    }
+}
+
+/*FIN DE L'ENTETE*/
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50px;
+    margin: 75px auto 0px auto;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: black;
+    background-color: #6bb4d6;
+}
+
+/*Réduit la taille de la police si la largeur de l'écran est inférieure à 560px*/
+@media (max-width:560px) {
+    .nomSite {
+        font-size:30px;
+    }
+    
+    .section {
+        font-size:20px;
+    }
+}
+
+/*Réduit la taille de la police si la largeur de l'écran est inférieure à 410px*/
+@media (max-width:410px) {
+    .nomSite {
+        font-size:25px;
+    }
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: column;/*Pour que le flux soit vers le bas*/
+    align-items: center;
+    gap: 20px; /*Pour espacer les éléments*/
+    width: 80%;
+    height: auto;
+    margin: 5px auto 0px auto;
+    padding: 1px 0px 20px 11px;
+    border-radius: 10px;
+    box-sizing: border-box;/*Pour faire en sorte que la largeur et hauteur définies ne tiennent pas en compte de border et padding*/
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 17px;
+    color: black;
+    background-color: #e6ddc6;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between; /*Pour écarter les images*/
+    width: 70%;
+    padding: 0 15%;
+}
+
+.image1, .image2 {
+    width: 22vw;/*l'unité vw dépend de la largeur de l'écran*/
+    height: auto;
+    border: 2px solid #550000;
+    border-radius: 20px;
+}
+
+.image345 {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #550000;
+    border-radius: 20px;
+}
+
+.destination {
+    display: flex;
+    border-spacing: 5px;
+}
+
+.destination tr td:nth-child(odd) {
+    width: 15%;
+    height: 15%;
+}
+
+.destination tr td:nth-child(even) {
+    height: 15%;
+    border-bottom: 2px solid #550000;
+    text-align: left;
+}
+
+.voirdestinations {
+    display: flex;
+    justify-content: center;/*Pour centrer horizontalement*/
+}
+
+a[href="destinations.html"] {
+    color: #550000;
+}
+
+/*DESTINATIONS.html*/
+
+.group1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    width: 70%;
+}
+
+.recherchedestinations {
+    display: flex;
+    justify-content: start;
+    height: 30px;
+    width: 40%;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: #3095cb;
+}
+
+.recherchedestinations input[type="text"] {
+    width: 90%;
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: black;
+    background-color: #3095cb;
+    border: none;
+    outline: none;
+}
+
+.filtrer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    padding: 7px;
+    border-radius: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    background-color: #3095cb;
+}
+
+.group2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2%;
+    width: 100%;
+}
+
+.group2 ul {
+    text-decoration: none;
+    width: 95%;
+}
+
+.group2 ul li {
+    display: inline-block;/*Pour mettre les li sur la même ligne*/
+    width: auto;
+    height: auto;
+    vertical-align: top;
+    border-bottom: 2px solid #550000;
+    margin-bottom: 30px;
+}
+
+.endroit {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+}
+
+.imagedestination {
+    height: auto;
+    width: 200px;
+    margin-right:6px;
+}
+
+.group2 p {
+    width:200px;
+}
+
+/*CONNEXION.html*/ /*INSCRIPTION.html*/
+
+.pageconnexion {
+    width: 50%;
+}
+
+.pageinscription {
+    width: 55%;
+}
+
+form {
+    width: 90%;
+}
+
+.formulaire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.formulaire input {
+    width: 70%;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid #550000;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fccaca;
+    border: none;
+    outline: none;
+}
+
+.formulaire input[type="submit"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 15px;
+    border-radius: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFAAAA;
+    background-color: #550000;
+    cursor: pointer;/*Pour que le bouton soit cliquable*/
+}
+
+/*INFORMATIONS.html*/
+
+.pageinformations {
+    width: 60%;
+}
+
+.paragraphinformations {
+    gap: 15px;
+    width: 60%;
+    padding: 20px;
+}
+
+.paragraphinformations label {
+    font-size: 20px;
+    text-align: center;
+}
+
+.paragraphinformations input {
+    width: 80%;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid #550000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*C'est le font awesome qui simule la modification d'un champ*/
+.paragraphinformations i {
+    margin-left: 3px;
+    padding: 5px;
+    border: 2px solid #550000;
+    border-radius: 10px;
+    cursor: pointer;/*Pour qu'il soit cliquable*/
+}
+
+.paragraphinformations i:hover, .paragraphinformations i:focus {
+    transform: scale(1.1); /*Agrandire la case*/
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.choixradio {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    width: 70%;
+}
+
+.paragraphinformations input[type="radio"] {
+    display: none;/*Pour cacher les boutons radio*/
+}
+
+/*Style des labels qui servent de boutons*/
+.civiliteLabel {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    background-color: #D46A6A;
+    cursor: pointer;
+}
+
+/*Réduit la taille de la police des labels de civilité si la largeur de l'écran est inférieure à 800px*/
+@media (max-width:800px) {
+    .civiliteLabel {
+        font-size:15px
+    }
+}
+
+.paragraphinformations input[type="radio"]:checked + .civiliteLabel {
+    transform: scale(1.1);/*Agrandire la case*/
+    background-color: #550000;
+}
+
+/*ADMIN.html*/
+
+.tableau {
+    background-color: aquamarine;
+    border : 3px solid;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tableau tr th {
+    font-weight: 900;
+    border : solid black;
+    padding: 0px 10px 0px 10px;
+}
+
+.tableau tr td {
+    font-weight: 400;
+    border : solid black;
+    padding: 0px 20px 0px 20px;
+}
+
+#reservation {
+    background-color: aqua;
+}
+
+#bannis {
+    background-color: red;
+}
