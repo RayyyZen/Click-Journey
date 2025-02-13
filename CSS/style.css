@@ -13,6 +13,13 @@ body {
     background-attachment: fixed;
 }
 
+footer {
+    margin-top: 20px;
+    padding-top: 10px;
+    width : 100%;
+    background-color: #e6ddc6;
+}
+
 .horizontal {
     display: flex;
     align-items: center;/*Pour centrer le contenu verticalement*/
@@ -36,9 +43,9 @@ body {
     word-spacing: -13px;/*Pour coller un peu plus Star à Tour dans le nom du site*/
 }
 
-a[href="acceuil.html"] {
+a[href="index.html"]{
     text-decoration: none;
-    color: black;
+    color : black
 }
 
 a[href="connexion.html"], a[href="inscription.html"] {
@@ -139,6 +146,10 @@ a[href="connexion.html"], a[href="inscription.html"] {
     background-color: #6bb4d6;
 }
 
+#section_footer{
+    margin : 30px auto 0px auto;
+}
+
 /*Réduit la taille de la police si la largeur de l'écran est inférieure à 560px*/
 @media (max-width:560px) {
     .nomSite {
@@ -192,7 +203,7 @@ a[href="connexion.html"], a[href="inscription.html"] {
 .image345 {
     width: 100%;
     height: 100%;
-    border: 2px solid #550000;
+    border: 2px solid black;
     border-radius: 20px;
 }
 
@@ -208,17 +219,14 @@ a[href="connexion.html"], a[href="inscription.html"] {
 
 .destination tr td:nth-child(even) {
     height: 15%;
-    border-bottom: 2px solid #550000;
+    border-bottom: 2px solid black;
     text-align: left;
 }
 
-.voirdestinations {
+a[href="destinations.html"] {
     display: flex;
     justify-content: center;/*Pour centrer horizontalement*/
-}
-
-a[href="destinations.html"] {
-    color: #550000;
+    color: black;
 }
 
 /*DESTINATIONS.html*/
@@ -335,11 +343,10 @@ form {
     width: 70%;
     height: 25px;
     padding: 5px;
-    border: 1px solid #550000;
+    border: 2px solid black;
     border-radius: 5px;
     text-align: center;
-    background-color: #fccaca;
-    border: none;
+    background-color: #e6ddc6;
     outline: none;
 }
 
@@ -353,9 +360,9 @@ form {
     border-radius: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 14px;
-    color: #FFAAAA;
-    background-color: #550000;
+    font-size: 20px;
+    color: black;
+    background-color: #6bb4d6;
     cursor: pointer;/*Pour que le bouton soit cliquable*/
 }
 
