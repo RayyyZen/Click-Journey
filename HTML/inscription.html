@@ -14,18 +14,27 @@
         <div class="paragraph pageinscription">
             <form action="../PHP/inscription.php" method="POST">
                 <div class="formulaire">
+                    <label>Civilite :</label>
+                    <div class="choixradio">
+                        <input type="radio" id="monsieur" name="civilite" value="Monsieur">
+                        <label for="monsieur" class="civiliteLabel">Monsieur</label>
+                        <input type="radio" id="madame" name="civilite" value="Madame">
+                        <label for="madame" class="civiliteLabel">Madame</label>
+                    
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
                     <label for="lastname">Nom : </label>
-                    <input type="text" id='lastname' name="lastname" title="Entrez le nom de la personne en majuscules" placeholder="DUPONT" pattern="[A-Z]{2,}" requiered>
+                    <input type="text" id='lastname' name="lastname" title="Entrez le nom de la personne en majuscules" placeholder="Dark" pattern="[A-Z]{2,}" maxlength="20" requiered>
                     <label for="name">Prénom : </label>
-                    <input type="text" id='name' name="name" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Jean" pattern="[A-Za-z]{2,}" requiered>
+                    <input type="text" id='name' name="name" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Vador" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
                     <label for="mobile">Téléphone portable : </label>
-                    <input type="text" id='mobile' name="mobile" title="Entrez le numéro de téléphone portable de la personne" pattern='[0-9]{10}' placeholder="0623456789" requiered>
+                    <input type="tel" id='mobile' name="mobile" title="Entrez le numéro de téléphone portable de la personne" pattern='[0-9]{10}' placeholder="0623456789" maxlength="10" requiered>
                     <label for="email">Adresse mail : </label>
-                    <input type="email" id='email' name="email" title="Entrez l'adresse mail de la personne" placeholder="jeandupont@email.fr" requiered>
+                    <input type="email" id='email' name="email" title="Entrez l'adresse mail de la personne" placeholder="dark.vador@gmail.com" maxlength="40" requiered>
                     <label for="password">Mot de passe : </label>
-                    <input type="password" id='password' name="password" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" requiered>
+                    <input type="password" id='password' name="password" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
                     <label for="password">Confirmer mot de passe : </label>
-                    <input type="password" id='cpassword' name="cpassword" title="Confirmer le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" requiered>
+                    <input type="password" id='cpassword' name="cpassword" title="Confirmer le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
                     <input type="submit" id='save' name="save" title="Enregistrer la personne" value="S'inscrire" requiered>
                 </div>
             </form>

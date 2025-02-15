@@ -293,7 +293,6 @@ a[href="destinations.html"] {
     width: auto;
     height: auto;
     vertical-align: top;
-    border-bottom: 2px solid #550000;
     margin-bottom: 30px;
 }
 
@@ -302,12 +301,13 @@ a[href="destinations.html"] {
     align-items: center;
     flex-direction: column;
     width: auto;
+    border: 5px solid #6bb4d6;
+    border-radius:10px;
 }
 
 .imagedestination {
     height: auto;
     width: 200px;
-    margin-right:6px;
 }
 
 .group2 p {
@@ -324,6 +324,12 @@ a[href="destinations.html"] {
     width: 55%;
 }
 
+@media (max-width:600px) {
+    .pageinscription, .pageconnexion {
+        width:90%;
+    }
+}
+
 form {
     width: 90%;
 }
@@ -333,10 +339,11 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 25px;
     width: 100%;
     text-align: center;
     margin-top: 10px;
+    font-size: 20px;
 }
 
 .formulaire input {
@@ -346,11 +353,14 @@ form {
     border: 2px solid black;
     border-radius: 5px;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 15px;
     background-color: #e6ddc6;
     outline: none;
 }
 
-.formulaire input[type="submit"] {
+input[type="submit"] {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -373,9 +383,15 @@ form {
 }
 
 .paragraphinformations {
-    gap: 15px;
+    gap: 25px;
     width: 60%;
     padding: 20px;
+}
+
+@media (max-width:600px) {
+    .pageinformations, .paragraphinformations {
+        width:90%;
+    }
 }
 
 .paragraphinformations label {
@@ -387,22 +403,26 @@ form {
     width: 80%;
     height: 25px;
     padding: 5px;
-    border: 1px solid #550000;
+    border: 2px solid black;
     border-radius: 5px;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #e6ddc6;
 }
 
 /*C'est le font awesome qui simule la modification d'un champ*/
 .paragraphinformations i {
     margin-left: 3px;
     padding: 5px;
-    border: 2px solid #550000;
+    border: 2px solid black;
     border-radius: 10px;
     cursor: pointer;/*Pour qu'il soit cliquable*/
 }
 
 .paragraphinformations i:hover, .paragraphinformations i:focus {
-    transform: scale(1.1); /*Agrandire la case*/
+    transform: scale(1.2); /*Agrandire la case*/
 }
 
 .group {
@@ -414,11 +434,11 @@ form {
 .choixradio {
     display: flex;
     justify-content: center;
-    gap: 5%;
+    gap: 7%;
     width: 70%;
 }
 
-.paragraphinformations input[type="radio"] {
+input[type="radio"] {
     display: none;/*Pour cacher les boutons radio*/
 }
 
@@ -428,7 +448,7 @@ form {
     border-radius: 5px;
     font-weight: bold;
     color: white;
-    background-color: #D46A6A;
+    background-color: #6bb4d6;
     cursor: pointer;
 }
 
@@ -439,18 +459,30 @@ form {
     }
 }
 
-.paragraphinformations input[type="radio"]:checked + .civiliteLabel {
-    transform: scale(1.1);/*Agrandire la case*/
-    background-color: #550000;
+input[type="radio"]:checked + .civiliteLabel {
+    transform: scale(1.2);/*Agrandire la case*/
+    background-color: #3095cb;
 }
 
 /*ADMIN.html*/
 
+.pageadmin {
+    width: 85%;
+}
+
+.tablediv {
+    width: 100%;
+    overflow-x: auto; /*Active le scroll horizontal*/
+    display: block; /*Assure que le scroll fonctionne*/
+    text-align: center; /*Centre le contenu inline*/
+    white-space: nowrap; /*Empêche le contenu de sauter à la ligne*/
+}
+
 .tableau {
     background-color: aquamarine;
-    border : 3px solid;
+    border : 2px solid;
     border-collapse: collapse;
-    text-align: center;
+    display: inline-block;
 }
 
 .tableau tr th {

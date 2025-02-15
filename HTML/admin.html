@@ -4,24 +4,28 @@
     <head>
         <title>Admin | Star Tour</title>
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     </head>
 
     <body>
         <div class="horizontal">
             <div class="nomSite"> <a href="index.html">Star Tour</a> </div>
             <div class="recherche">
-                <form action="recherche" method="post">
-                    <input type="text" name="recherche" placeholder="Rechercher..." required>
-                </form>
-                </div>
-            <div class="inscription"> <a href="inscription.html">S'inscrire</a> </div>
-            <div class="connexion"> <a href="connexion.html">Se connecter</a> </div>
+            <form action="../PHP/recherche.php" method="post">
+                <input type="text" name="recherche" placeholder="Rechercher..." required>
+            </form>
+            </div>
+            <div class="inscription montre"> <a href="inscription.html">S'inscrire</a> </div>
+            <div class="connexion montre"> <a href="connexion.html">Se connecter</a> </div>
+            <div class="inscription cache"> <a href="inscription.html" class="fa-solid fa-user"></a> </div>
         </div>
-        <div class="section">Page Administrateur</div>
-        <div class ="paragraph">
+        <div class="section pageadmin">Page Administrateur</div>
+        <div class ="paragraph pageadmin">
             <h1>Bienvenue sur la page d'administrateur</h1>
             <p>duilazbhdiqzhjdhlznlqZdbhiqZJDOnm,kl</p>
             <h3>Voici la liste des utilisateurs VIP</h3>
+
+            <div class="tablediv">
             <table class = "tableau">
                 <tr>
                     <th>Nom</th>
@@ -48,7 +52,11 @@
                     <td>#0002</td>
                 </tr>
             </table>
+            </div>
+
             <h3>Voici la liste des réservations disponibles</h3>
+
+            <div class="tablediv">
             <table class = "tableau" id = "reservation">
                 <tr>
                     <th>ID</th>
@@ -78,7 +86,11 @@
                     <td>27</td>
                 </tr>
             </table>
+            </div>
+
                 <h3>Voici la liste des utilisateurs BANNIS</h3>
+
+            <div class="tablediv">
             <table class = "tableau" id ="bannis">
                 <tr>
                     <th>Nom</th>
@@ -101,6 +113,7 @@
                     <td>anas.chokri@email.com</td>
                 </tr>
             </table>
+            </div>
         </div>
     </body>
 </html>
