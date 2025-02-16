@@ -1,4 +1,4 @@
-/*DEBUT DE L'ENTETE*/
+/*DEBUT DE L'ENTÊTE*/
 
 @font-face {
     font-family: Star_Jedi;
@@ -11,13 +11,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-footer {
-    margin-top: 20px;
-    padding-top: 10px;
-    width : 100%;
-    background-color: #e6ddc6;
 }
 
 .horizontal {
@@ -37,20 +30,14 @@ footer {
     justify-content: flex-start;/*Pour qu'il se positionne à gauche*/
     align-items: center;
     font-family: Star_Jedi;
-    font-weight: bold;
     font-size: 40px;
     margin: 0px 0px 7px 10px;
-    word-spacing: -13px;/*Pour coller un peu plus Star à Tour dans le nom du site*/
+    word-spacing: -13px;/*Pour coller un peu plus le mot "Star" du mot "Tour" dans le nom du site*/
 }
 
-a[href="index.html"]{
+a[href="index.html"], a[href="connexion.html"], a[href="inscription.html"] {
     text-decoration: none;
     color : black
-}
-
-a[href="connexion.html"], a[href="inscription.html"] {
-    text-decoration: none;
-    color: black;
 }
 
 .recherche {
@@ -68,7 +55,7 @@ a[href="connexion.html"], a[href="inscription.html"] {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     background-color: #3095cb;
-    color: white;
+    color: black;
     width: 260px;
     padding: 5px;
     border: none;
@@ -85,7 +72,6 @@ a[href="connexion.html"], a[href="inscription.html"] {
     border-radius: 10px 10px 10px 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: white;
     background-color: #3095cb;
 }
 
@@ -99,7 +85,6 @@ a[href="connexion.html"], a[href="inscription.html"] {
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: white;
     background-color: #3095cb;
 }
 
@@ -108,11 +93,11 @@ a[href="connexion.html"], a[href="inscription.html"] {
     display: none;/*Pour ne pas afficher un élément*/
 }
 
-/*Remplace "S'inscrire" et "Se connecter" de l'entête par une îcone si la largeur de l'écran est inférieure à 800px*/
-@media (max-width:800px) {
+/*Remplace "S'inscrire" et "Se connecter" de l'entête par une îcone si la largeur de l'écran est inférieure à 820px*/
+@media (max-width:820px) {
     .cache {
         display: block;/*Pour afficher l'élément caché*/
-        margin-right: 2px;
+        margin-right: 5px;
         border-radius: 90px;
     }
 
@@ -129,7 +114,7 @@ a[href="connexion.html"], a[href="inscription.html"] {
     }
 }
 
-/*FIN DE L'ENTETE*/
+/*FIN DE L'ENTÊTE*/
 
 .section {
     display: flex;
@@ -144,10 +129,6 @@ a[href="connexion.html"], a[href="inscription.html"] {
     font-weight: bold;
     color: black;
     background-color: #6bb4d6;
-}
-
-#section_footer{
-    margin : 30px auto 0px auto;
 }
 
 /*Réduit la taille de la police si la largeur de l'écran est inférieure à 560px*/
@@ -196,7 +177,7 @@ a[href="connexion.html"], a[href="inscription.html"] {
 .image1, .image2 {
     width: 22vw;/*l'unité vw dépend de la largeur de l'écran*/
     height: auto;
-    border: 2px solid #550000;
+    border: 2px solid black;
     border-radius: 20px;
 }
 
@@ -227,6 +208,10 @@ a[href="destinations.html"] {
     display: flex;
     justify-content: center;/*Pour centrer horizontalement*/
     color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 7px;
+    background-color: #3095cb;
 }
 
 /*DESTINATIONS.html*/
@@ -301,17 +286,18 @@ a[href="destinations.html"] {
     align-items: center;
     flex-direction: column;
     width: auto;
-    border: 5px solid #6bb4d6;
-    border-radius:10px;
+    border: 2px solid black;
 }
 
 .imagedestination {
     height: auto;
-    width: 200px;
+    width: 290px;
 }
 
 .group2 p {
-    width:200px;
+    width:290px;
+    padding-left: 3px;
+    box-sizing: border-box;
 }
 
 /*CONNEXION.html*/ /*INSCRIPTION.html*/
