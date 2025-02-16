@@ -35,9 +35,9 @@ body {
     word-spacing: -13px;/*Pour coller un peu plus le mot "Star" du mot "Tour" dans le nom du site*/
 }
 
-a[href="index.html"], a[href="connexion.html"], a[href="inscription.html"] {
+.horizontal a[href="index.html"], .horizontal a[href="connexion.html"], .horizontal a[href="inscription.html"] {
     text-decoration: none;
-    color : black
+    color : black;
 }
 
 .recherche {
@@ -362,6 +362,11 @@ input[type="submit"] {
     cursor: pointer;/*Pour que le bouton soit cliquable*/
 }
 
+.inscrivez-vous, .connectez-vous {
+    font-size:12px;
+    color: #3095cb;
+}
+
 /*INFORMATIONS.html*/
 
 .pageinformations {
@@ -465,14 +470,13 @@ input[type="radio"]:checked + .civiliteLabel {
 }
 
 .tableau {
-    background-color: aquamarine;
+    background-color: #e6ddc6;
     border : 2px solid;
-    border-collapse: collapse;
     display: inline-block;
 }
 
 .tableau tr th {
-    font-weight: 900;
+    font-weight: bold;
     border : solid black;
     padding: 0px 10px 0px 10px;
 }
@@ -483,10 +487,63 @@ input[type="radio"]:checked + .civiliteLabel {
     padding: 0px 20px 0px 20px;
 }
 
-#reservation {
-    background-color: aqua;
+#bannis {
+    border-color: #f58d8d;
 }
 
-#bannis {
-    background-color: red;
+#bannis tr:nth-child(1) {
+    background-color: #f58d8d;
+}
+
+#vip {
+    border-color: #9afab8;
+}
+
+#vip tr:nth-child(1) {
+    background-color: #9afab8;
+}
+
+#utilisateur {
+    border-color: #6bb4d6;
+}
+
+#utilisateur tr:nth-child(1) {
+    background-color: #6bb4d6;
+}
+
+.modifier, .bannir, .promouvoir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 9px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 17px;
+    color: black;
+    cursor: pointer;
+}
+
+.modifier {
+    background-color: #3095cb;
+}
+
+.bannir {
+    background-color: #f58d8d;
+}
+
+.promouvoir {
+    background-color: #9afab8;
+}
+
+.modifier:hover, .bannir:hover, .promouvoir:hover {
+    transform: scale(1.2);
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:9%;
 }

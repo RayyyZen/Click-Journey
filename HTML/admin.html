@@ -3,6 +3,9 @@
 <html>
     <head>
         <title>Admin | Star Tour</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Agence de voyage des lieux de tournage de la saga Star Wars">
+        <meta name="author" content="Rayane M., Enzo F., Hugo N.">
         <link rel="stylesheet" type="text/css" href="../CSS/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     </head>
@@ -19,101 +22,116 @@
             <div class="connexion montre"> <a href="connexion.html">Se connecter</a> </div>
             <div class="inscription cache"> <a href="inscription.html" class="fa-solid fa-user"></a> </div>
         </div>
+
         <div class="section pageadmin">Page Administrateur</div>
+
         <div class ="paragraph pageadmin">
-            <h1>Bienvenue sur la page d'administrateur</h1>
-            <p>duilazbhdiqzhjdhlznlqZdbhiqZJDOnm,kl</p>
             <h3>Voici la liste des utilisateurs VIP</h3>
 
             <div class="tablediv">
-            <table class = "tableau">
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>adresse mail</th>
-                    <th>ID prochaine réservation</th>
-                </tr>
-                <tr>
-                    <td>Fulgori</td>
-                    <td>Enzo</td>
-                    <td>enzo.fulgori@email.com</td>
-                    <td>None</td>
-                </tr>
-                <tr>
-                    <td>Mehanni</td>
-                    <td>Rayane</td>
-                    <td>rayane.mehanni@email.com</td>
-                    <td>#0001</td>
-                </tr>
-                <tr>
-                    <td>Nkundiyeze</td>
-                    <td>Hugo</td>
-                    <td>hugo.nkundiyeze@email.com</td>
-                    <td>#0002</td>
-                </tr>
-            </table>
+                <table class="tableau" id="vip">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Adresse mail</th>
+                        <th>Téléphone</th>
+                    </tr>
+                    <tr>
+                        <td>Dark</td>
+                        <td>Vador</td>
+                        <td>dark.vador@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                    <tr>
+                        <td>Skywalker</td>
+                        <td>Anakin</td>
+                        <td>skywalker.anakin@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                    <tr>
+                        <td>Skywalker</td>
+                        <td>Luke</td>
+                        <td>skywalker.luke@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="options">
+                <div class="modifier">Modifier</div>
+                <div class="bannir">Bannir</div>
             </div>
 
-            <h3>Voici la liste des réservations disponibles</h3>
+            <h3>Voici la liste des utilisateurs</h3>
 
             <div class="tablediv">
-            <table class = "tableau" id = "reservation">
-                <tr>
-                    <th>ID</th>
-                    <th>Pays</th>
-                    <th>Durée</th>
-                    <th>Prix</th>
-                    <th>Places disponibles</th>
-                    <th>Places restantes</th>
-                    <th>Places réservées</th>
-                </tr>
-                <tr>
-                    <td>#0001</td>
-                    <td>Tunisie</td>
-                    <td>7 jours</td>
-                    <td>800€</td>
-                    <td>56</td>
-                    <td>30</td>
-                    <td>26</td>
-                </tr>
-                <tr>
-                    <td>#0002</td>
-                    <td>Italie</td>
-                    <td>10 jours</td>
-                    <td>580€</td>
-                    <td>32</td>
-                    <td>5</td>
-                    <td>27</td>
-                </tr>
-            </table>
+                <table class="tableau" id="utilisateur">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Adresse mail</th>
+                        <th>Téléphone</th>
+                    </tr>
+                    <tr>
+                        <td>Darth</td>
+                        <td>Nihilus</td>
+                        <td>darth.nihilus@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                    <tr>
+                        <td>Ahsoka</td>
+                        <td>Tano</td>
+                        <td>ahsoka.tano@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                    <tr>
+                        <td>Mace</td>
+                        <td>Windu</td>
+                        <td>mace.windu@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                </table>
             </div>
+            <div class="options">
+                <div class="modifier">Modifier</div>
+                <div class="bannir">Bannir</div>
+            </div>
+            <div class="promouvoir">Promouvoir</div>
 
-                <h3>Voici la liste des utilisateurs BANNIS</h3>
+            <h3>Voici la liste des utilisateurs BANNIS</h3>
 
             <div class="tablediv">
-            <table class = "tableau" id ="bannis">
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>adresse mail</th>
-                </tr>
-                <tr>
-                    <td>Amimi</td>
-                    <td>Ahmed</td>
-                    <td>ahmed.amimi@email.com</td>
-                </tr>
-                <tr>
-                    <td>Errabih</td>
-                    <td>Amine</td>
-                    <td>amine.errabih@email.com</td>
-                </tr>
-                <tr>
-                    <td>Chokri</td>
-                    <td>Anas</td>
-                    <td>anas.chokri@email.com</td>
-                </tr>
-            </table>
+                <table class="tableau" id="bannis">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Adresse mail</th>
+                        <th>Téléphone</th>
+                    </tr>
+                    <tr>
+                        <td>Darth</td>
+                        <td>Maul</td>
+                        <td>darth.maul@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                    <tr>
+                        <td>Darth</td>
+                        <td>Bane</td>
+                        <td>darth.bane@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                    <tr>
+                        <td>Darth</td>
+                        <td>Caedus</td>
+                        <td>darth.caedus@email.com</td>
+                        <td>07 XX XX XX XX</td>
+                    </tr>
+                </table>
             </div>
+            <div class="options">
+                <div class="modifier">Modifier</div>
+                <div class="bannir">Débannir</div>
+            </div>
+
         </div>
     </body>
 </html>
