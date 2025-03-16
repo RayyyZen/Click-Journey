@@ -35,7 +35,7 @@ body {
     word-spacing: -13px;/*Pour coller un peu plus le mot "Star" du mot "Tour" dans le nom du site*/
 }
 
-.horizontal a[href="index.html"], .horizontal a[href="connexion.html"], .horizontal a[href="inscription.html"] {
+.horizontal a[href="index.php"], .horizontal a[href="connexion.php"], .horizontal a[href="inscription.php"], .horizontal a[href="informations.php"], .horizontal a[href="admin.php"], .horizontal a[href="../PHP/deconnexion.php"] {
     text-decoration: none;
     color : black;
 }
@@ -62,7 +62,7 @@ body {
     outline: none;
 }
 
-.inscription {
+.inscription, .informations {
     display: flex;
     justify-content: flex-end;/*Pour le mettre tout à droite*/
     align-items: center;
@@ -75,7 +75,7 @@ body {
     background-color: #3095cb;
 }
 
-.connexion {
+.connexion, .deconnexion, .admin {
     display: flex;
     justify-content: flex-end;/*Pour le mettre tout à droite*/
     align-items: center;
@@ -86,6 +86,10 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     background-color: #3095cb;
+}
+
+.admin {
+    margin-left: 0px;
 }
 
 /*Pour cacher des éléments en fonction de la largeur de l'écran*/
@@ -204,7 +208,7 @@ body {
     text-align: left;
 }
 
-a[href="destinations.html"] {
+a[href="destinations.php"] {
     display: flex;
     justify-content: center;/*Pour centrer horizontalement*/
     color: black;
@@ -214,7 +218,7 @@ a[href="destinations.html"] {
     background-color: #3095cb;
 }
 
-/*DESTINATIONS.html*/
+/*DESTINATIONS.php*/
 
 .group1 {
     display: flex;
@@ -300,7 +304,7 @@ a[href="destinations.html"] {
     box-sizing: border-box;
 }
 
-/*CONNEXION.html*/ /*INSCRIPTION.html*/
+/*CONNEXION.php*/ /*INSCRIPTION.php*/
 
 .pageconnexion {
     width: 50%;
@@ -367,7 +371,7 @@ input[type="submit"] {
     color: #3095cb;
 }
 
-/*INFORMATIONS.html*/
+/*INFORMATIONS.php*/
 
 .pageinformations {
     width: 60%;
@@ -455,7 +459,7 @@ input[type="radio"]:checked + .civiliteLabel {
     background-color: #3095cb;
 }
 
-/*ADMIN.html*/
+/*ADMIN.php*/
 
 .pageadmin {
     width: 85%;

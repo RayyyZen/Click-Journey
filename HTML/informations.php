@@ -1,3 +1,8 @@
+<?php
+    require_once '../PHP/accespages.php';
+    accesPages("informations.php");
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -12,43 +17,43 @@
 
     <body>
         <div class="horizontal">
-            <div class="nomSite"> <a href="index.html">Star Tour</a> </div>
+            <div class="nomSite"> <a href="index.php">Star Tour</a> </div>
+            <?php
+                require_once '../PHP/affichage.php';
+                afficheIcones();
+            ?>
         </div>
 
         <div class="section pageinformations">Informations</div>
 
         <div class="paragraph paragraphinformations">
-
-            <label>Civilité :</label>
-            <div class="choixradio">
-                <input type="radio" id="monsieur" name="civilite" value="Monsieur" checked disabled>
-                <label for="monsieur" class="civiliteLabel">Monsieur</label>
-                <input type="radio" id="madame" name="civilite" value="Madame" disabled>
-                <label for="madame" class="civiliteLabel">Madame</label>
-                <i class="fa-solid fa-pen-nib"></i>
-            </div>
+            
+            <?php
+                require_once '../PHP/affichage.php';
+                afficheCivilite();
+            ?>
             
             <label>Nom :</label>
             <div class="group">
-                <input type="text" id="nom" value="Dark" disabled>
+                <?php echo '<input type="text" id="nom" value='.$_SESSION['nom'].' disabled>'; ?>
                 <i class="fa-solid fa-pen-nib"></i>
             </div>
 
             <label>Prénom :</label>
             <div class="group">
-                <input type="text" id="prenom" value="Vador" disabled>
+                <?php echo '<input type="text" id="prenom" value='.$_SESSION['prenom'].' disabled>'; ?>
                 <i class="fa-solid fa-pen-nib"></i>
             </div>
 
             <label>Adresse mail :</label>
             <div class="group">
-                <input type="text" id="mail" value="dark.vador@gmail.com" disabled>
+                <?php echo '<input type="text" id="mail" value='.$_SESSION['email'].' disabled>'; ?>
                 <i class="fa-solid fa-pen-nib"></i>
             </div>
 
             <label>Téléphone :</label>
             <div class="group">
-                <input type="text" id="telephone" value="07 XX XX XX XX" disabled>
+                <?php echo '<input type="text" id="telephone" value='.$_SESSION['mobile'].' disabled>'; ?>
                 <i class="fa-solid fa-pen-nib"></i>
             </div>
 

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -12,15 +14,16 @@
 
     <body>
         <div class="horizontal">
-            <div class="nomSite"> <a href="index.html">Star Tour</a> </div>
+            <div class="nomSite"> <a href="index.php">Star Tour</a> </div>
             <div class="recherche">
                 <form action="../PHP/recherche.php" method="post">
                     <input type="text" name="recherche" placeholder="Rechercher..." maxlength="30" required>
                 </form>
             </div>
-            <div class="inscription montre"> <a href="inscription.html">S'inscrire</a> </div>
-            <div class="connexion montre"> <a href="connexion.html">Se connecter</a> </div>
-            <div class="inscription cache"> <a href="inscription.html" class="fa-solid fa-user"></a> </div>
+            <?php
+                require_once '../PHP/affichage.php';
+                afficheIcones();
+            ?>
         </div>
 
         <div class="section">Destinations</div>

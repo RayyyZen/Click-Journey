@@ -1,3 +1,8 @@
+<?php
+    require_once '../PHP/accespages.php';
+    accesPages("inscription.php");
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -11,11 +16,11 @@
 
     <body>
         <div class="horizontal">
-            <div class="nomSite"> <a href="index.html">Star Tour</a> </div>
+            <div class="nomSite"> <a href="index.php">Star Tour</a> </div>
         </div>
         <div class="section pageinscription">Inscription</div>
         <div class="paragraph pageinscription">
-            <form action="../PHP/inscription.php" method="POST">
+            <form action="../PHP/formulaireinscription.php" method="POST">
                 <div class="formulaire">
                     <label>Civilité :</label>
                     <div class="choixradio">
@@ -27,7 +32,7 @@
                     </div>
 
                     <label for="lastname">Nom : </label>
-                    <input type="text" id='nom_de_famille' name="nom_de_famille" title="Entrez le nom de la personne en majuscules" placeholder="Dark" pattern="[A-Z]{2,}" maxlength="20" requiered>
+                    <input type="text" id='nom' name="nom" title="Entrez le nom de la personne en majuscules" placeholder="Dark" pattern="[A-Z]{2,}" maxlength="20" requiered>
                     <label for="name">Prénom : </label>
                     <input type="text" id='prenom' name="prenom" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Vador" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
                     <label for="mobile">Téléphone portable : </label>
@@ -35,10 +40,10 @@
                     <label for="email">Adresse mail : </label>
                     <input type="email" id='email' name="email" title="Entrez l'adresse mail de la personne" placeholder="dark.vador@gmail.com" maxlength="40" requiered>
                     <label for="password">Mot de passe : </label>
-                    <input type="password" id='mot_de_passe' name="mot_de_passe" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
+                    <input type="password" id='mdp' name="mdp" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
                     <label for="password">Confirmer mot de passe : </label>
-                    <input type="password" id='c_mot_de_passe' name="c_mot_de_passe" title="Confirmer le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
-                    <a href="connexion.html" class="connectez-vous">Déjà un compte ? Connectez-vous !</a>
+                    <input type="password" id='cmdp' name="cmdp" title="Confirmer le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
+                    <a href="connexion.php" class="connectez-vous">Déjà un compte ? Connectez-vous !</a>
                     <input type="submit" id='sauvegarder' name="sauvegarder" title="Enregistrer la personne" value="S'inscrire" requiered>
                 </div>
             </form>
