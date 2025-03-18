@@ -75,7 +75,7 @@
                 <ul>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination1.png" class="imagedestination">
+                            <img src="../Data/destination1.png" class="imagedestination" id="Tataouine">
                             <p>
                                 Tataouine (Tunisie)<br>Durée : 3 jours<br>Prix : 480€<br><br>
                                 Plongez dans l'ambiance mythique de Tatooine en explorant 
@@ -88,7 +88,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination2.png" class="imagedestination">
+                            <img src="../Data/destination2.png" class="imagedestination" id ="Skye">
                             <p>
                                 Skye (Irlande)<br>Durée : 3 jours<br>Prix : 620€<br><br>
                                 Perchée au large des côtes irlandaises, Skellig Michael est un joyau de la nature et du patrimoine. 
@@ -99,7 +99,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination3.png" class="imagedestination">
+                            <img src="../Data/destination3.png" class="imagedestination" id ="Guilin">
                             <p>
                                 Guilin (Chine)<br>Durée : 5 jours<br>Prix : 980€<br><br>
                                 Les paysages verdoyants et montagneux de Kashyyyk, la planète des Wookiees, 
@@ -111,7 +111,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination4.png" class="imagedestination">
+                            <img src="../Data/destination4.png" class="imagedestination" id ="Californie">
                             <p>
                                 Californie (États-Unis)<br>Durée : 7 jours<br>Prix : 1950€<br><br>
                                 Bienvenue sur la lune forestière d'Endor ! 
@@ -122,7 +122,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination5.png" class="imagedestination">
+                            <img src="../Data/destination5.png" class="imagedestination" id ="Crait">
                             <p>
                                 Crait (Bolivie)<br>Durée : 7 jours<br>Prix : 1750€<br><br>
                                 Direction le Salar de Uyuni, le plus grand désert de sel au monde ! 
@@ -133,7 +133,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination6.png" class="imagedestination">
+                            <img src="../Data/destination6.png" class="imagedestination" id="Naboo">
                             <p>
                                 Naboo (Italie)<br>Durée : 5 jours<br>Prix : 1400€<br><br>
                                 Plongez dans l'élégance de Naboo en visitant le Palais Royal de Caserte, 
@@ -144,7 +144,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination7.png" class="imagedestination">
+                            <img src="../Data/destination7.png" class="imagedestination" id="Phang Nga">
                             <p>
                                 Phang Nga (Thaïlande)<br>Durée : 7 jours<br>Prix : 1800€<br><br>
                                 La célèbre baie de Phang Nga, avec ses formations rocheuses calcaires spectaculaires, 
@@ -154,7 +154,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination8.png" class="imagedestination">
+                            <img src="../Data/destination8.png" class="imagedestination" id="Krafiac">
                             <p>
                                 Krafiac (Island)<br>Durée : 6 jours<br>Prix : 2100€<br><br>
                                 Les scènes enneigées de Starkiller Base dans Le Réveil de la Force ont été tournées en Islande, 
@@ -165,7 +165,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination9.png" class="imagedestination">
+                            <img src="../Data/destination9.png" class="imagedestination" id="Abu Dhabi">
                             <p>
                                 Abu Dhabi (Émirats Arabes Unis)<br>Durée : 7 jours<br>Prix : 2550€<br><br>
                                 Si vous rêvez d'explorer Jakku, la planète désertique de Rey, direction Abu Dhabi, 
@@ -176,7 +176,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination10.png" class="imagedestination">
+                            <img src="../Data/destination10.png" class="imagedestination" id="Wadi Rum">
                             <p>
                                 Wadi Rum (Jordanie)<br>Durée : 6 jours<br>Prix : 2100€<br><br>
                                 Envie d'explorer un décor digne d'une planète lointaine ? 
@@ -188,7 +188,7 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination11.png" class="imagedestination">
+                            <img src="../Data/destination11.png" class="imagedestination" id="Atoll de Laamu">
                             <p>
                                 Atoll de Laamu (Maldives)<br>Durée : 9 jours<br>Prix : 2600€<br><br>
                                 Si vous rêvez d'un décor tropical digne d'un film de science-fiction, alors les Maldives sont faites pour vous ! 
@@ -200,9 +200,9 @@
                     </li>
                     <li>
                         <div class="endroit">
-                            <img src="../Data/destination12.png" class="imagedestination">
+                            <img src="../Data/destination12.png" class="imagedestination" id="Alpes Suisses">
                             <p>
-                                Alpes suisses<br>Durée : 6 jours<br>Prix : 1800€<br><br>
+                                Alpes Suisses<br>Durée : 6 jours<br>Prix : 1800€<br><br>
                                 Avant sa destruction tragique par l'Étoile de la Mort, 
                                 la planète Alderaan était un monde paisible aux paysages majestueux. 
                                 Si vous souhaitez découvrir une version réelle de ce paradis perdu, 
