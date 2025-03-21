@@ -1,7 +1,5 @@
 <?php
     function afficheIcones(){
-        echo '<link rel="stylesheet" type="text/css" href="../CSS/style.css">';
-        echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">';
 
         if(isset($_SESSION['nom'])){
             echo '<div class="informations"> <a href="informations.php" class="fa-solid fa-user"></a> </div>';
@@ -17,8 +15,6 @@
     }
 
     function afficheCivilite(){
-        echo '<link rel="stylesheet" type="text/css" href="../CSS/style.css">';
-        echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">';
 
         echo '<label>Civilité :</label>';
         echo '<div class="choixradio">';
@@ -38,7 +34,6 @@
     }
 
     function statutUtilisateurs($tableau){
-        echo '<link rel="stylesheet" type="text/css" href="../CSS/style.css">';
 
         $json = file_get_contents('../JSON/utilisateurs.json');
         $utilisateurs = json_decode($json, true);
@@ -86,6 +81,29 @@
                 echo '    <td>'.$email.'</td>';
                 echo '    <td>'.$mobile.'</td>';
                 echo '</tr>';
+            }
+        }
+    }
+
+    function afficheVoyages($recherche){
+
+        $json = file_get_contents('../JSON/voyages.json');
+        $tabvoyages = json_decode($json, true);
+
+        if(!is_array($tabvoyages)){
+            $tabvoyages = [];
+        }
+        foreach($tabvoyages as $voyage){
+            if(str_contains(strtolower($voyage['ville']),strtolower($recherche)) || str_contains(strtolower($voyage['pays']),strtolower($recherche))){
+                echo '<li>';
+                echo '    <div class="endroit">';
+                echo '        <img src="'.$voyage['image'].'" class="imagedestination">';
+                echo "        <p>".$voyage['ville']." (".$voyage['pays'].")";
+                echo "        <br>Durée : ".$voyage['duree']." jours";
+                echo "        <br>Prix : ".$voyage['prix']."€";
+                echo "        <br><br>".$voyage['description']." </p>";
+                echo '    </div>';
+                echo '</li>';
             }
         }
     }

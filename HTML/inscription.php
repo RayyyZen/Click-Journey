@@ -32,19 +32,19 @@
                     </div>
 
                     <label for="lastname">Nom : </label>
-                    <input type="text" id='nom' name="nom" title="Entrez le nom de la personne en majuscules" placeholder="Dark" pattern="[A-Z]{2,}" maxlength="20" requiered>
+                    <input type="text" id='nom' name="nom" title="Entrez le nom de la personne en majuscules" placeholder="Dark" pattern="[A-Z]{2,}" maxlength="20" required>
                     <label for="name">Prénom : </label>
-                    <input type="text" id='prenom' name="prenom" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Vador" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
+                    <input type="text" id='prenom' name="prenom" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Vador" pattern="[A-Za-z]{2,}" maxlength="20" required>
                     <label for="mobile">Téléphone portable : </label>
-                    <input type="tel" id='mobile' name="mobile" title="Entrez le numéro de téléphone portable de la personne" pattern='[0-9]{10}' placeholder="0623456789" maxlength="10" requiered>
+                    <input type="tel" id='mobile' name="mobile" title="Entrez le numéro de téléphone portable de la personne" pattern='[0-9]{10}' placeholder="0623456789" maxlength="10" required>
                     <label for="email">Adresse mail : </label>
-                    <input type="email" id='email' name="email" title="Entrez l'adresse mail de la personne" placeholder="dark.vador@gmail.com" maxlength="40" requiered>
+                    <input type="email" id='email' name="email" title="Entrez l'adresse mail de la personne" placeholder="dark.vador@gmail.com" maxlength="40" required>
                     <label for="password">Mot de passe : </label>
-                    <input type="password" id='mdp' name="mdp" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
+                    <input type="password" id='mdp' name="mdp" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" required>
                     <label for="password">Confirmer mot de passe : </label>
-                    <input type="password" id='cmdp' name="cmdp" title="Confirmer le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" requiered>
+                    <input type="password" id='cmdp' name="cmdp" title="Confirmer le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" required>
                     <a href="connexion.php" class="connectez-vous">Déjà un compte ? Connectez-vous !</a>
-                    <input type="submit" id='sauvegarder' name="sauvegarder" title="Enregistrer la personne" value="S'inscrire" requiered>
+                    <input type="submit" id='sauvegarder' name="sauvegarder" title="Enregistrer la personne" value="S'inscrire" required>
                 </div>
             </form>
         </div>

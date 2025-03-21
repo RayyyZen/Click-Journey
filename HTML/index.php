@@ -16,8 +16,8 @@
         <div class="horizontal">
             <div class="nomSite"> <a href="index.php">Star Tour</a> </div>
             <div class="recherche">
-                <form action="../PHP/recherche.php" method="post">
-                    <input type="text" name="recherche" placeholder="Rechercher..." maxlength="30" required>
+                <form action="../PHP/formulairerecherche.php" method="post">
+                    <input type="text" name="recherche" placeholder="Rechercher..." maxlength="30">
                 </form>
             </div>
 
