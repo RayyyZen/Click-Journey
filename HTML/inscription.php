@@ -6,18 +6,14 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Inscription | Star Tour</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Agence de voyage des lieux de tournage de la saga Star Wars">
-        <meta name="author" content="Rayane M., Enzo F., Hugo N.">
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css">        
-    </head>
+    <?php
+        require_once '../PHP/affichage.php';
+        afficheHead("Inscription");
+    ?>
 
     <body>
-        <div class="horizontal">
-            <div class="nomSite"> <a href="index.php">Star Tour</a> </div>
-        </div>
+        <?php afficheHorizontal(0,0); ?>
+        
         <div class="section pageinscription">Inscription</div>
         <div class="paragraph pageinscription">
             <form action="../PHP/formulaireinscription.php" method="POST">

@@ -3,30 +3,13 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Acceuil | Star Tour</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Agence de voyage des lieux de tournage de la saga Star Wars">
-        <meta name="author" content="Rayane M., Enzo F., Hugo N.">
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    </head>
+    <?php
+        require_once '../PHP/affichage.php';
+        afficheHead("Acceuil");
+    ?>
 
     <body>
-        <div class="horizontal">
-            <div class="nomSite"> <a href="index.php">Star Tour</a> </div>
-            <div class="recherche">
-                <form action="../PHP/formulairerecherche.php" method="post">
-                    <input type="text" name="recherche" placeholder="Rechercher..." maxlength="30">
-                </form>
-            </div>
-
-            <?php
-                require_once '../PHP/affichage.php';
-                afficheIcones();
-            ?>
-
-        </div>
+        <?php afficheHorizontal(1,1); ?>
 
         <div class="section">Qui sommes-nous ?</div>
 
@@ -54,29 +37,7 @@
                 <br><br>&nbsp&nbsp&nbsp Préparez-vous à une immersion totale dans ces destinations extraordinaires, où chaque paysage vous rappellera une scène culte. Que vous soyez un Jedi en quête d'exploration ou un simple voyageur curieux, ces lieux vous transporteront au cœur de l'univers Star Wars.
             </p>
 
-            <table class="destination">
-                <tr>
-                    <td><img src="../Data/destination1.png" class="image345"></td>
-                    <td>
-                        Venez explorer les dunes infinies du désert du Sahara, où l'ambiance mystique de Tatooine prend vie sous le soleil brûlant du Maghreb. À Matmata, laissez-vous surprendre par les habitaciones troglodytes qui ont servi de décor à la maison de Luke Skywalker, un véritable retour dans l'histoire de la saga. Poursuivez votre aventure à Tozeur, où les vastes plaines de sel de Chott el Jerid vous offriront un paysage spectaculaire, à l'image de la ferme des Lars, un lieu emblématique immortalisé à l'écran.
-                        Une expérience hors du temps, immergée dans l'authenticité des paysages désertiques et l'essence même de l'univers Star Wars, vous attend dans cette aventure unique au cœur du Maghreb.
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="../Data/destination2.png" class="image345"></td>
-                    <td>
-                        Perchée au large des côtes irlandaises, Skellig Michael est un véritable joyau de la nature et du patrimoine, où l'histoire et la spiritualité se rencontrent. C'est ici, dans ce décor spectaculaire, que Luke Skywalker s'est exilé dans la nouvelle trilogie de Star Wars.
-                        L'île est réputée pour ses monastères anciens, qui remontent à plus de 1 000 ans, et ses falaises abruptes qui dominent l'océan Atlantique, offrant une vue à couper le souffle. Un lieu mystique, intemporel, où chaque recoin semble chargé d'histoire, vous plongeant dans l'atmosphère mystique de l'univers Star Wars tout en vous offrant une immersion totale dans la nature sauvage irlandaise.
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="../Data/destination3.png" class="image345"></td>
-                    <td>
-                        Les paysages verdoyants et montagneux de Kashyyyk, la planète des Wookiees dans Star Wars, trouvent leur inspiration dans les sublimes formations karstiques de Guilin en Chine. Ces montagnes majestueuses, émergeant des rivières, créent un décor d'une beauté féerique, où la nature semble presque irréelle.
-                        Laissez-vous emporter par la tranquillité des rivières sinueuses et les falaises imposantes qui surgissent à perte de vue, offrant une atmosphère parfaite pour une immersion totale dans un décor digne de La Revanche des Sith. Chaque recoin de ce paysage enchanteur vous plonge dans un monde lointain, tout en offrant une expérience unique et authentique, en pleine harmonie avec la nature.
-                    </td>
-                </tr>
-            </table>
+            <?php affiche3voyages(); ?>
 
             <a href="destinations.php">Voir toutes nos destinations</a>
         </div>

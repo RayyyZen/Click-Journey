@@ -3,28 +3,13 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Destinations | Star Tour</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Agence de voyage des lieux de tournage de la saga Star Wars">
-        <meta name="author" content="Rayane M., Enzo F., Hugo N.">
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    </head>
+    <?php
+        require_once '../PHP/affichage.php';
+        afficheHead("Destinations");
+    ?>
 
     <body>
-        <div class="horizontal">
-            <div class="nomSite"> <a href="index.php">Star Tour</a> </div>
-            <div class="recherche">
-                <form action="../PHP/recherche.php" method="post">
-                    <input type="text" name="recherche" placeholder="Rechercher..." maxlength="30" required>
-                </form>
-            </div>
-            <?php
-                require_once '../PHP/affichage.php';
-                afficheIcones();
-            ?>
-        </div>
+        <?php afficheHorizontal(1,1); ?>
 
         <div class="section">Destinations</div>
 

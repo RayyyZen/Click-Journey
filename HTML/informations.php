@@ -6,32 +6,19 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Informations | Star Tour</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Agence de voyage des lieux de tournage de la saga Star Wars">
-        <meta name="author" content="Rayane M., Enzo F., Hugo N.">
-        <link rel="stylesheet" type="text/css" href="../CSS/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    </head>
+    <?php
+        require_once '../PHP/affichage.php';
+        afficheHead("Informations");
+    ?>
 
     <body>
-        <div class="horizontal">
-            <div class="nomSite"> <a href="index.php">Star Tour</a> </div>
-            <?php
-                require_once '../PHP/affichage.php';
-                afficheIcones();
-            ?>
-        </div>
+        <?php afficheHorizontal(1,1); ?>
 
         <div class="section pageinformations">Informations</div>
 
         <div class="paragraph paragraphinformations">
             
-            <?php
-                require_once '../PHP/affichage.php';
-                afficheCivilite();
-            ?>
+            <?php afficheCivilite(); ?>
             
             <label>Nom :</label>
             <div class="group">

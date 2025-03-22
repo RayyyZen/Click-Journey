@@ -1,4 +1,15 @@
 <?php
+    function afficheHead($page){
+        echo '<head>';
+        echo '<title>'.$page.' | Star Tour</title>';
+        echo '<meta charset="UTF-8">';
+        echo '<meta name="description" content="Agence de voyage des lieux de tournage de la saga Star Wars">';
+        echo '<meta name="author" content="Rayane M., Enzo F., Hugo N.">';
+        echo '<link rel="stylesheet" type="text/css" href="../CSS/style.css">';
+        echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">';
+        echo '</head>';
+    }
+    
     function afficheIcones(){
 
         if(isset($_SESSION['nom'])){
@@ -10,8 +21,24 @@
         }
         else{
             echo "<div class='inscription'> <a href='inscription.php'>S'inscrire</a> </div>";
-            echo "<div class='connexion'> <a href='connexion.php'>Se connecter</a> </div>";
+            echo "<div class='connexion montre'> <a href='connexion.php'>Se connecter</a> </div>";
         }
+    }
+
+    function afficheHorizontal($recherche,$icone){
+        echo '<div class="horizontal">';
+        echo '<div class="nomSite"> <a href="index.php">Star Tour</a> </div>';
+        if($recherche == 1){
+            echo '<div class="recherche">';
+            echo '<form action="../PHP/formulairerecherche.php" method="post">';
+            echo '    <input type="text" name="recherche" placeholder="Rechercher..." required>';
+            echo '</form>';
+            echo '</div>';
+        }
+        if($icone == 1){
+            afficheIcones();
+        }
+        echo '</div>';
     }
 
     function afficheCivilite(){
@@ -94,17 +121,75 @@
             $tabvoyages = [];
         }
         foreach($tabvoyages as $voyage){
-            if(str_contains(strtolower($voyage['ville']),strtolower($recherche)) || str_contains(strtolower($voyage['pays']),strtolower($recherche))){
+            if(str_contains(strtolower($voyage['titre']),strtolower($recherche)) || str_contains(strtolower($voyage['ville']),strtolower($recherche)) || str_contains(strtolower($voyage['pays']),strtolower($recherche))){
                 echo '<li>';
-                echo '    <div class="endroit">';
+                echo '    <a href="../HTML/voyage.php?nom='.$voyage['ville'].'" class="endroit">';
                 echo '        <img src="'.$voyage['image'].'" class="imagedestination">';
+                echo '        <p class=titredestination>'.$voyage['titre'].'</p>';
                 echo "        <p>".$voyage['ville']." (".$voyage['pays'].")";
                 echo "        <br>Durée : ".$voyage['duree']." jours";
                 echo "        <br>Prix : ".$voyage['prix']."€";
-                echo "        <br><br>".$voyage['description']." </p>";
-                echo '    </div>';
-                echo '</li>';
+                echo "        </p>";
+                echo '    </a>';
+                echo '</a></li>';
             }
         }
+    }
+
+    function afficheInfosVoyage($nom){
+        $json = file_get_contents('../JSON/voyages.json');
+        $tabvoyages = json_decode($json, true);
+
+        if(!is_array($tabvoyages)){
+            $tabvoyages = [];
+        }
+        foreach($tabvoyages as $voyage){
+            if($voyage['ville'] == $nom){
+                break;
+            }
+        }
+
+        echo '<div class="section pagevoyage">Voyage</div>';
+
+        echo '<div class="paragraph pagevoyage">';
+        echo '<table class="destinationvoyage">';
+        echo '        <tr>';
+        echo '            <td><img src="'.$voyage['image'].'" class="image345voyage"></td>';
+        echo '            <td>';
+        echo '            <p class=titredestination>'.$voyage['titre'].'</p>';
+        echo "            <p>".$voyage['ville']." (".$voyage['pays'].")";
+        echo "            <br>Durée : ".$voyage['duree']." jours";
+        echo "            <br>Prix : ".$voyage['prix']."€";
+        echo '           </td>';
+        echo '        </tr>';
+        echo '</table>';
+        echo ($voyage['description']);
+        echo '<a href="etapes.php">Réserver</a>';
+        echo '</div>';
+    }
+
+    function affiche3voyages(){
+        $json = file_get_contents('../JSON/voyages.json');
+        $tabvoyages = json_decode($json, true);
+
+        if(!is_array($tabvoyages)){
+            $tabvoyages = [];
+        }
+
+        echo '<table class="destination">';
+        $i=0;
+        foreach($tabvoyages as $voyage){
+            echo '<tr>';
+            echo '    <td><img src="'.$voyage['image'].'" class="image345"></td>';
+            echo '    <td>';
+            echo ($voyage['description']);
+            echo '    </td>';
+            echo '</tr>';
+            $i++;
+            if($i>=3){
+                break;
+            }
+        }
+        echo '</table>';
     }
 ?>

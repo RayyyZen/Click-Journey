@@ -1,6 +1,7 @@
 [
     {
         "image": "../Data/destination1.png",
+        "titre": "Le désert de Tatooine",
         "pays": "Tunisie",
         "ville": "Tataouine",
         "duree": "3",
@@ -12,6 +13,7 @@
     },
     {
         "image": "../Data/destination2.png",
+        "titre": "L'île mystique de Luke Skywalker",
         "pays": "Irlande",
         "ville": "Skye",
         "duree": "3",
@@ -23,6 +25,7 @@
     },
     {
         "image": "../Data/destination3.png",
+        "titre": "La jungle luxuriante de Kashyyyk",
         "pays": "Chine",
         "ville": "Guilin",
         "duree": "5",
@@ -34,6 +37,7 @@
     },
     {
         "image": "../Data/destination4.png",
+        "titre": "La forêt enchantée d'Endor",
         "pays": "Etats-Unis",
         "ville": "Californie",
         "duree": "7",
@@ -45,6 +49,7 @@
     },
     {
         "image": "../Data/destination5.png",
+        "titre": "La planète minérale de Crait",
         "pays": "Bolivie",
         "ville": "Crait",
         "duree": "7",
@@ -56,6 +61,7 @@
     },
     {
         "image": "../Data/destination6.png",
+        "titre": "Le raffinement de Naboo",
         "pays": "Italie",
         "ville": "Naboo",
         "duree": "5",
@@ -67,6 +73,7 @@
     },
     {
         "image": "../Data/destination7.png",
+        "titre": "Les falaises mystiques de la planète Kashyyyk",
         "pays": "Thaïlande",
         "ville": "Phang Nga",
         "duree": "7",
@@ -78,6 +85,7 @@
     },
     {
         "image": "../Data/destination8.png",
+        "titre": "Les paysages extrêmes de Starkiller Base",
         "pays": "Islande",
         "ville": "Krafiac",
         "duree": "6",
@@ -89,6 +97,7 @@
     },
     {
         "image": "../Data/destination9.png",
+        "titre": "Le désert brûlant de Jakku",
         "pays": "Emirates Arabes Unis",
         "ville": "Abu Dhabi",
         "duree": "7",
@@ -100,6 +109,7 @@
     },
     {
         "image": "../Data/destination10.png",
+        "titre": "Le désert de Pasaana",
         "pays": "Jordanie",
         "ville": "Wadi Rum",
         "duree": "6",
@@ -111,6 +121,7 @@
     },
     {
         "image": "../Data/destination11.png",
+        "titre": "Le paradis aquatique de Scarif",
         "pays": "Maldives",
         "ville": "Atoll de Laamu",
         "duree": "9",
@@ -122,6 +133,7 @@
     },
     {
         "image": "../Data/destination12.png",
+        "titre": "Les montagnes enneigées d'Alderaan",
         "pays": "",
         "ville": "Alpes suisses",
         "duree": "6",
@@ -133,10 +145,11 @@
     },
     {
         "image": "../Data/destination13.png",
+        "titre": "La Planète Hoth",
         "pays": "Norvège",
         "ville": "Hardangerjøkulen",
-        "duree": "0",
-        "prix": "0",
+        "duree": "5",
+        "prix": "1850",
         "description": "Plongez dans l'immensité glaciale de Hardangerjøkulen, où la rébellion s'est tenue face à l'Empire ! Ce glacier spectaculaire, accessible par une randonnée en pleine nature, offre des paysages à couper le souffle. En hiver, vivez une expérience unique en explorant les étendues de neige à motoneige ou en ski de randonnée. Une aventure épique dans un décor digne de l'Alliance Rebelle !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
@@ -144,10 +157,11 @@
     },
     {
         "image": "../Data/destination14.png",
+        "titre": "La Forêt de Naboo",
         "pays": "Royaume-Uni",
         "ville": "Whippendell Woods",
-        "duree": "0",
-        "prix": "0",
+        "duree": "3",
+        "prix": "890",
         "description": "Envie d'une balade féerique ? Whippendell Woods, avec ses arbres centenaires et ses sentiers mystérieux, vous plonge dans l'univers enchanteur de Naboo. Imaginez-vous à la place de Qui-Gon et Obi-Wan marchant dans cette forêt luxuriante… Ici, chaque rayon de soleil filtrant à travers les feuilles rappelle la magie de la saga. Un havre de paix idéal pour une escapade nature près de Londres !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
@@ -155,10 +169,11 @@
     },
     {
         "image": "../Data/destination15.png",
+        "titre": "La Planète Takodana",
         "pays": "Royaume-Uni",
         "ville": "Puzzlewood",
-        "duree": "0",
-        "prix": "0",
+        "duree": "4",
+        "prix": "1150",
         "description": "Mystique et envoûtante, la forêt de Puzzlewood semble tout droit sortie d'un conte. Ce lieu magique a inspiré de nombreuses œuvres de fantasy, et vous comprendrez vite pourquoi ! En arpentant ses sentiers sinueux bordés de rochers couverts de mousse, vous aurez l'impression de chercher le sabre laser de Luke Skywalker dans le château de Maz Kanata. Une immersion totale dans l'univers de la Force vous attend !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
@@ -166,10 +181,11 @@
     },
     {
         "image": "../Data/destination16.png",
+        "titre": "Une Base Impériale",
         "pays": "Royaume-Uni",
         "ville": "Canary Wharf Station",
-        "duree": "0",
-        "prix": "0",
+        "duree": "2",
+        "prix": "620",
         "description": "Saviez-vous que le métro londonien cache un décor impérial ? La station ultramoderne de Canary Wharf a été transformée en base de l'Empire dans Rogue One. Si vous aimez les lieux au design futuriste, faites une halte ici lors de votre visite de Londres et imaginez-vous en pleine infiltration secrète avec les héros de la Résistance. Une expérience insolite en plein cœur de la ville !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
@@ -177,10 +193,11 @@
     },
     {
         "image": "../Data/destination17.png",
+        "titre": "Les Terres de Mustafar",
         "pays": "Italie",
         "ville": "Mount Etna",
-        "duree": "0",
-        "prix": "0",
+        "duree": "5",
+        "prix": "1490",
         "description": "Oserez-vous poser le pied sur les terres de Mustafar ? Le volcan Etna, l'un des plus actifs d'Europe, a été utilisé pour créer les coulées de lave de la planète où Anakin et Obi-Wan se sont affrontés. Assistez à des éruptions spectaculaires depuis les hauteurs et explorez les champs de lave solidifiée. Un décor digne des Sith, à la fois impressionnant et fascinant !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
@@ -188,10 +205,11 @@
     },
     {
         "image": "../Data/destination18.png",
+        "titre": "La Planète Eadu",
         "pays": "Islande",
         "ville": "Máfabót",
-        "duree": "0",
-        "prix": "0",
+        "duree": "6",
+        "prix": "2290",
         "description": "Envie d'explorer un paysage sauvage et mystique ? Máfabót, une région isolée d'Islande, a servi de décor pour la planète Eadu dans Rogue One. Ses falaises escarpées, ses paysages brumeux et son ambiance austère en font un lieu parfait pour une immersion totale dans l'univers de Star Wars. Aventurez-vous dans ce territoire brut où le vent souffle fort et où la nature règne en maître !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
@@ -199,10 +217,11 @@
     },
     {
         "image": "../Data/destination19.png",
+        "titre": "La Cantina de Mos Eisley",
         "pays": "Tunisie",
         "ville": "Ajim",
-        "duree": "0",
-        "prix": "0",
+        "duree": "4",
+        "prix": "790",
         "description": "Si vous rêvez de visiter l'un des lieux les plus emblématiques de Star Wars, direction Ajim, un petit village de l'île de Djerba, en Tunisie. C'est ici que l'équipe de tournage a filmé l'extérieur de la légendaire Cantina de Mos Eisley, où Luke et Obi-Wan rencontrent Han Solo pour la première fois dans Un Nouvel Espoir. L'endroit a peu changé depuis le tournage, et vous pourrez y voir les anciennes bâtisses utilisées pour le décor de la maison de Ben Kenobi et d'autres lieux mythiques de Tatooine. Un voyage dans le temps pour tout fan de la saga !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
@@ -210,10 +229,11 @@
     },
     {
         "image": "../Data/destination20.png",
+        "titre": "Canto Bight, la Cité du Jeu",
         "pays": "Croatie",
         "ville": "Dubrovnik",
-        "duree": "0",
-        "prix": "0",
+        "duree": "4",
+        "prix": "1190",
         "description": "Bienvenue dans Canto Bight, la ville luxueuse et scintillante où Finn et Rose se rendent dans Les Derniers Jedi ! Ce décor extravagant a été filmé dans les rues historiques de Dubrovnik, en Croatie. Connue pour ses remparts imposants et son architecture médiévale, la ville offre une ambiance à la fois authentique et futuriste, parfaite pour représenter cette métropole où l'élite de la galaxie vient jouer et faire fortune. Promenez-vous le long des rues pavées et des bâtiments en pierre blanche, et imaginez-vous dans l'effervescence de cette cité cosmopolite. Entre ruelles pittoresques, vue imprenable sur la mer Adriatique et charme historique, Dubrovnik est une destination incontournable pour tout fan de Star Wars et de voyages enchanteurs !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
