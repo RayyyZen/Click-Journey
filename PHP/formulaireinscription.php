@@ -9,8 +9,12 @@
     $mdp = $_POST['mdp'];
     $cmdp = $_POST['cmdp'];
 
-    if(($civilite!="Monsieur" && $civilite!="Madame") || $nom=="" || $prenom=="" || $mobile=="" || $email=="" || $mdp=="" || $cmdp=="" || "$mdp" != "$cmdp"){
-        header("Location: ../HTML/inscription.php");
+    if($civilite!="Monsieur" && $civilite!="Madame"){
+        header("Location: ../HTML/inscription.php?message=Champ obligatoire&erreur=civilite&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
+        exit(0);
+    }
+    else if("$mdp" != "$cmdp"){
+        header("Location: ../HTML/inscription.php?message=Les mots de passes ne sont pas identiques&erreur=mdp&civilite=".$civilite."&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
         exit(0);
     }
 
@@ -35,7 +39,7 @@
     }
 
     if($verifmail == 0){
-        header("Location: ../HTML/inscription.php");
+        header("Location: ../HTML/inscription.php?message=Compte déjà existant&erreur=email&civilite=".$civilite."&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
         exit(0);
     }
 

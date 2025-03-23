@@ -382,6 +382,11 @@ input[type="submit"] {
     color: #3095cb;
 }
 
+.erreur {
+    font-size:9px;
+    color: #f58d8d;
+}
+
 /*INFORMATIONS.php*/
 
 .pageinformations {
@@ -428,6 +433,8 @@ input[type="submit"] {
 }
 
 .paragraphinformations i:hover, .paragraphinformations i:focus {
+    color: white;
+    background-color: black;
     transform: scale(1.2); /*Agrandire la case*/
 }
 
@@ -470,10 +477,25 @@ input[type="radio"]:checked + .civiliteLabel {
     background-color: #3095cb;
 }
 
+a[href="../PHP/suppression.php"] {
+    text-decoration: none;
+    color: black;
+    background-color: #f58d8d;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
 /*ADMIN.php*/
 
 .pageadmin {
-    width: 85%;
+    width: 70%;
+}
+
+@media (max-width:800px) {
+    .pageadmin {
+        width: 85%;
+    }
 }
 
 .tablediv {
@@ -597,4 +619,9 @@ input[type="radio"]:checked + .civiliteLabel {
     height: 100px;
     border-bottom: 2px solid black;
     text-align: left;
+}
+
+.lienvoyage {
+    text-decoration: none;
+    color: black;
 }

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -7,9 +9,9 @@
     ?>
 
     <body>
-        <?php afficheHorizontal(1,1); ?>
-
-        <?php afficheInfosVoyage($_GET['nom']); ?>
-
+        <?php 
+            afficheHorizontal(1,1);
+            afficheInfosVoyage($_GET['nom']);
+        ?>
     </body>
 </html>

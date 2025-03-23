@@ -47,20 +47,30 @@
             $compteExistant = 1;
             break;
         }
+        else if($email == $emailUtilisateur && $mdp != $mdpUtilisateur){
+            $compteExistant = -1;
+            break;
+        }
     }
 
-    if($compteExistant == 0 || $statut == "Banni"){
-        header("Location: ../HTML/connexion.php");
-        exit(1);
+    if($compteExistant == -1){
+        header("Location: ../HTML/connexion.php?message=Mot de passe incorrect&erreur=mdp&email=".$email);
     }
+    else if($compteExistant == 0){
+        header("Location: ../HTML/connexion.php?message=Compte inexistant&erreur=email&email=".$email);
+    }
+    else if($statut == "Banni"){
+        header("Location: ../HTML/connexion.php?message=Ce compte est banni&erreur=mdp&email=".$email);
+    }
+    else{
+        $_SESSION['statut'] = $statut;
+        $_SESSION['civilite'] = $civilite;
+        $_SESSION['nom'] = $nom;
+        $_SESSION['prenom'] = $prenom;
+        $_SESSION['email'] = $email;
+        $_SESSION['mobile'] = $mobile;
+        $_SESSION['mdp'] = $mdp;
 
-    $_SESSION['statut'] = $statut;
-    $_SESSION['civilite'] = $civilite;
-    $_SESSION['nom'] = $nom;
-    $_SESSION['prenom'] = $prenom;
-    $_SESSION['email'] = $email;
-    $_SESSION['mobile'] = $mobile;
-    $_SESSION['mdp'] = $mdp;
-
-    header("Location: ../HTML/index.php");
+        header("Location: ../HTML/index.php");
+    }
 ?>

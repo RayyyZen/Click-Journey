@@ -44,6 +44,7 @@
                 <i class="fa-solid fa-pen-nib"></i>
             </div>
 
+            <a href="../PHP/suppression.php">Supprimer mon compte</a>
         </div>
     </body>
 </html>

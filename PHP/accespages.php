@@ -11,6 +11,11 @@
                 header("location: index.php");
             }
         }
+        else if($page == "etapes.php"){
+            if(!isset($_SESSION['email'])){
+                header("location: connexion.php");
+            }
+        }
         else{
             if(isset($_SESSION['email'])){
                 header("location: index.php");

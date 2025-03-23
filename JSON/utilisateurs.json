@@ -1,5 +1,5 @@
-[
-    {
+{
+    "0": {
         "statut": "Admin",
         "civilite": "Monsieur",
         "nom": "Dark",
@@ -8,7 +8,7 @@
         "email": "dark.vador@gmail.com",
         "mdp": "vador"
     },
-    {
+    "1": {
         "statut": "Admin",
         "civilite": "Monsieur",
         "nom": "Skywalker",
@@ -17,7 +17,7 @@
         "email": "skywalker.anakin@gmail.com",
         "mdp": "anakin"
     },
-    {
+    "2": {
         "statut": "Admin",
         "civilite": "Monsieur",
         "nom": "Skywalker",
@@ -26,7 +26,7 @@
         "email": "skywalker.luke@gmail.com",
         "mdp": "luke"
     },
-    {
+    "3": {
         "statut": "Banni",
         "civilite": "Monsieur",
         "nom": "Darth",
@@ -35,7 +35,7 @@
         "email": "darth.maul@gmail.com",
         "mdp": "maul"
     },
-    {
+    "4": {
         "statut": "Banni",
         "civilite": "Monsieur",
         "nom": "Darth",
@@ -44,7 +44,7 @@
         "email": "darth.bane@gmail.com",
         "mdp": "bane"
     },
-    {
+    "5": {
         "statut": "Banni",
         "civilite": "Monsieur",
         "nom": "Darth",
@@ -53,7 +53,7 @@
         "email": "darth.caedus@gmail.com",
         "mdp": "caedus"
     },
-    {
+    "6": {
         "statut": "Utilisateur",
         "civilite": "Monsieur",
         "nom": "Darth",
@@ -62,7 +62,7 @@
         "email": "darth.nihilus@gmail.com",
         "mdp": "nihilus"
     },
-    {
+    "8": {
         "statut": "Utilisateur",
         "civilite": "Madame",
         "nom": "Ahsoka",
@@ -71,7 +71,7 @@
         "email": "ahsoka.tano@gmail.com",
         "mdp": "tano"
     },
-    {
+    "9": {
         "statut": "Utilisateur",
         "civilite": "Monsieur",
         "nom": "Mace",
@@ -80,4 +80,4 @@
         "email": "mace.windu@gmail.com",
         "mdp": "windu"
     }
-]
+}

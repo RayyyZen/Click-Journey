@@ -123,7 +123,7 @@
         foreach($tabvoyages as $voyage){
             if(str_contains(strtolower($voyage['titre']),strtolower($recherche)) || str_contains(strtolower($voyage['ville']),strtolower($recherche)) || str_contains(strtolower($voyage['pays']),strtolower($recherche))){
                 echo '<li>';
-                echo '    <a href="../HTML/voyage.php?nom='.$voyage['ville'].'" class="endroit">';
+                echo '    <a href="../HTML/voyage.php?nom='.$voyage['titre'].'" class="endroit">';
                 echo '        <img src="'.$voyage['image'].'" class="imagedestination">';
                 echo '        <p class=titredestination>'.$voyage['titre'].'</p>';
                 echo "        <p>".$voyage['ville']." (".$voyage['pays'].")";
@@ -144,7 +144,7 @@
             $tabvoyages = [];
         }
         foreach($tabvoyages as $voyage){
-            if($voyage['ville'] == $nom){
+            if($voyage['titre'] == $nom){
                 break;
             }
         }
@@ -179,12 +179,12 @@
         echo '<table class="destination">';
         $i=0;
         foreach($tabvoyages as $voyage){
+            
             echo '<tr>';
-            echo '    <td><img src="'.$voyage['image'].'" class="image345"></td>';
-            echo '    <td>';
-            echo ($voyage['description']);
-            echo '    </td>';
+            echo '    <td><a href="../HTML/voyage.php?nom='.$voyage['titre'].'" class="lienvoyage"><img src="'.$voyage['image'].'" class="image345"></a></td>';
+            echo '    <td><a href="../HTML/voyage.php?nom='.$voyage['titre'].'" class="lienvoyage">'.$voyage['description'].'</a></td>';
             echo '</tr>';
+            
             $i++;
             if($i>=3){
                 break;
