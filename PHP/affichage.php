@@ -70,6 +70,7 @@
         }
 
         echo '<tr>';
+        echo '    <th></th>';
         echo '    <th>Civilité</th>';
         echo '    <th>Nom</th>';
         echo '    <th>Prénom</th>';
@@ -78,35 +79,31 @@
         echo '</tr>';
 
         foreach($utilisateurs as $util){
-            foreach($util as $key => $elm){
-                switch($key){
-                    case "statut" :
-                        $statut = $elm;
-                        break;
-                    case "civilite" :
-                        $civilite = $elm;
-                        break;
-                    case "nom" :
-                        $nom = $elm;
-                        break;
-                    case "prenom" :
-                        $prenom = $elm;
-                        break;
-                    case "email" :
-                        $email = $elm;
-                        break;
-                    case "mobile" :
-                        $mobile = $elm;
-                        break;
-                }
-            }
-            if($statut == $tableau){
+            if($util['statut'] == $tableau){
                 echo '<tr>';
-                echo '    <td>'.$civilite.'</td>';
-                echo '    <td>'.$nom.'</td>';
-                echo '    <td>'.$prenom.'</td>';
-                echo '    <td>'.$email.'</td>';
-                echo '    <td>'.$mobile.'</td>';
+                echo '    <td>';
+                if($_SESSION['email'] == $util['email']){
+                    echo '        <a href="../PHP/boutonadmin.php?action=etoile&email='.$util['email'].'" class="fa-solid fa-star boutonadmin"></a>';
+                }
+                if($tableau == "Admin" && $_SESSION['email'] != $util['email']){
+                    echo '        <a href="../PHP/boutonadmin.php?action=retrograder&email='.$util['email'].'" class="fa-solid fa-circle-user boutonadmin"></a>';
+                }
+                if($tableau == "Utilisateur"){
+                    echo '        <a href="../PHP/boutonadmin.php?action=promouvoir&email='.$util['email'].'" class="fa-solid fa-hammer boutonadmin"></a>';
+                }
+                if($tableau != "Banni" && $_SESSION['email'] != $util['email']){
+                    echo '        <a href="../PHP/boutonadmin.php?action=bannir&email='.$util['email'].'" class="fa-regular fa-trash-can boutonadmin"></a>';
+                }
+                if($tableau == "Banni"){
+                    echo '        <a href="../PHP/boutonadmin.php?action=debannir&email='.$util['email'].'" class="fa-solid fa-rotate-right boutonadmin"></a>';
+                }
+                //echo '        <a href="../PHP/boutonadmin.php?action=modifier&email='.$util['email'].'" class="fa-regular fa-pen-to-square boutonadmin"></a>';
+                echo '    </td>';
+                echo '    <td>'.$util['civilite'].'</td>';
+                echo '    <td>'.$util['nom'].'</td>';
+                echo '    <td>'.$util['prenom'].'</td>';
+                echo '    <td>'.$util['email'].'</td>';
+                echo '    <td>'.$util['mobile'].'</td>';
                 echo '</tr>';
             }
         }

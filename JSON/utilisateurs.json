@@ -27,7 +27,7 @@
         "mdp": "luke"
     },
     "3": {
-        "statut": "Banni",
+        "statut": "Utilisateur",
         "civilite": "Monsieur",
         "nom": "Darth",
         "prenom": "Maul",
@@ -36,7 +36,7 @@
         "mdp": "maul"
     },
     "4": {
-        "statut": "Banni",
+        "statut": "Utilisateur",
         "civilite": "Monsieur",
         "nom": "Darth",
         "prenom": "Bane",
@@ -45,7 +45,7 @@
         "mdp": "bane"
     },
     "5": {
-        "statut": "Banni",
+        "statut": "Utilisateur",
         "civilite": "Monsieur",
         "nom": "Darth",
         "prenom": "Caedus",
@@ -54,7 +54,7 @@
         "mdp": "caedus"
     },
     "6": {
-        "statut": "Utilisateur",
+        "statut": "Banni",
         "civilite": "Monsieur",
         "nom": "Darth",
         "prenom": "Nihilus",
@@ -63,7 +63,7 @@
         "mdp": "nihilus"
     },
     "8": {
-        "statut": "Utilisateur",
+        "statut": "Banni",
         "civilite": "Madame",
         "nom": "Ahsoka",
         "prenom": "Tano",
@@ -72,7 +72,7 @@
         "mdp": "tano"
     },
     "9": {
-        "statut": "Utilisateur",
+        "statut": "Banni",
         "civilite": "Monsieur",
         "nom": "Mace",
         "prenom": "Windu",

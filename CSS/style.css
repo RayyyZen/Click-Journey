@@ -585,6 +585,15 @@ a[href="../PHP/suppression.php"] {
     gap:9%;
 }
 
+.boutonadmin {
+    text-decoration: none;
+    color: black;
+}
+
+.boutonadmin:hover {
+    color: rgb(123, 121, 121);
+}
+
 /*VOYAGE.php*/
 
 .pagevoyage {
