@@ -29,7 +29,7 @@
         echo '<div class="horizontal">';
         echo '<div class="nomSite"> <a href="index.php">Star Tour</a> </div>';
         if($recherche == 1){
-            echo '<div class="recherche">';
+            echo '<div class="recherche montre2">';
             echo '<form action="../PHP/formulairerecherche.php" method="post">';
             echo '    <input type="text" name="recherche" placeholder="Rechercher..." required>';
             echo '</form>';
@@ -161,7 +161,7 @@
         echo '        </tr>';
         echo '</table>';
         echo ($voyage['description']);
-        echo '<a href="etapes.php">Réserver</a>';
+        echo '<a href="etapes.php?nom='.$nom.'">Réserver</a>';
         echo '</div>';
     }
 
@@ -188,5 +188,73 @@
             }
         }
         echo '</table>';
+    }
+
+    function afficheEtapes($nom){
+        $json = file_get_contents('../JSON/voyages.json');
+        $tabvoyages = json_decode($json, true);
+
+        if(!is_array($tabvoyages)){
+            $tabvoyages = [];
+        }
+
+        foreach($tabvoyages as $voyage){
+            if($voyage['titre'] == $nom){
+                break;
+            }
+        }
+        $i=1;
+        foreach($voyage['etapes'] as $etape){
+            echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
+
+            echo '<label>Hébergement :</label>';
+            echo '<select name="hebergementetape'.$i.'">';
+            echo '  <option value="hotel3">Hôtel 3 étoiles</option>';
+            echo '  <option value="hotel4">Hôtel 4 étoiles</option>';
+            echo '  <option value="hotel5">Hôtel 5 étoiles</option>';
+            echo '  <option value="appartement">Appartement</option>';
+            echo '  <option value="villa">Villa</option>';
+            echo '</select>';
+
+            echo '<label>Repas :</label>';
+            echo '<select name="repas'.$i.'">';
+            echo '  <option value="aucun">Aucun</option>';
+            echo '  <option value="petitdejeuner">Petit-déjeuner</option>';
+            echo '  <option value="allinclusive">All-inclusive</option>';
+            echo '</select>';
+
+            echo '<label>Activités et excursions :</label>';
+            echo '<select name="activites'.$i.'">';
+            echo '  <option value="non">Non</option>';
+            echo '  <option value="oui">Oui</option>';
+            echo '</select>';
+            $i++;
+        }
+    }
+
+    function afficheRecap() {
+        echo 'Nombre de personnes :';
+        echo '<div class="champ">'.$_SESSION['personnes'].'</div>';
+        echo 'Date de départ :';
+        echo '<div class="champ">'.$_SESSION['depart'].'</div>';
+        echo 'Date de retour :';
+        echo '<div class="champ">'.$_SESSION['retour'].'</div>';
+        echo 'Classe du vol :';
+        echo '<div class="champ">'.$_SESSION['classe'].'</div>';
+        echo 'Assurance voyage :';
+        echo '<div class="champ">'.$_SESSION['assurance'].'</div>';
+
+        for($i=1;$i<=3;$i++){
+            echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
+            echo 'Hébergement :';
+            echo '<div class="champ">'.$_SESSION['hebergementetape'.$i].'</div>';
+            echo 'Repas :';
+            echo '<div class="champ">'.$_SESSION['repas'.$i].'</div>';
+            echo 'Activités et excursions :';
+            echo '<div class="champ">'.$_SESSION['activites'.$i].'</div>';
+        }
+
+        require_once '../PHP/paiement.php';
+        payer($_SESSION['montant']);
     }
 ?>

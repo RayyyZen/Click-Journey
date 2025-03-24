@@ -1,0 +1,30 @@
+[
+    {
+        "status": "accepted",
+        "transaction": "123456789ABSD",
+        "voyage": {
+            "personnes": "1",
+            "depart": "2025-03-24",
+            "retour": "2025-03-27",
+            "classe": "economique",
+            "assurance": "non",
+            "etapes": [
+                {
+                    "hebergement": "hotel3",
+                    "repas": "aucun",
+                    "activites": "non"
+                },
+                {
+                    "hebergement": "hotel3",
+                    "repas": "aucun",
+                    "activites": "non"
+                },
+                {
+                    "hebergement": "hotel3",
+                    "repas": "aucun",
+                    "activites": "non"
+                }
+            ]
+        }
+    }
+]

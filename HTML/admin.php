@@ -18,7 +18,7 @@
         <div class="section pageadmin">Page Administrateur</div>
 
         <div class ="paragraph pageadmin">
-            <h3>Voici la liste des ADMINISTRATEURS</h3>
+            <h3 class="titreadmins">Voici la liste des Administrateurs</h3>
 
             <div class="tablediv">
                 <table class="tableau" id="vip">
@@ -26,7 +26,7 @@
                 </table>
             </div>
 
-            <h3>Voici la liste des UTILISATEURS</h3>
+            <h3 class="titreutilisateurs">Voici la liste des Utilisateurs</h3>
 
             <div class="tablediv">
                 <table class="tableau" id="utilisateur">
@@ -34,7 +34,7 @@
                 </table>
             </div>
 
-            <h3>Voici la liste des BANNIS</h3>
+            <h3 class="titrebannis">Voici la liste des Bannis</h3>
 
             <div class="tablediv">
                 <table class="tableau" id="bannis">

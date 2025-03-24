@@ -16,6 +16,11 @@
                 header("location: connexion.php");
             }
         }
+        else if($page == "recapitulatif.php"){
+            if(!isset($_SESSION['personnes']) || $_SESSION['personnes'] == ""){
+                header("location: connexion.php");
+            }
+        }
         else{
             if(isset($_SESSION['email'])){
                 header("location: index.php");

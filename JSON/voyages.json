@@ -9,7 +9,11 @@
         "description": "Plongez dans l'ambiance mythique de Tatooine en explorant les dunes infinies du désert du Sahara. À Matmata, découvrez les habitations troglodytes qui ont servi de maison à Luke Skywalker, tandis qu'à Tozeur, vous pourrez admirer les vastes plaines de sel de Chott el Jerid, là où la ferme des Lars a été construite. Une expérience hors du temps sous le soleil brûlant du Maghreb !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination2.png",
@@ -21,7 +25,11 @@
         "description": "Perchée au large des côtes irlandaises, Skellig Michael est un joyau de la nature et du patrimoine. C'est ici que Luke Skywalker s'est exilé dans la nouvelle trilogie. L'île est connue pour ses monastères anciens et ses falaises abruptes offrant une vue spectaculaire sur l'Atlantique.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination3.png",
@@ -33,7 +41,11 @@
         "description": "Les paysages verdoyants et montagneux de Kashyyyk, la planète des Wookiees, sont inspirés par les sublimes formations karstiques de Guilin en Chine. Ces montagnes émergeant des rivières ont un charme féerique, parfait pour une immersion totale dans un décor digne de La Revanche des Sith.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination4.png",
@@ -45,7 +57,11 @@
         "description": "Bienvenue sur la lune forestière d'Endor ! Rendez-vous dans le Redwood National Park, où les séquoias géants offrent un décor majestueux aux péripéties des Ewoks. Ce parc national est une destination parfaite pour les amoureux de la nature et des randonnées inoubliables sous ces arbres millénaires.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination5.png",
@@ -57,7 +73,11 @@
         "description": "Direction le Salar de Uyuni, le plus grand désert de sel au monde ! Ce paysage unique, où le ciel et la terre se confondent lors de la saison des pluies, a servi d'inspiration pour la planète Crait (Les Derniers Jedi). Un décor surnaturel pour une expérience hors du commun.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination6.png",
@@ -69,7 +89,11 @@
         "description": "Plongez dans l'élégance de Naboo en visitant le Palais Royal de Caserte, un chef-d'œuvre baroque qui a servi de décor au palais de la reine Amidala. Puis, direction le lac de Côme, où vous pourrez revivre la romance entre Anakin et Padmé dans un cadre paradisiaque.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination7.png",
@@ -81,7 +105,11 @@
         "description": "La célèbre baie de Phang Nga, avec ses formations rocheuses calcaires spectaculaires, a servi d'inspiration pour la planète Kashyyyk (le monde des Wookiees) dans La Revanche des Sith.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination8.png",
@@ -93,7 +121,11 @@
         "description": "Les scènes enneigées de Starkiller Base dans Le Réveil de la Force ont été tournées en Islande, notamment près du volcan Krafla et des glaciers de Eyjafjallajökull. Ce pays offre des paysages extraterrestres avec ses champs de lave, geysers et cascades majestueuses.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination9.png",
@@ -105,7 +137,11 @@
         "description": "Si vous rêvez d'explorer Jakku, la planète désertique de Rey, direction Abu Dhabi, où les dunes infinies du désert de Rub al-Khali ont servi de décor au film Le Réveil de la Force. Cet endroit magique est parfait pour une aventure saharienne inoubliable.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination10.png",
@@ -117,7 +153,11 @@
         "description": "Envie d'explorer un décor digne d'une planète lointaine ? Direction Wadi Rum, en Jordanie, un désert spectaculaire qui a servi de décor pour la planète Pasaana dans L'Ascension de Skywalker. Avec ses immenses falaises de grès rouge, ses vallées lunaires et son sable doré, cet endroit offre une expérience hors du temps, parfaite pour les aventuriers en quête de paysages grandioses.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination11.png",
@@ -129,7 +169,11 @@
         "description": "Si vous rêvez d'un décor tropical digne d'un film de science-fiction, alors les Maldives sont faites pour vous ! Cet archipel paradisiaque a servi d'inspiration pour Scarif, la planète océanique fortifiée dans Rogue One : A Star Wars Story. Avec ses lagons turquoise, ses plages de sable blanc et ses récifs coralliens, ce lieu est un véritable Eden… bien plus paisible que dans le film !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination12.png",
@@ -141,7 +185,11 @@
         "description": "Avant sa destruction tragique par l'Étoile de la Mort, la planète Alderaan était un monde paisible aux paysages majestueux. Si vous souhaitez découvrir une version réelle de ce paradis perdu, rendez-vous dans les Alpes suisses ! Avec leurs pics enneigés, leurs vallées verdoyantes et leurs lacs scintillants, elles rappellent les décors idylliques que l'on aperçoit brièvement avant la destruction d'Alderaan dans Un Nouvel Espoir.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination13.png",
@@ -153,7 +201,11 @@
         "description": "Plongez dans l'immensité glaciale de Hardangerjøkulen, où la rébellion s'est tenue face à l'Empire ! Ce glacier spectaculaire, accessible par une randonnée en pleine nature, offre des paysages à couper le souffle. En hiver, vivez une expérience unique en explorant les étendues de neige à motoneige ou en ski de randonnée. Une aventure épique dans un décor digne de l'Alliance Rebelle !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination14.png",
@@ -165,7 +217,11 @@
         "description": "Envie d'une balade féerique ? Whippendell Woods, avec ses arbres centenaires et ses sentiers mystérieux, vous plonge dans l'univers enchanteur de Naboo. Imaginez-vous à la place de Qui-Gon et Obi-Wan marchant dans cette forêt luxuriante… Ici, chaque rayon de soleil filtrant à travers les feuilles rappelle la magie de la saga. Un havre de paix idéal pour une escapade nature près de Londres !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination15.png",
@@ -177,7 +233,11 @@
         "description": "Mystique et envoûtante, la forêt de Puzzlewood semble tout droit sortie d'un conte. Ce lieu magique a inspiré de nombreuses œuvres de fantasy, et vous comprendrez vite pourquoi ! En arpentant ses sentiers sinueux bordés de rochers couverts de mousse, vous aurez l'impression de chercher le sabre laser de Luke Skywalker dans le château de Maz Kanata. Une immersion totale dans l'univers de la Force vous attend !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination16.png",
@@ -189,7 +249,11 @@
         "description": "Saviez-vous que le métro londonien cache un décor impérial ? La station ultramoderne de Canary Wharf a été transformée en base de l'Empire dans Rogue One. Si vous aimez les lieux au design futuriste, faites une halte ici lors de votre visite de Londres et imaginez-vous en pleine infiltration secrète avec les héros de la Résistance. Une expérience insolite en plein cœur de la ville !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination17.png",
@@ -201,7 +265,11 @@
         "description": "Oserez-vous poser le pied sur les terres de Mustafar ? Le volcan Etna, l'un des plus actifs d'Europe, a été utilisé pour créer les coulées de lave de la planète où Anakin et Obi-Wan se sont affrontés. Assistez à des éruptions spectaculaires depuis les hauteurs et explorez les champs de lave solidifiée. Un décor digne des Sith, à la fois impressionnant et fascinant !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination18.png",
@@ -213,7 +281,11 @@
         "description": "Envie d'explorer un paysage sauvage et mystique ? Máfabót, une région isolée d'Islande, a servi de décor pour la planète Eadu dans Rogue One. Ses falaises escarpées, ses paysages brumeux et son ambiance austère en font un lieu parfait pour une immersion totale dans l'univers de Star Wars. Aventurez-vous dans ce territoire brut où le vent souffle fort et où la nature règne en maître !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination19.png",
@@ -225,7 +297,11 @@
         "description": "Si vous rêvez de visiter l'un des lieux les plus emblématiques de Star Wars, direction Ajim, un petit village de l'île de Djerba, en Tunisie. C'est ici que l'équipe de tournage a filmé l'extérieur de la légendaire Cantina de Mos Eisley, où Luke et Obi-Wan rencontrent Han Solo pour la première fois dans Un Nouvel Espoir. L'endroit a peu changé depuis le tournage, et vous pourrez y voir les anciennes bâtisses utilisées pour le décor de la maison de Ben Kenobi et d'autres lieux mythiques de Tatooine. Un voyage dans le temps pour tout fan de la saga !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     {
         "image": "../Data/destination20.png",
@@ -237,6 +313,10 @@
         "description": "Bienvenue dans Canto Bight, la ville luxueuse et scintillante où Finn et Rose se rendent dans Les Derniers Jedi ! Ce décor extravagant a été filmé dans les rues historiques de Dubrovnik, en Croatie. Connue pour ses remparts imposants et son architecture médiévale, la ville offre une ambiance à la fois authentique et futuriste, parfaite pour représenter cette métropole où l'élite de la galaxie vient jouer et faire fortune. Promenez-vous le long des rues pavées et des bâtiments en pierre blanche, et imaginez-vous dans l'effervescence de cette cité cosmopolite. Entre ruelles pittoresques, vue imprenable sur la mer Adriatique et charme historique, Dubrovnik est une destination incontournable pour tout fan de Star Wars et de voyages enchanteurs !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
-        "personnes": []
+        "etapes": [
+            "A",
+            "B",
+            "C"
+        ]
     }
 ]
