@@ -5,7 +5,7 @@
     $mdp = $_POST['mdp'];
 
     if($email === "" || $mdp === ""){
-        header("Location: ../HTML/connexion.php");
+        header("Location: ../Pages/connexion.php");
         exit(1);
     }
 
@@ -17,60 +17,41 @@
     }
 
     $compteExistant = 0;
-    foreach($utilisateurs as $util){
-        foreach($util as $key => $elm){
-            switch($key){
-                case "email" :
-                    $emailUtilisateur = $elm;
-                    break;
-                case "mdp" :
-                    $mdpUtilisateur = $elm;
-                    break;
-                case "statut" :
-                    $statut = $elm;
-                    break;
-                case "civilite" :
-                    $civilite = $elm;
-                    break;
-                case "nom" :
-                    $nom = $elm;
-                    break;
-                case "prenom" :
-                    $prenom = $elm;
-                    break;
-                case "mobile" :
-                    $mobile = $elm;
-                    break;
-            }
-        }
-        if($email == $emailUtilisateur && $mdp == $mdpUtilisateur){
+    foreach($utilisateurs as &$util){
+        if($util['email'] == $email && $util['mdp'] == $mdp){
             $compteExistant = 1;
+            $util['connexion'] = date("Y-m-j H:i:s");
             break;
         }
-        else if($email == $emailUtilisateur && $mdp != $mdpUtilisateur){
+        else if($util['email'] == $email && $util['mdp'] != $mdp){
             $compteExistant = -1;
             break;
         }
     }
 
     if($compteExistant == -1){
-        header("Location: ../HTML/connexion.php?message=Mot de passe incorrect&erreur=mdp&email=".$email);
+        header("Location: ../Pages/connexion.php?message=Mot de passe incorrect&erreur=mdp&email=".$email);
     }
     else if($compteExistant == 0){
-        header("Location: ../HTML/connexion.php?message=Compte inexistant&erreur=email&email=".$email);
+        header("Location: ../Pages/connexion.php?message=Compte inexistant&erreur=email&email=".$email);
     }
-    else if($statut == "Banni"){
-        header("Location: ../HTML/connexion.php?message=Ce compte est banni&erreur=mdp&email=".$email);
+    else if($util['statut'] == "Banni"){
+        header("Location: ../Pages/connexion.php?message=Ce compte est banni&erreur=mdp&email=".$email);
     }
     else{
-        $_SESSION['statut'] = $statut;
-        $_SESSION['civilite'] = $civilite;
-        $_SESSION['nom'] = $nom;
-        $_SESSION['prenom'] = $prenom;
-        $_SESSION['email'] = $email;
-        $_SESSION['mobile'] = $mobile;
-        $_SESSION['mdp'] = $mdp;
+        $_SESSION['statut'] = $util['statut'];
+        $_SESSION['civilite'] = $util['civilite'];
+        $_SESSION['nom'] = $util['nom'];
+        $_SESSION['prenom'] = $util['prenom'];
+        $_SESSION['email'] = $util['email'];
+        $_SESSION['mobile'] = $util['mobile'];
+        $_SESSION['mdp'] = $util['mdp'];
+        $_SESSION['dateinscription'] = $util['inscription'];
+        $_SESSION['dateconnexion'] = $util['connexion'];
 
-        header("Location: ../HTML/index.php");
+        $nouveaujson = json_encode($utilisateurs, JSON_PRETTY_PRINT);
+        file_put_contents('../JSON/utilisateurs.json',$nouveaujson);
+
+        header("Location: ../Pages/index.php");
     }
 ?>

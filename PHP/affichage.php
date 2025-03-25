@@ -120,7 +120,7 @@
         foreach($tabvoyages as $voyage){
             if(str_contains(strtolower($voyage['titre']),strtolower($recherche)) || str_contains(strtolower($voyage['ville']),strtolower($recherche)) || str_contains(strtolower($voyage['pays']),strtolower($recherche))){
                 echo '<li>';
-                echo '    <a href="../HTML/voyage.php?nom='.$voyage['titre'].'" class="endroit">';
+                echo '    <a href="../Pages/voyage.php?nom='.$voyage['titre'].'" class="endroit">';
                 echo '        <img src="'.$voyage['image'].'" class="imagedestination">';
                 echo '        <p class=titredestination>'.$voyage['titre'].'</p>';
                 echo "        <p>".$voyage['ville']." (".$voyage['pays'].")";
@@ -161,7 +161,7 @@
         echo '        </tr>';
         echo '</table>';
         echo ($voyage['description']);
-        echo '<a href="etapes.php?nom='.$nom.'">Réserver</a>';
+        echo '<a href="etapes.php?nom='.$nom.'" class="lienetapes">Réserver</a>';
         echo '</div>';
     }
 
@@ -178,8 +178,8 @@
         foreach($tabvoyages as $voyage){
             
             echo '<tr>';
-            echo '    <td><a href="../HTML/voyage.php?nom='.$voyage['titre'].'" class="lienvoyage"><img src="'.$voyage['image'].'" class="image345"></a></td>';
-            echo '    <td><a href="../HTML/voyage.php?nom='.$voyage['titre'].'" class="lienvoyage">'.$voyage['description'].'</a></td>';
+            echo '    <td><a href="../Pages/voyage.php?nom='.$voyage['titre'].'" class="lienvoyage"><img src="'.$voyage['image'].'" class="image345"></a></td>';
+            echo '    <td><a href="../Pages/voyage.php?nom='.$voyage['titre'].'" class="lienvoyage">'.$voyage['description'].'</a></td>';
             echo '</tr>';
             
             $i++;
@@ -294,8 +294,12 @@
             $voyage = $tr['voyage'];
             $etapes = $voyage['etapes'];
 
+            echo 'Numéro de transaction :';
+            echo '<div class="champ1">'.$tr['transaction'].'</div>';
             echo 'Titre du voyage :';
             echo '<div class="champ1">'.$voyage['titre'].'</div>';
+            echo 'Montant total :';
+            echo '<div class="champ1">'.$voyage['montant'].'</div>';
             echo 'Nombre de personnes :';
             echo '<div class="champ">'.$voyage['personnes'].'</div>';
             echo 'Date de départ :';
@@ -347,7 +351,7 @@
             
             require_once '../PHP/paiement.php';
             payer($_SESSION['montant']);
-            echo "<a href='../HTML/etapes.php?nom=".$_SESSION['titre']."&depart=".$_SESSION['depart']."&retour=".$_SESSION['retour']."&personnes=".$_SESSION['personnes']."' class='lienretour'>Retour</a>";
+            echo "<a href='../Pages/etapes.php?nom=".$_SESSION['titre']."&depart=".$_SESSION['depart']."&retour=".$_SESSION['retour']."&personnes=".$_SESSION['personnes']."' class='lienretour'>Retour</a>";
         }
     }
 
@@ -362,7 +366,7 @@
         foreach($transactions as $tr){
             if($tr['utilisateur'] == $_SESSION['email'] && $tr['status'] == "accepted"){
                 $voy = $tr['voyage'];
-                echo '<a href="../HTML/recapitulatif.php?transaction='.$tr['transaction'].'">'.$voy['titre'].'</a>';
+                echo '<a href="../Pages/recapitulatif.php?transaction='.$tr['transaction'].'">'.$voy['titre'].'</a>';
             }
         }
     }

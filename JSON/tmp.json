@@ -1,0 +1,83 @@
+{
+    "0": {
+        "statut": "Admin",
+        "civilite": "Monsieur",
+        "nom": "Dark",
+        "prenom": "Vador",
+        "mobile": "0611111111",
+        "email": "dark.vador@gmail.com",
+        "mdp": "vador"
+    },
+    "1": {
+        "statut": "Admin",
+        "civilite": "Monsieur",
+        "nom": "Skywalker",
+        "prenom": "Anakin",
+        "mobile": "0611111112",
+        "email": "skywalker.anakin@gmail.com",
+        "mdp": "anakin"
+    },
+    "2": {
+        "statut": "Admin",
+        "civilite": "Monsieur",
+        "nom": "Skywalker",
+        "prenom": "Luke",
+        "mobile": "0611111113",
+        "email": "skywalker.luke@gmail.com",
+        "mdp": "luke"
+    },
+    "3": {
+        "statut": "Utilisateur",
+        "civilite": "Monsieur",
+        "nom": "Darth",
+        "prenom": "Maul",
+        "mobile": "0611111114",
+        "email": "darth.maul@gmail.com",
+        "mdp": "maul"
+    },
+    "4": {
+        "statut": "Utilisateur",
+        "civilite": "Monsieur",
+        "nom": "Darth",
+        "prenom": "Bane",
+        "mobile": "0611111115",
+        "email": "darth.bane@gmail.com",
+        "mdp": "bane"
+    },
+    "5": {
+        "statut": "Utilisateur",
+        "civilite": "Monsieur",
+        "nom": "Darth",
+        "prenom": "Caedus",
+        "mobile": "0611111116",
+        "email": "darth.caedus@gmail.com",
+        "mdp": "caedus"
+    },
+    "6": {
+        "statut": "Banni",
+        "civilite": "Monsieur",
+        "nom": "Darth",
+        "prenom": "Nihilus",
+        "mobile": "0611111117",
+        "email": "darth.nihilus@gmail.com",
+        "mdp": "nihilus"
+    },
+    "8": {
+        "statut": "Banni",
+        "civilite": "Madame",
+        "nom": "Ahsoka",
+        "prenom": "Tano",
+        "mobile": "0611111118",
+        "email": "ahsoka.tano@gmail.com",
+        "mdp": "tano"
+    },
+    "9": {
+        "statut": "Banni",
+        "civilite": "Monsieur",
+        "nom": "Mace",
+        "prenom": "Windu",
+        "mobile": "0611111119",
+        "email": "mace.windu@gmail.com",
+        "mdp": "windu"
+    }
+}

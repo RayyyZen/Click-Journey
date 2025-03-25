@@ -44,6 +44,16 @@
                 <i class="fa-solid fa-pen-nib"></i>
             </div>
 
+            <label>Date d'inscription :</label>
+            <div class="group">
+                <?php echo '<div class="champdate">'.$_SESSION['dateinscription'].'</div>'; ?>
+            </div>
+
+            <label>Dernière connexion :</label>
+            <div class="group">
+                <?php echo '<div class="champdate">'.$_SESSION['dateconnexion'].'</div>'; ?>
+            </div>
+
             <label>Réservations :</label>
             <?php afficheReservations() ?>
 

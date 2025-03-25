@@ -51,7 +51,7 @@
     file_put_contents('../JSON/transactions.json',$nouveaujson);
 
     if($_GET['status'] == "denied"){
-        header("Location: ../HTML/recapitulatif.php");
+        header("Location: ../Pages/recapitulatif.php");
         exit(1);
     }
 
@@ -70,5 +70,5 @@
         unset($_SESSION['activites'.$i]);
     }
 
-    header("Location: ../HTML/index.php");
+    header("Location: ../Pages/index.php");
 ?>

@@ -21,5 +21,5 @@
 
     file_put_contents('../JSON/utilisateurs.json',$nouveaujson);
 
-    header("location: ../HTML/index.php");
+    header("location: ../Pages/index.php");
 ?>

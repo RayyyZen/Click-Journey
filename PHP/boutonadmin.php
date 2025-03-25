@@ -33,5 +33,5 @@
 
     file_put_contents('../JSON/utilisateurs.json',$nouveaujson);
 
-    header("Location: ../HTML/admin.php");
+    header("Location: ../Pages/admin.php");
 ?>

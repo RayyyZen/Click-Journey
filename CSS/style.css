@@ -222,7 +222,7 @@ body {
     text-align: left;
 }
 
-a[href="destinations.php"], a[href="etapes.php"] {
+a[href="destinations.php"], .lienetapes {
     display: flex;
     justify-content: center;/*Pour centrer horizontalement*/
     color: black;
@@ -428,7 +428,7 @@ input[type="submit"] {
     text-align: center;
 }
 
-.paragraphinformations input, .paragraphinformations a, .champ, .champ1 {
+.paragraphinformations input, .paragraphinformations a, .champ, .champ1, .champdate {
     width: 80%;
     height: 25px;
     padding: 5px;
@@ -444,6 +444,7 @@ input[type="submit"] {
 .paragraphinformations a {
     color: black;
     background-color: #6bb4d6;
+    height: auto;
 }
 
 /*C'est le font awesome qui simule la modification d'un champ*/

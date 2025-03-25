@@ -10,11 +10,11 @@
     $cmdp = $_POST['cmdp'];
 
     if($civilite!="Monsieur" && $civilite!="Madame"){
-        header("Location: ../HTML/inscription.php?message=Champ obligatoire&erreur=civilite&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
+        header("Location: ../Pages/inscription.php?message=Champ obligatoire&erreur=civilite&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
         exit(0);
     }
     else if("$mdp" != "$cmdp"){
-        header("Location: ../HTML/inscription.php?message=Les mots de passes ne sont pas identiques&erreur=mdp&civilite=".$civilite."&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
+        header("Location: ../Pages/inscription.php?message=Les mots de passes ne sont pas identiques&erreur=mdp&civilite=".$civilite."&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
         exit(0);
     }
 
@@ -39,9 +39,12 @@
     }
 
     if($verifmail == 0){
-        header("Location: ../HTML/inscription.php?message=Compte déjà existant&erreur=email&civilite=".$civilite."&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
+        header("Location: ../Pages/inscription.php?message=Compte déjà existant&erreur=email&civilite=".$civilite."&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
         exit(0);
     }
+
+    $_SESSION['dateinscription'] = date("Y-m-j H:i:s");
+    $_SESSION['dateconnexion'] = date("Y-m-j H:i:s");
 
     $nouveau = [
         "statut" => "utilisateur",
@@ -51,6 +54,8 @@
         "mobile" => "$mobile",
         "email" => "$email",
         "mdp" => "$mdp",
+        "inscription" => $_SESSION['dateinscription'],
+        "connexion" => $_SESSION['dateconnexion'],
     ];
 
     $utilisateurs[] = $nouveau;
@@ -66,5 +71,5 @@
     $_SESSION['mobile'] = $mobile;
     $_SESSION['mdp'] = $mdp;
 
-    header("Location: ../HTML/index.php");
+    header("Location: ../Pages/index.php");
 ?>
