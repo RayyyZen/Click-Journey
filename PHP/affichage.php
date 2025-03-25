@@ -232,6 +232,50 @@
         }
     }
 
+    function afficheChamp($texte) {
+        switch($texte){
+            case "hotel3" :
+                echo "<div class='champ'>Hôtel 3 étoiles</div>";
+                break;
+            case "hotel4" :
+                echo "<div class='champ'>Hôtel 4 étoiles</div>";
+                break;
+            case "hotel5" :
+                echo "<div class='champ'>Hôtel 5 étoiles</div>";
+                break;
+            case "appartement" :
+                echo "<div class='champ'>Appartement</div>";
+                break;
+            case "villa" :
+                echo "<div class='champ'>Villa</div>";
+                break;
+            case "oui" :
+                echo "<div class='champ'>Oui</div>";
+                break;
+            case "non" :
+                echo "<div class='champ'>Non</div>";
+                break;
+            case "aucun" :
+                echo "<div class='champ'>Aucun</div>";
+                break;
+            case "petitdejeuner" :
+                echo "<div class='champ'>Petit-déjeuner</div>";
+                break;
+            case "allinclusive" :
+                echo "<div class='champ'>All-inclusive</div>";
+                break;
+            case "economique" :
+                echo "<div class='champ'>Economique</div>";
+                break;
+            case "premium" :
+                echo "<div class='champ'>Premium</div>";
+                break;
+            case "buisiness" :
+                echo "<div class='champ'>Buisiness</div>";
+                break;
+        }
+    }
+
     function afficheRecap($transaction) {
         if($transaction != ""){
             $json = file_get_contents('../JSON/transactions.json');
@@ -250,51 +294,60 @@
             $voyage = $tr['voyage'];
             $etapes = $voyage['etapes'];
 
+            echo 'Titre du voyage :';
+            echo '<div class="champ1">'.$voyage['titre'].'</div>';
             echo 'Nombre de personnes :';
             echo '<div class="champ">'.$voyage['personnes'].'</div>';
             echo 'Date de départ :';
             echo '<div class="champ">'.$voyage['depart'].'</div>';
             echo 'Date de retour :';
             echo '<div class="champ">'.$voyage['retour'].'</div>';
+            echo 'Durée du voyage :';
+            echo '<div class="champ">'.$voyage['duree'].' jours</div>';
             echo 'Classe du vol :';
-            echo '<div class="champ">'.$voyage['classe'].'</div>';
+            echo (afficheChamp($voyage['classe']));
             echo 'Assurance voyage :';
-            echo '<div class="champ">'.$voyage['assurance'].'</div>';
+            echo (afficheChamp($voyage['assurance']));
 
             for($i=1;$i<=3;$i++){
                 echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
                 echo 'Hébergement :';
-                echo '<div class="champ">'.$etapes[$i-1]['hebergement'].'</div>';
+                echo (afficheChamp($etapes[$i-1]['hebergement']));
                 echo 'Repas :';
-                echo '<div class="champ">'.$etapes[$i-1]['repas'].'</div>';
+                echo (afficheChamp($etapes[$i-1]['repas']));
                 echo 'Activités et excursions :';
-                echo '<div class="champ">'.$etapes[$i-1]['activites'].'</div>';
+                echo (afficheChamp($etapes[$i-1]['activites']));
             }
         }
         else{
+            echo 'Titre du voyage :';
+            echo '<div class="champ1">'.$_SESSION['titre'].'</div>';
             echo 'Nombre de personnes :';
             echo '<div class="champ">'.$_SESSION['personnes'].'</div>';
             echo 'Date de départ :';
             echo '<div class="champ">'.$_SESSION['depart'].'</div>';
             echo 'Date de retour :';
             echo '<div class="champ">'.$_SESSION['retour'].'</div>';
+            echo 'Durée du voyage :';
+            echo '<div class="champ">'.$_SESSION['duree'].' jours</div>';
             echo 'Classe du vol :';
-            echo '<div class="champ">'.$_SESSION['classe'].'</div>';
+            echo (afficheChamp($_SESSION['classe']));
             echo 'Assurance voyage :';
-            echo '<div class="champ">'.$_SESSION['assurance'].'</div>';
+            echo (afficheChamp($_SESSION['assurance']));
 
             for($i=1;$i<=3;$i++){
                 echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
                 echo 'Hébergement :';
-                echo '<div class="champ">'.$_SESSION['hebergementetape'.$i].'</div>';
+                echo (afficheChamp($_SESSION['hebergementetape'.$i]));
                 echo 'Repas :';
-                echo '<div class="champ">'.$_SESSION['repas'.$i].'</div>';
+                echo (afficheChamp($_SESSION['repas'.$i]));
                 echo 'Activités et excursions :';
-                echo '<div class="champ">'.$_SESSION['activites'.$i].'</div>';
+                echo (afficheChamp($_SESSION['activites'.$i]));
             }
-
+            
             require_once '../PHP/paiement.php';
             payer($_SESSION['montant']);
+            echo "<a href='../HTML/etapes.php?nom=".$_SESSION['titre']."&depart=".$_SESSION['depart']."&retour=".$_SESSION['retour']."&personnes=".$_SESSION['personnes']."' class='lienretour'>Retour</a>";
         }
     }
 

@@ -428,7 +428,7 @@ input[type="submit"] {
     text-align: center;
 }
 
-.paragraphinformations input {
+.paragraphinformations input, .paragraphinformations a, .champ, .champ1 {
     width: 80%;
     height: 25px;
     padding: 5px;
@@ -439,6 +439,11 @@ input[type="submit"] {
     font-weight: bold;
     font-size: 15px;
     background-color: #e6ddc6;
+}
+
+.paragraphinformations a {
+    color: black;
+    background-color: #6bb4d6;
 }
 
 /*C'est le font awesome qui simule la modification d'un champ*/
@@ -669,4 +674,22 @@ a[href="../PHP/suppression.php"] {
 .lienvoyage {
     text-decoration: none;
     color: black;
+}
+
+.champ, .champ1 {
+    width: 70%;
+}
+
+.champ1 {
+    height: auto;
+}
+
+.lienretour {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 25px;
 }

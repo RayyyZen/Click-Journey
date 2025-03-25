@@ -49,7 +49,7 @@
     $_SESSION['retour'] = $_POST['retour'];
     $_SESSION['classe'] = $_POST['classe'];
     $_SESSION['assurance'] = $_POST['assurance'];
-    $_SESSION['duree'] = $duree;
+    $_SESSION['duree'] = $duree->days;
     $_SESSION['montant'] = $montant;
 
     for($i=1;$i<=3;$i++){

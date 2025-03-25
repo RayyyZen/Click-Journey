@@ -38,7 +38,7 @@
                     ?>
                     <label>Date de retour :</label>
                     <?php
-                        $value=date("Y-m-d");
+                        $value=date('Y-m-d"', strtotime('+ 1 days'));
                         if(isset($_GET['retour'])){
                             $value = $_GET['retour'];
                         }

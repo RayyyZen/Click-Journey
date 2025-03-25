@@ -24,8 +24,10 @@
         "personnes" => $_SESSION['personnes'],
         "depart" => $_SESSION['depart'],
         "retour" => $_SESSION['retour'],
+        "duree" => $_SESSION['duree'],
         "classe" => $_SESSION['classe'],
         "assurance" => $_SESSION['assurance'],
+        "montant" => $_SESSION['montant'],
         "etapes" => $etapes,
     ];
 
@@ -48,6 +50,12 @@
 
     file_put_contents('../JSON/transactions.json',$nouveaujson);
 
+    if($_GET['status'] == "denied"){
+        header("Location: ../HTML/recapitulatif.php");
+        exit(1);
+    }
+
+    unset($_SESSION['titre']);
     unset($_SESSION['personnes']);
     unset($_SESSION['depart']);
     unset($_SESSION['retour']);
