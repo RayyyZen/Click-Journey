@@ -4,7 +4,7 @@
     $dateretour = new DateTime($_POST['retour']);
     $duree = $datedepart->diff($dateretour);
     if($datedepart >= $dateretour){
-        header("Location: ../HTML/etapes.php?nom=".$_GET['nom']."&message=Les dates sont incohérents&depart=".$_POST['depart']."&retour=".$_POST['retour']."&personnes=".$_POST['personnes']);
+        header("Location: ../HTML/etapes.php?nom=".$_GET['nom']."&message=Les dates sont incohérentes&depart=".$_POST['depart']."&retour=".$_POST['retour']."&personnes=".$_POST['personnes']);
         exit(1);
     }
     else if($duree->days > 30){

@@ -232,29 +232,85 @@
         }
     }
 
-    function afficheRecap() {
-        echo 'Nombre de personnes :';
-        echo '<div class="champ">'.$_SESSION['personnes'].'</div>';
-        echo 'Date de départ :';
-        echo '<div class="champ">'.$_SESSION['depart'].'</div>';
-        echo 'Date de retour :';
-        echo '<div class="champ">'.$_SESSION['retour'].'</div>';
-        echo 'Classe du vol :';
-        echo '<div class="champ">'.$_SESSION['classe'].'</div>';
-        echo 'Assurance voyage :';
-        echo '<div class="champ">'.$_SESSION['assurance'].'</div>';
+    function afficheRecap($transaction) {
+        if($transaction != ""){
+            $json = file_get_contents('../JSON/transactions.json');
+            $transactions = json_decode($json, true);
 
-        for($i=1;$i<=3;$i++){
-            echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
-            echo 'Hébergement :';
-            echo '<div class="champ">'.$_SESSION['hebergementetape'.$i].'</div>';
-            echo 'Repas :';
-            echo '<div class="champ">'.$_SESSION['repas'.$i].'</div>';
-            echo 'Activités et excursions :';
-            echo '<div class="champ">'.$_SESSION['activites'.$i].'</div>';
+            if(!is_array($transactions)){
+                $transactions = [];
+            }
+
+            foreach($transactions as $tr){
+                if($tr['transaction'] == $transaction){
+                    break;
+                }
+            }
+
+            $voyage = $tr['voyage'];
+            $etapes = $voyage['etapes'];
+
+            echo 'Nombre de personnes :';
+            echo '<div class="champ">'.$voyage['personnes'].'</div>';
+            echo 'Date de départ :';
+            echo '<div class="champ">'.$voyage['depart'].'</div>';
+            echo 'Date de retour :';
+            echo '<div class="champ">'.$voyage['retour'].'</div>';
+            echo 'Classe du vol :';
+            echo '<div class="champ">'.$voyage['classe'].'</div>';
+            echo 'Assurance voyage :';
+            echo '<div class="champ">'.$voyage['assurance'].'</div>';
+
+            for($i=1;$i<=3;$i++){
+                echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
+                echo 'Hébergement :';
+                echo '<div class="champ">'.$etapes[$i-1]['hebergement'].'</div>';
+                echo 'Repas :';
+                echo '<div class="champ">'.$etapes[$i-1]['repas'].'</div>';
+                echo 'Activités et excursions :';
+                echo '<div class="champ">'.$etapes[$i-1]['activites'].'</div>';
+            }
+        }
+        else{
+            echo 'Nombre de personnes :';
+            echo '<div class="champ">'.$_SESSION['personnes'].'</div>';
+            echo 'Date de départ :';
+            echo '<div class="champ">'.$_SESSION['depart'].'</div>';
+            echo 'Date de retour :';
+            echo '<div class="champ">'.$_SESSION['retour'].'</div>';
+            echo 'Classe du vol :';
+            echo '<div class="champ">'.$_SESSION['classe'].'</div>';
+            echo 'Assurance voyage :';
+            echo '<div class="champ">'.$_SESSION['assurance'].'</div>';
+
+            for($i=1;$i<=3;$i++){
+                echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
+                echo 'Hébergement :';
+                echo '<div class="champ">'.$_SESSION['hebergementetape'.$i].'</div>';
+                echo 'Repas :';
+                echo '<div class="champ">'.$_SESSION['repas'.$i].'</div>';
+                echo 'Activités et excursions :';
+                echo '<div class="champ">'.$_SESSION['activites'.$i].'</div>';
+            }
+
+            require_once '../PHP/paiement.php';
+            payer($_SESSION['montant']);
+        }
+    }
+
+    function afficheReservations(){
+        $json = file_get_contents('../JSON/transactions.json');
+        $transactions = json_decode($json, true);
+
+        if(!is_array($transactions)){
+            $transactions = [];
         }
 
-        require_once '../PHP/paiement.php';
-        payer($_SESSION['montant']);
+        foreach($transactions as $tr){
+            if($tr['utilisateur'] == $_SESSION['email'] && $tr['status'] == "accepted"){
+                $voy = $tr['voyage'];
+                echo '<a href="../HTML/recapitulatif.php?transaction='.$tr['transaction'].'">'.$voy['titre'].'</a>';
+            }
+        }
     }
 ?>

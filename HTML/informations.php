@@ -1,6 +1,6 @@
 <?php
     require_once '../PHP/accespages.php';
-    accesPages("informations.php");
+    accesPages("informations.php","");
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +43,9 @@
                 <?php echo '<input type="text" id="telephone" value='.$_SESSION['mobile'].' disabled>'; ?>
                 <i class="fa-solid fa-pen-nib"></i>
             </div>
+
+            <label>Réservations :</label>
+            <?php afficheReservations() ?>
 
             <a href="../PHP/suppression.php">Supprimer mon compte</a>
         </div>

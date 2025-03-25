@@ -1,6 +1,6 @@
 <?php
     require_once '../PHP/accespages.php';
-    accesPages("admin.php");
+    accesPages("admin.php","");
 ?>
 
 <!DOCTYPE html>

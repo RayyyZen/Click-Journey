@@ -1,6 +1,6 @@
 <?php
     require_once '../PHP/accespages.php';
-    accesPages("connexion.php");
+    accesPages("connexion.php","");
 ?>
 
 <!DOCTYPE html>

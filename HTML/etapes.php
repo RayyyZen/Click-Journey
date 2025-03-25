@@ -1,6 +1,6 @@
 <?php
     require_once '../PHP/accespages.php';
-    accesPages("etapes.php");
+    accesPages("etapes.php","");
     session_start();
 ?>
 
