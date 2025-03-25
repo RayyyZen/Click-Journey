@@ -14,7 +14,7 @@
 <html>
     <?php
         require_once '../PHP/affichage.php';
-        afficheHead("Acceuil");
+        afficheHead("Récapitulatif");
     ?>
 
     <body>

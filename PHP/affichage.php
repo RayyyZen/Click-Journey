@@ -42,7 +42,6 @@
     }
 
     function afficheCivilite(){
-
         echo '<label>Civilité :</label>';
         echo '<div class="choixradio">';
         if($_SESSION['civilite'] == "Monsieur"){
@@ -278,6 +277,7 @@
 
     function afficheRecap($transaction) {
         if($transaction != ""){
+            //Si on est dans cette condition ca veut dire qu'on a accédé au récap depuis la page d'informations
             $json = file_get_contents('../JSON/transactions.json');
             $transactions = json_decode($json, true);
 
@@ -295,11 +295,11 @@
             $etapes = $voyage['etapes'];
 
             echo 'Numéro de transaction :';
-            echo '<div class="champ1">'.$tr['transaction'].'</div>';
+            echo '<div class="champ">'.$tr['transaction'].'</div>';
             echo 'Titre du voyage :';
             echo '<div class="champ1">'.$voyage['titre'].'</div>';
             echo 'Montant total :';
-            echo '<div class="champ1">'.$voyage['montant'].'</div>';
+            echo '<div class="champ">'.$voyage['montant'].'€</div>';
             echo 'Nombre de personnes :';
             echo '<div class="champ">'.$voyage['personnes'].'</div>';
             echo 'Date de départ :';
@@ -324,8 +324,11 @@
             }
         }
         else{
+            //Si on est dans cette condition ca veut dire qu'on a accédé au récap depuis la page d'étapes
             echo 'Titre du voyage :';
             echo '<div class="champ1">'.$_SESSION['titre'].'</div>';
+            echo 'Montant total :';
+            echo '<div class="champ">'.$_SESSION['montant'].'€</div>';
             echo 'Nombre de personnes :';
             echo '<div class="champ">'.$_SESSION['personnes'].'</div>';
             echo 'Date de départ :';

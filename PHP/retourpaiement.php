@@ -70,5 +70,5 @@
         unset($_SESSION['activites'.$i]);
     }
 
-    header("Location: ../Pages/index.php");
+    header("Location: ../Pages/informations.php");
 ?>

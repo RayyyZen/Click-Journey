@@ -60,10 +60,6 @@
                     </form>
             </div>
 
-        
-
-            
-            
             <div class="group2">
                 <ul>
                     <?php
