@@ -10,9 +10,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Ksar Ouled Soltane",
+            "l'ile de Djerba",
+            "la Cantina de Chalmun"
         ]
     },
     {
@@ -26,9 +26,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Skellig Michael",
+            "Malin Head",
+            "Sybil Head"
         ]
     },
     {
@@ -42,9 +42,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Les collines de Guilin",
+            "Disneyland Hong-Kong",
+            "Chishui Waterfall"
         ]
     },
     {
@@ -58,9 +58,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Les forêts de séquoias de Californie",
+            "Los Angeles",
+            "Disneyland Resort"
         ]
     },
     {
@@ -74,9 +74,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Salar d'Uyuni",
+            "La Paz",
+            "Sud de Lipez"
         ]
     },
     {
@@ -90,9 +90,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Lac de Côme",
+            "Milan",
+            "Monza"
         ]
     },
     {
@@ -106,25 +106,25 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "La baie de Phang Nga",
+            "Khao Phing Kan",
+            "Phuket"
         ]
     },
     {
         "image": "../Data/destination8.png",
         "titre": "Les paysages extrêmes de Starkiller Base",
         "pays": "Islande",
-        "ville": "Krafiac",
+        "ville": "Krafla",
         "duree": "6",
         "prix": "2100",
         "description": "Les scènes enneigées de Starkiller Base dans Le Réveil de la Force ont été tournées en Islande, notamment près du volcan Krafla et des glaciers de Eyjafjallajökull. Ce pays offre des paysages extraterrestres avec ses champs de lave, geysers et cascades majestueuses.",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Le volcan de Krafla",
+            "Jökulsárlón",
+            "Parc national de Skaftafell"
         ]
     },
     {
@@ -138,9 +138,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Abu Dhbai",
+            "Le désert d'Abu Dhabi",
+            "Sea World Yas Island"
         ]
     },
     {
@@ -154,9 +154,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Zone Protégée de Wadi Rum",
+            "Petra",
+            "Amman"
         ]
     },
     {
@@ -170,15 +170,15 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Hadhdhunmathi Atholhu",
+            "Baresdhoo",
+            "Kudafushi"
         ]
     },
     {
         "image": "../Data/destination12.png",
         "titre": "Les montagnes enneigées d'Alderaan",
-        "pays": "",
+        "pays": "Suisse",
         "ville": "Alpes suisses",
         "duree": "6",
         "prix": "1800",
@@ -186,9 +186,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Lac de Bachalp",
+            "Grindelwald",
+            "Glacier d'Aletsch"
         ]
     },
     {
@@ -202,9 +202,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Hardangerjøkulen",
+            "Eidfjord",
+            "Oslo"
         ]
     },
     {
@@ -218,9 +218,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Whippendell Woods",
+            "Londres",
+            "Cambridge"
         ]
     },
     {
@@ -234,25 +234,25 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Puzzlewood",
+            "Birmingham",
+            "Sheffield"
         ]
     },
     {
         "image": "../Data/destination16.png",
         "titre": "Une Base Impériale",
         "pays": "Royaume-Uni",
-        "ville": "Canary Wharf Station",
+        "ville": "Londres",
         "duree": "2",
         "prix": "620",
         "description": "Saviez-vous que le métro londonien cache un décor impérial ? La station ultramoderne de Canary Wharf a été transformée en base de l'Empire dans Rogue One. Si vous aimez les lieux au design futuriste, faites une halte ici lors de votre visite de Londres et imaginez-vous en pleine infiltration secrète avec les héros de la Résistance. Une expérience insolite en plein cœur de la ville !",
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Londres",
+            "Norwich",
+            "Canterbury"
         ]
     },
     {
@@ -266,9 +266,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Mount Etna",
+            "Donatello",
+            "Palerme"
         ]
     },
     {
@@ -282,9 +282,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Mafabot",
+            "Dynjandi",
+            "le Whale Watching"
         ]
     },
     {
@@ -298,9 +298,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Amghar Mosque",
+            "El Bibane",
+            "Ajim"
         ]
     },
     {
@@ -314,9 +314,9 @@
         "debut": "XX/XX/2025",
         "fin": "YY/YY/2025",
         "etapes": [
-            "A",
-            "B",
-            "C"
+            "Dubrovnik",
+            "Zagreb",
+            "Hvar"
         ]
     }
 ]
