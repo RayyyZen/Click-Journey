@@ -117,7 +117,8 @@
             $tabvoyages = [];
         }
         foreach($tabvoyages as $voyage){
-            if(str_contains(strtolower($voyage['titre']),strtolower($recherche)) || str_contains(strtolower($voyage['ville']),strtolower($recherche)) || str_contains(strtolower($voyage['pays']),strtolower($recherche))){
+            if($recherche == '' || strpos(strtolower($voyage['titre']),strtolower($recherche)) !== false || strpos(strtolower($voyage['ville']),strtolower($recherche)) !== false || strpos(strtolower($voyage['pays']),strtolower($recherche)) !== false){
+                //Pour les versions anciennes de PHP il faut remplacer la fonction str_contains() par strpos()
                 echo '<li>';
                 echo '    <a href="../Pages/voyage.php?nom='.$voyage['titre'].'" class="endroit">';
                 echo '        <img src="'.$voyage['image'].'" class="imagedestination">';
@@ -127,7 +128,7 @@
                 echo "        <br>Prix : ".$voyage['prix']."€";
                 echo "        </p>";
                 echo '    </a>';
-                echo '</a></li>';
+                echo '</li>';
             }
         }
     }
