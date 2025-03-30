@@ -1,81 +1,113 @@
 [
     {
+        "status": "accepted",
+        "transaction": "67e9a36a7bf59",
+        "utilisateur": "dark.vador@gmail.com",
+        "voyage": {
+            "titre": "La Plan\u00e8te Eadu",
+            "personnes": "6",
+            "depart": "2025-03-30",
+            "retour": "2025-04-10",
+            "duree": 11,
+            "classe": "economique",
+            "assurance": "non",
+            "montant": 25190.000000000004,
+            "etapes": [
+                {
+                    "hebergement": "hotel3",
+                    "repas": "aucun",
+                    "activites": "non"
+                },
+                {
+                    "hebergement": "hotel3",
+                    "repas": "aucun",
+                    "activites": "non"
+                },
+                {
+                    "hebergement": "hotel3",
+                    "repas": "aucun",
+                    "activites": "non"
+                }
+            ]
+        }
+    },
+    {
         "status": "denied",
-        "transaction": "67e2c8184db06",
-        "utilisateur": "dd@gmail.com",
+        "transaction": "67e9a3de094a7",
+        "utilisateur": "dark.vador@gmail.com",
         "voyage": {
-            "titre": "La jungle luxuriante de Kashyyyk",
-            "personnes": "1",
-            "depart": "2025-03-25",
-            "retour": "2025-03-26",
+            "titre": "Le d\u00e9sert de Pasaana",
+            "personnes": "2",
+            "depart": "2025-03-30",
+            "retour": "2025-03-31",
             "duree": 1,
-            "classe": "economique",
-            "assurance": "non",
-            "montant": 196,
+            "classe": "buisiness",
+            "assurance": "oui",
+            "montant": 960,
             "etapes": [
                 {
-                    "hebergement": "hotel3",
-                    "repas": "aucun",
-                    "activites": "non"
+                    "hebergement": "villa",
+                    "repas": "allinclusive",
+                    "activites": "oui"
                 },
                 {
-                    "hebergement": "hotel3",
-                    "repas": "aucun",
-                    "activites": "non"
+                    "hebergement": "villa",
+                    "repas": "allinclusive",
+                    "activites": "oui"
                 },
                 {
-                    "hebergement": "hotel3",
-                    "repas": "aucun",
-                    "activites": "non"
+                    "hebergement": "villa",
+                    "repas": "allinclusive",
+                    "activites": "oui"
                 }
             ]
         }
     },
     {
         "status": "accepted",
-        "transaction": "67e2c86d3ca0b",
-        "utilisateur": "dd@gmail.com",
+        "transaction": "67e9a4302f303",
+        "utilisateur": "dark.vador@gmail.com",
         "voyage": {
-            "titre": "La jungle luxuriante de Kashyyyk",
-            "personnes": "1",
-            "depart": "2025-03-25",
-            "retour": "2025-03-26",
+            "titre": "Le d\u00e9sert de Pasaana",
+            "personnes": "2",
+            "depart": "2025-03-30",
+            "retour": "2025-03-31",
             "duree": 1,
-            "classe": "economique",
-            "assurance": "non",
-            "montant": 196,
+            "classe": "buisiness",
+            "assurance": "oui",
+            "montant": 960,
             "etapes": [
                 {
-                    "hebergement": "hotel3",
-                    "repas": "aucun",
-                    "activites": "non"
+                    "hebergement": "villa",
+                    "repas": "allinclusive",
+                    "activites": "oui"
                 },
                 {
-                    "hebergement": "hotel3",
-                    "repas": "aucun",
-                    "activites": "non"
+                    "hebergement": "villa",
+                    "repas": "allinclusive",
+                    "activites": "oui"
                 },
                 {
-                    "hebergement": "hotel3",
-                    "repas": "aucun",
-                    "activites": "non"
+                    "hebergement": "villa",
+                    "repas": "allinclusive",
+                    "activites": "oui"
                 }
             ]
         }
     },
     {
         "status": "accepted",
-        "transaction": "67e2c952ceec0",
-        "utilisateur": "dd@gmail.com",
+        "transaction": "67e9a49434d8a",
+        "utilisateur": "darth.maul@gmail.com",
         "voyage": {
-            "titre": "Le raffinement de Naboo",
-            "personnes": "1",
-            "depart": "2025-03-25",
-            "retour": "2025-03-26",
+            "titre": "L'\u00eele mystique de Luke Skywalker",
+            "personnes": "3",
+            "depart": "2025-03-30",
+            "retour": "2025-03-31",
             "duree": 1,
             "classe": "economique",
             "assurance": "non",
-            "montant": 280,
+            "montant": 620,
             "etapes": [
                 {
                     "hebergement": "hotel3",

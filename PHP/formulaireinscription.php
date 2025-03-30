@@ -47,7 +47,7 @@
     $_SESSION['dateconnexion'] = date("Y-m-j H:i:s");
 
     $nouveau = [
-        "statut" => "utilisateur",
+        "statut" => "Utilisateur",
         "civilite" => "$civilite",
         "nom" => "$nom",
         "prenom" => "$prenom",
