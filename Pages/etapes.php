@@ -44,6 +44,17 @@
                         }
                         echo '<input type="date" id="retour" name="retour" value="'.$value.'" min="'.date("Y-m-d").'">';
                     ?>
+
+                    <script type="text/javascript">
+                        var depart = document.getElementById("depart");
+                        var retour = document.getElementById("retour");
+                        majDateRetour();
+                        depart.addEventListener('change', majDateRetour);
+                        //On rappelle la fonction qui checke les dates dès qu'il y a un changement de date de depart
+                        window.addEventListener('load', majDateRetour);
+                        //On rappelle la fonction qui checke les dates dès qu'il y a un rechargement de la page
+                    </script>
+
                     <?php
                         if(isset($_GET['message'])){
                             echo '<i class="fa-solid fa-triangle-exclamation erreur"> '.$_GET['message'].'</i>';

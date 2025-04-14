@@ -7,11 +7,14 @@
         echo '<meta name="author" content="Rayane M., Enzo F., Hugo N.">';
         echo '<link rel="stylesheet" type="text/css" href="../CSS/style.css">';
         echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">';
+        echo '<script src="../JavaScript/couleur.js" type="text/javascript"></script>';
+        if($page == "Etapes"){
+            echo '<script src="../JavaScript/dateretour.js" type="text/javascript"></script>';
+        }
         echo '</head>';
     }
     
     function afficheIcones(){
-
         if(isset($_SESSION['nom'])){
             echo '<div class="informations"> <a href="informations.php" class="fa-solid fa-user"></a> </div>';
             echo '<div class="deconnexion"> <a href="../PHP/deconnexion.php" class="fa-solid fa-right-from-bracket"></a> </div>';
@@ -26,6 +29,8 @@
     }
 
     function afficheHorizontal($recherche,$icone){
+        echo '<script>document.addEventListener("DOMContentLoaded", appliquerCouleur);</script>';
+        /*Je fais ca au lieu d'appeler directement la fonction pour que le script attende que tous les elements html soient charges pour appeler la fonction pour eviter les bugs*/
         echo '<div class="horizontal">';
         echo '<div class="nomSite"> <a href="index.php">Star Tour</a> </div>';
         if($recherche == 1){
@@ -35,6 +40,7 @@
             echo '</form>';
             echo '</div>';
         }
+        echo '<button type="button" name="couleur" class="couleur" onclick="changerCouleur()"><i class="fa-solid fa-circle-half-stroke"></i></button>';
         if($icone == 1){
             afficheIcones();
         }
