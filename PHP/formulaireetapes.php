@@ -33,6 +33,7 @@
 
     $prix = $voyage['prix'];
     $jours = $voyage['duree'];
+    $etapes = $voyage['etapes'];
 
     $heber = ($hebergement[$_POST['hebergementetape1']] + $hebergement[$_POST['hebergementetape2']] + $hebergement[$_POST['hebergementetape3']])/3;
     $rep = ($repas[$_POST['repas1']] + $repas[$_POST['repas2']] + $repas[$_POST['repas3']])/3;
@@ -51,10 +52,9 @@
     $_SESSION['assurance'] = $_POST['assurance'];
     $_SESSION['duree'] = $duree->days;
     $_SESSION['montant'] = $montant;
-    $_SESSION['prix'] = $voyage['prix'];
-    $_SESSION['duree'] = $voyage['duree'];
 
     for($i=1;$i<=3;$i++){
+        $_SESSION['etape'.$i] = $etapes[$i-1];
         $_SESSION['hebergementetape'.$i] = $_POST['hebergementetape'.$i];
         $_SESSION['repas'.$i] = $_POST['repas'.$i];
         $_SESSION['activites'.$i] = $_POST['activites'.$i];

@@ -73,13 +73,26 @@
                     </select>
                     <?php 
                         afficheEtapes($_GET['nom']);
-                        $prix = $_GET['prix'];
+                        $json = file_get_contents('../JSON/voyages.json');
+                        $tabvoyages = json_decode($json, true);
+
+                        if(!is_array($tabvoyages)){
+                            $tabvoyages = [];
+                        }
+                
+                        foreach($tabvoyages as $voyage){
+                            if($voyage['titre'] == $_GET['nom']){
+                                break;
+                            }
+                        }
+
+                        $prix = $voyage['prix'];
                         echo '<input type="hidden" id="prix" value="'.$prix.'">';
-                        $duree = $_GET['duree'];
+                        $duree = $voyage['duree'];
                         echo '<input type="hidden" id="duree" value="'.$duree.'">';
                     ?>
                     <input type="submit" id='save' name="save" title="Engistrer les etapes" value="Confirmer" required>
-                    
+
                     <script type="text/javascript">
                         var champs = document.querySelectorAll("input, select");
                         var i;

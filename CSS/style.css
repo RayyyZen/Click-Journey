@@ -87,7 +87,7 @@ body {
     /*border-box permet d'inclure le padding et la bordure dans le height pour que les elements soient toujours alignes*/
 }
 
-.informations, .inscription, .connexion, .deconnexion, .admin {
+.informations, .inscription, .connexion, .deconnexion, .admin, .annuler {
     display: flex;
     justify-content: flex-end;/*Pour le mettre tout à droite*/
     align-items: center;
@@ -106,6 +106,13 @@ body {
 .informations, .inscription {
     margin-right: 0px;
     margin-left: 0px;
+}
+
+.annuler {
+    border-width: 1px;
+    height: auto;
+    margin: 0px;
+    cursor: pointer;
 }
 
 .admin {
@@ -255,24 +262,30 @@ a[href="destinations.php"], .lienetapes {
 
 /*DESTINATIONS.php*/
 
-.group1 {
+.group1, .group4 {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2%;
     width: 70%;
+    margin-top: 10px;
+}
+
+.group4 {
+    margin: 0px;
+    width: 30%;
 }
 
 .recherchedestinations {
     display: flex;
     align-items: center;
     gap: 5%;
-    width: 70%;
+    width: 100%;
 }
 
 .recherchedestinations input[type="text"] {
     display: flex;
-    width: 60%;
+    width: 40%;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid black;
@@ -320,6 +333,14 @@ a[href="destinations.php"], .lienetapes {
 .group2 ul li a {
     text-decoration: none;
     color: black;
+}
+
+.group3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
 }
 
 .endroit {

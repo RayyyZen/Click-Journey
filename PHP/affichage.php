@@ -12,6 +12,10 @@
             echo '<script src="../JavaScript/dateretour.js" type="text/javascript"></script>';
             echo '<script src="../JavaScript/montant.js" type="text/javascript"></script>';
         }
+        else if($page == "Destinations"){
+            echo '<script src="../JavaScript/annuler.js" type="text/javascript"></script>';
+            echo '<script src="../JavaScript/tri.js" type="text/javascript"></script>';
+        }
         echo '</head>';
     }
     
@@ -37,7 +41,7 @@
         if($recherche == 1){
             echo '<div class="recherche montre2">';
             echo '<form action="../PHP/formulairerecherche.php" method="post">';
-            echo '    <input type="text" name="recherche" placeholder="Rechercher..." required>';
+            echo '    <input type="text" name="recherche" placeholder="Rechercher...">';
             echo '</form>';
             echo '</div>';
         }
@@ -115,27 +119,57 @@
         }
     }
 
-    function afficheVoyages($recherche){
+    function rechercheVoyages($voyage,$recherche){
+        if($recherche == '' || strpos(strtolower($voyage['titre']),strtolower($recherche)) !== false || strpos(strtolower($voyage['ville']),strtolower($recherche)) !== false || strpos(strtolower($voyage['pays']),strtolower($recherche)) !== false){
+            return 1;
+        }
+        return 0;
+    }
+
+    function dureeVoyages($voyage,$duree){
+        if($duree == '' || $duree == "duree" || ($duree == "4jours" && $voyage['duree'] < 4) || ($duree == "4jours6" && $voyage['duree'] >= 4 && $voyage['duree'] < 6) || ($duree == "6jours8" && $voyage['duree'] >= 6 && $voyage['duree'] < 8) || ($duree == "jours8" && $voyage['duree'] >= 8)){
+            return 1;
+        }
+        return 0;
+    }
+
+    function prixVoyages($voyage,$prix){
+        if($prix == '' || $prix == "prix" || ($prix == "euros500" && $voyage['prix'] < 500) || ($prix == "500euros1000" && $voyage['prix'] >= 500 && $voyage['prix'] < 1000) || ($prix == "1000euros1500" && $voyage['prix'] >= 1000 && $voyage['prix'] < 1500) || ($prix == "1500euros2000" && $voyage['prix'] >= 1500 && $voyage['prix'] < 2000) || ($prix == "euros2000" && $voyage['prix'] >= 2000)){
+            return 1;
+        }
+        return 0;
+    }
+
+    function continentVoyages($voyage,$continent){
+        if($continent == '' || $continent == "continent" || $continent == $voyage['continent']){
+            return 1;
+        }
+        return 0;
+    }
+
+    function afficheVoyages($recherche,$duree,$prix,$continent){
 
         $json = file_get_contents('../JSON/voyages.json');
         $tabvoyages = json_decode($json, true);
+        $i = 0;
 
         if(!is_array($tabvoyages)){
             $tabvoyages = [];
         }
         foreach($tabvoyages as $voyage){
-            if($recherche == '' || strpos(strtolower($voyage['titre']),strtolower($recherche)) !== false || strpos(strtolower($voyage['ville']),strtolower($recherche)) !== false || strpos(strtolower($voyage['pays']),strtolower($recherche)) !== false){
+            if(rechercheVoyages($voyage,$recherche) && dureeVoyages($voyage,$duree) && prixVoyages($voyage,$prix) && continentVoyages($voyage,$continent)){
                 //Pour les versions anciennes de PHP il faut remplacer la fonction str_contains() par strpos()
-                echo '<li>';
+                echo '<li id="'.$voyage['prix'].','.$voyage['duree'].','.$i.'">';
                 echo '    <a href="../Pages/voyage.php?nom='.$voyage['titre'].'" class="endroit">';
                 echo '        <img src="'.$voyage['image'].'" class="imagedestination">';
                 echo '        <p class=titredestination>'.$voyage['titre'].'</p>';
                 echo "        <p>".$voyage['ville']." (".$voyage['pays'].")";
                 echo "        <br>Durée : ".$voyage['duree']." jours";
-                echo "        <br>Prix : ".$voyage['prix']."€";
+                echo "        <br>A partir de : ".$voyage['prix']."€";
                 echo "        </p>";
                 echo '    </a>';
                 echo '</li>';
+                $i++;
             }
         }
     }
@@ -168,7 +202,7 @@
         echo '        </tr>';
         echo '</table>';
         echo ($voyage['description']);
-        echo '<a href="etapes.php?nom='.$nom.'&prix='.$voyage['prix'].'&duree='.$voyage['duree'].'" class="lienetapes">Réserver</a>';
+        echo '<a href="etapes.php?nom='.$nom.'" class="lienetapes">Réserver</a>';
         echo '</div>';
     }
 
@@ -351,7 +385,7 @@
             echo (afficheChamp($_SESSION['assurance']));
 
             for($i=1;$i<=3;$i++){
-                echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
+                echo '<p class="titreetapes">Etape '.$i.' : '.$_SESSION['etape'.$i].'</p>';
                 echo 'Hébergement :';
                 echo (afficheChamp($_SESSION['hebergementetape'.$i]));
                 echo 'Repas :';
@@ -362,7 +396,7 @@
             
             require_once '../PHP/paiement.php';
             payer($_SESSION['montant']);
-            echo "<a href='../Pages/etapes.php?nom=".$_SESSION['titre']."&prix=".$_SESSION['prix']."&duree=".$_SESSION['duree']."&depart=".$_SESSION['depart']."&retour=".$_SESSION['retour']."&personnes=".$_SESSION['personnes']."' class='lienretour'>Retour</a>";
+            echo "<a href='../Pages/etapes.php?nom=".$_SESSION['titre']."&depart=".$_SESSION['depart']."&retour=".$_SESSION['retour']."&personnes=".$_SESSION['personnes']."' class='lienretour'>Retour</a>";
         }
     }
 

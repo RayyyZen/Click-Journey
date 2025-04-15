@@ -21,8 +21,8 @@
                 <div class="formulaire">
                     <label for="idPersonne">Adresse mail :</label>
                     <?php
+                        $texte = "Entrez l'identifiant de la personne";
                         if(isset($_GET['erreur']) && $_GET['erreur'] == "mdp"){
-                            $texte = "Entrez l'identifiant de la personne";
                             echo '<input type="email" id="email" name="email" title="'.$texte.'" placeholder="dark.vador@gmail.com" value="'.$_GET['email'].'" maxlength="40" required>';
                         }
                         else{

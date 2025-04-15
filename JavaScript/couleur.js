@@ -69,9 +69,13 @@ function appliquerCouleur() {
             elements[i].style.color = "white";
         }
         var element = document.querySelector('#utilisateur tr:nth-child(1)');
-        element.style.backgroundColor = "rgb(107, 180, 214)";
+        if(element != null){
+            element.style.backgroundColor = "rgb(107, 180, 214)";
+        }
         var elmt = document.querySelector('.titreutilisateurs');
-        elmt.style.background = "rgb(48, 149, 203)";
+        if(elmt != null){
+            elmt.style.background = "rgb(48, 149, 203)";
+        }
     }
     else {
         body[0].style.backgroundImage = 'url("../Data/blue_sky.jpg")';
@@ -110,9 +114,13 @@ function appliquerCouleur() {
             elements[i].style.color = "black";
         }
         var element = document.querySelector('#utilisateur tr:nth-child(1)');
-        element.style.backgroundColor = "rgb(107, 180, 214)";
+        if(element != null){
+            element.style.backgroundColor = "rgb(107, 180, 214)";
+        }
         var elmt = document.querySelector('.titreutilisateurs');
-        elmt.style.background = "rgb(48, 149, 203)";
+        if(elmt != NULL){
+            elmt.style.background = "rgb(48, 149, 203)";
+        }
     }
 }
 

@@ -81,8 +81,6 @@
     unset($_SESSION['assurance']);
     unset($_SESSION['duree']);
     unset($_SESSION['montant']);
-    unset($_SESSION['prix']);
-    unset($_SESSION['duree']);
 
     for($i=1;$i<=3;$i++){
         unset($_SESSION['hebergementetape'.$i]);

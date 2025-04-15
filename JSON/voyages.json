@@ -2,6 +2,7 @@
     {
         "image": "../Data/destination1.png",
         "titre": "Le désert de Tatooine",
+        "continent": "Afrique",
         "pays": "Tunisie",
         "ville": "Tataouine",
         "duree": "3",
@@ -18,6 +19,7 @@
     {
         "image": "../Data/destination2.png",
         "titre": "Île mystique de Luke Skywalker",
+        "continent": "Europe",
         "pays": "Irlande",
         "ville": "Skye",
         "duree": "3",
@@ -34,6 +36,7 @@
     {
         "image": "../Data/destination3.png",
         "titre": "La jungle luxuriante de Kashyyyk",
+        "continent": "Asie",
         "pays": "Chine",
         "ville": "Guilin",
         "duree": "5",
@@ -50,6 +53,7 @@
     {
         "image": "../Data/destination4.png",
         "titre": "La forêt enchantée d'Endor",
+        "continent": "Amérique",
         "pays": "Etats-Unis",
         "ville": "Californie",
         "duree": "7",
@@ -66,6 +70,7 @@
     {
         "image": "../Data/destination5.png",
         "titre": "La planète minérale de Crait",
+        "continent": "Amérique",
         "pays": "Bolivie",
         "ville": "Crait",
         "duree": "7",
@@ -82,6 +87,7 @@
     {
         "image": "../Data/destination6.png",
         "titre": "Le raffinement de Naboo",
+        "continent": "Europe",
         "pays": "Italie",
         "ville": "Naboo",
         "duree": "5",
@@ -98,6 +104,7 @@
     {
         "image": "../Data/destination7.png",
         "titre": "Les falaises mystiques de la planète Kashyyyk",
+        "continent": "Asie",
         "pays": "Thaïlande",
         "ville": "Phang Nga",
         "duree": "7",
@@ -114,6 +121,7 @@
     {
         "image": "../Data/destination8.png",
         "titre": "Les paysages extrêmes de Starkiller Base",
+        "continent": "Europe",
         "pays": "Islande",
         "ville": "Krafla",
         "duree": "6",
@@ -130,6 +138,7 @@
     {
         "image": "../Data/destination9.png",
         "titre": "Le désert brûlant de Jakku",
+        "continent": "Asie",
         "pays": "Emirates Arabes Unis",
         "ville": "Abu Dhabi",
         "duree": "7",
@@ -146,6 +155,7 @@
     {
         "image": "../Data/destination10.png",
         "titre": "Le désert de Pasaana",
+        "continent": "Asie",
         "pays": "Jordanie",
         "ville": "Wadi Rum",
         "duree": "6",
@@ -162,6 +172,7 @@
     {
         "image": "../Data/destination11.png",
         "titre": "Le paradis aquatique de Scarif",
+        "continent": "Asie",
         "pays": "Maldives",
         "ville": "Atoll de Laamu",
         "duree": "9",
@@ -178,6 +189,7 @@
     {
         "image": "../Data/destination12.png",
         "titre": "Les montagnes enneigées d'Alderaan",
+        "continent": "Europe",
         "pays": "Suisse",
         "ville": "Alpes suisses",
         "duree": "6",
@@ -194,6 +206,7 @@
     {
         "image": "../Data/destination13.png",
         "titre": "La Planète Hoth",
+        "continent": "Europe",
         "pays": "Norvège",
         "ville": "Hardangerjøkulen",
         "duree": "5",
@@ -210,6 +223,7 @@
     {
         "image": "../Data/destination14.png",
         "titre": "La Forêt de Naboo",
+        "continent": "Europe",
         "pays": "Royaume-Uni",
         "ville": "Whippendell Woods",
         "duree": "3",
@@ -226,6 +240,7 @@
     {
         "image": "../Data/destination15.png",
         "titre": "La Planète Takodana",
+        "continent": "Europe",
         "pays": "Royaume-Uni",
         "ville": "Puzzlewood",
         "duree": "4",
@@ -242,6 +257,7 @@
     {
         "image": "../Data/destination16.png",
         "titre": "Une Base Impériale",
+        "continent": "Europe",
         "pays": "Royaume-Uni",
         "ville": "Londres",
         "duree": "2",
@@ -258,6 +274,7 @@
     {
         "image": "../Data/destination17.png",
         "titre": "Les Terres de Mustafar",
+        "continent": "Europe",
         "pays": "Italie",
         "ville": "Mount Etna",
         "duree": "5",
@@ -274,6 +291,7 @@
     {
         "image": "../Data/destination18.png",
         "titre": "La Planète Eadu",
+        "continent": "Europe",
         "pays": "Islande",
         "ville": "Máfabót",
         "duree": "6",
@@ -290,6 +308,7 @@
     {
         "image": "../Data/destination19.png",
         "titre": "La Cantina de Mos Eisley",
+        "continent": "Afrique",
         "pays": "Tunisie",
         "ville": "Ajim",
         "duree": "4",
@@ -306,6 +325,7 @@
     {
         "image": "../Data/destination20.png",
         "titre": "Canto Bight, la Cité du Jeu",
+        "continent": "Europe",
         "pays": "Croatie",
         "ville": "Dubrovnik",
         "duree": "4",
