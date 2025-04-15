@@ -41,7 +41,7 @@
     $prix = $prix/$jours;
     $prix -= $hebergement['hotel3'] + $classe['economique'];
 
-    $montant = ($prix + $heber + $rep + $activ + $classe[$_POST['classe']]) * $duree->days * $_POST['personnes'];
+    $montant = ($prix + $heber + $rep + $activ + $classe[$_POST['classe']] + $assurance[$_POST['assurance']]) * $duree->days * $_POST['personnes'];
     
     $_SESSION['titre'] = $_GET['nom'];
     $_SESSION['personnes'] = $_POST['personnes'];
@@ -51,6 +51,8 @@
     $_SESSION['assurance'] = $_POST['assurance'];
     $_SESSION['duree'] = $duree->days;
     $_SESSION['montant'] = $montant;
+    $_SESSION['prix'] = $voyage['prix'];
+    $_SESSION['duree'] = $voyage['duree'];
 
     for($i=1;$i<=3;$i++){
         $_SESSION['hebergementetape'.$i] = $_POST['hebergementetape'.$i];

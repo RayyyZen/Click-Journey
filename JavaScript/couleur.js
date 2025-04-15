@@ -63,6 +63,15 @@ function appliquerCouleur() {
                 elements[i].style.color = "black";
             }
         }
+        var elements = document.querySelectorAll('.paragraphinformations a');
+        var i;
+        for(i=0;i<elements.length-1;i++){
+            elements[i].style.color = "white";
+        }
+        var element = document.querySelector('#utilisateur tr:nth-child(1)');
+        element.style.backgroundColor = "rgb(107, 180, 214)";
+        var elmt = document.querySelector('.titreutilisateurs');
+        elmt.style.background = "rgb(48, 149, 203)";
     }
     else {
         body[0].style.backgroundImage = 'url("../Data/blue_sky.jpg")';
@@ -95,6 +104,15 @@ function appliquerCouleur() {
                 elements[i].style.color = "rgb(48, 149, 203)";
             }
         }
+        var elements = document.querySelectorAll('.paragraphinformations a');
+        var i;
+        for(i=0;i<elements.length-1;i++){
+            elements[i].style.color = "black";
+        }
+        var element = document.querySelector('#utilisateur tr:nth-child(1)');
+        element.style.backgroundColor = "rgb(107, 180, 214)";
+        var elmt = document.querySelector('.titreutilisateurs');
+        elmt.style.background = "rgb(48, 149, 203)";
     }
 }
 

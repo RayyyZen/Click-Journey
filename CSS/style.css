@@ -519,7 +519,7 @@ input[type="radio"] {
 
 input[type="radio"]:checked + .civiliteLabel {
     transform: scale(1.2);/*Agrandire la case*/
-    background-color: #3095cb;
+    background-color: #6bb4d6;
 }
 
 a[href="../PHP/suppression.php"] {

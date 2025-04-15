@@ -1,18 +1,36 @@
 <?php
     session_start();
+
+    $json = file_get_contents('../JSON/voyages.json');
+    $tabvoyages = json_decode($json, true);
+
+    if(!is_array($tabvoyages)){
+        $tabvoyages = [];
+    }
+
+    foreach($tabvoyages as $voy){
+        if($voy['titre'] == $_GET['nom']){
+            break;
+        }
+    }
+
+    $etp = $voy["etapes"];
     
     $etapes = [
         [
+            "etapetitre" => $etp[0],
             "hebergement" => $_SESSION['hebergementetape1'],
             "repas" => $_SESSION['repas1'],
             "activites" => $_SESSION['activites1'],
         ],
         [
+            "etapetitre" => $etp[1],
             "hebergement" => $_SESSION['hebergementetape2'],
             "repas" => $_SESSION['repas2'],
             "activites" => $_SESSION['activites2'],
         ],
         [
+            "etapetitre" => $etp[2],
             "hebergement" => $_SESSION['hebergementetape3'],
             "repas" => $_SESSION['repas3'],
             "activites" => $_SESSION['activites3'],
@@ -63,6 +81,8 @@
     unset($_SESSION['assurance']);
     unset($_SESSION['duree']);
     unset($_SESSION['montant']);
+    unset($_SESSION['prix']);
+    unset($_SESSION['duree']);
 
     for($i=1;$i<=3;$i++){
         unset($_SESSION['hebergementetape'.$i]);

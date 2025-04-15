@@ -10,6 +10,7 @@
         echo '<script src="../JavaScript/couleur.js" type="text/javascript"></script>';
         if($page == "Etapes"){
             echo '<script src="../JavaScript/dateretour.js" type="text/javascript"></script>';
+            echo '<script src="../JavaScript/montant.js" type="text/javascript"></script>';
         }
         echo '</head>';
     }
@@ -167,7 +168,7 @@
         echo '        </tr>';
         echo '</table>';
         echo ($voyage['description']);
-        echo '<a href="etapes.php?nom='.$nom.'" class="lienetapes">Réserver</a>';
+        echo '<a href="etapes.php?nom='.$nom.'&prix='.$voyage['prix'].'&duree='.$voyage['duree'].'" class="lienetapes">Réserver</a>';
         echo '</div>';
     }
 
@@ -214,7 +215,7 @@
             echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
 
             echo '<label>Hébergement :</label>';
-            echo '<select name="hebergementetape'.$i.'">';
+            echo '<select name="hebergementetape'.$i.'" id="hebergementetape'.$i.'">';
             echo '  <option value="hotel3">Hôtel 3 étoiles</option>';
             echo '  <option value="hotel4">Hôtel 4 étoiles</option>';
             echo '  <option value="hotel5">Hôtel 5 étoiles</option>';
@@ -223,14 +224,14 @@
             echo '</select>';
 
             echo '<label>Repas :</label>';
-            echo '<select name="repas'.$i.'">';
+            echo '<select name="repas'.$i.'" id="repas'.$i.'">';
             echo '  <option value="aucun">Aucun</option>';
             echo '  <option value="petitdejeuner">Petit-déjeuner</option>';
             echo '  <option value="allinclusive">All-inclusive</option>';
             echo '</select>';
 
             echo '<label>Activités et excursions :</label>';
-            echo '<select name="activites'.$i.'">';
+            echo '<select name="activites'.$i.'" id="activites'.$i.'">';
             echo '  <option value="non">Non</option>';
             echo '  <option value="oui">Oui</option>';
             echo '</select>';
@@ -321,7 +322,7 @@
             echo (afficheChamp($voyage['assurance']));
 
             for($i=1;$i<=3;$i++){
-                echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
+                echo '<p class="titreetapes">Etape '.$i.' : '.$etapes[$i-1]['etapetitre'].'</p>';
                 echo 'Hébergement :';
                 echo (afficheChamp($etapes[$i-1]['hebergement']));
                 echo 'Repas :';
@@ -361,7 +362,7 @@
             
             require_once '../PHP/paiement.php';
             payer($_SESSION['montant']);
-            echo "<a href='../Pages/etapes.php?nom=".$_SESSION['titre']."&depart=".$_SESSION['depart']."&retour=".$_SESSION['retour']."&personnes=".$_SESSION['personnes']."' class='lienretour'>Retour</a>";
+            echo "<a href='../Pages/etapes.php?nom=".$_SESSION['titre']."&prix=".$_SESSION['prix']."&duree=".$_SESSION['duree']."&depart=".$_SESSION['depart']."&retour=".$_SESSION['retour']."&personnes=".$_SESSION['personnes']."' class='lienretour'>Retour</a>";
         }
     }
 

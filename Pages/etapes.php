@@ -38,7 +38,7 @@
                     ?>
                     <label>Date de retour :</label>
                     <?php
-                        $value=date('Y-m-d"', strtotime('+ 1 days'));
+                        $value=date('Y-m-d', strtotime('+ 1 days'));
                         if(isset($_GET['retour'])){
                             $value = $_GET['retour'];
                         }
@@ -61,18 +61,34 @@
                         }
                     ?>
                     <label>Classe du vol :</label>
-                    <select name="classe">
+                    <select name="classe" id="classe">
                         <option value="economique">Economique</option>
                         <option value="premium">Premium</option>
                         <option value="buisiness">Buisiness</option>
                     </select>
                     <label>Assurance voyage :</label>
-                    <select name="assurance">
+                    <select name="assurance" id="assurance">
                         <option value="non">Non</option>
                         <option value="oui">Oui</option>
                     </select>
-                    <?php afficheEtapes($_GET['nom']) ?>
+                    <?php 
+                        afficheEtapes($_GET['nom']);
+                        $prix = $_GET['prix'];
+                        echo '<input type="hidden" id="prix" value="'.$prix.'">';
+                        $duree = $_GET['duree'];
+                        echo '<input type="hidden" id="duree" value="'.$duree.'">';
+                    ?>
                     <input type="submit" id='save' name="save" title="Engistrer les etapes" value="Confirmer" required>
+                    
+                    <script type="text/javascript">
+                        var champs = document.querySelectorAll("input, select");
+                        var i;
+                        montant();
+                        for(i=0;i<champs.length;i++){
+                            champs[i].addEventListener("change", montant);
+                        }
+                        window.addEventListener("load", montant);
+                    </script>
                 </div>
             </form>
         </div>
