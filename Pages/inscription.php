@@ -16,8 +16,8 @@
 
         <div class="section pageinscription">Inscription</div>
         <div class="paragraph pageinscription">
-            <form action="../PHP/formulaireinscription.php" method="POST">
-                <div class="formulaire">
+            <form action="../PHP/formulaireinscription.php" method="POST" onsubmit="return formulaireInscription();">
+                <div class="formulaire" id="forminscription">
                     <label>Civilité :</label>
                     <div class="choixradio">
                         <?php
@@ -44,59 +44,126 @@
                             echo '<i class="fa-solid fa-triangle-exclamation erreur"> '.$_GET['message'].'</i>';
                         }
                     ?>
+
                     <label for="lastname">Nom : </label>
-                    <?php 
-                        if(isset($_GET['nom'])){
-                            echo '<input type="text" id="nom" name="nom" title="Entrez le nom de la personne en majuscules" placeholder="Dark" value="'.$_GET['nom'].'" pattern="[A-Za-z]{2,}" maxlength="20" required>';
-                        }
-                        else{
-                            echo '<input type="text" id="nom" name="nom" title="Entrez le nom de la personne en majuscules" placeholder="Dark" pattern="[A-Za-z]{2,}" maxlength="20" required>';
-                        }
-                    ?>
+                    <div class="group5">
+                        <?php 
+                            if(isset($_GET['nom'])){
+                                echo '<input type="text" id="nom" name="nom" title="Entrez le nom de la personne en majuscules" placeholder="Dark" value="'.$_GET['nom'].'" maxlength="20">';
+                            }
+                            else{
+                                echo '<input type="text" id="nom" name="nom" title="Entrez le nom de la personne en majuscules" placeholder="Dark" maxlength="20">';
+                            }
+                        ?>
+                        <p class="pclass">0/20</p>
+                    </div>
+                    
                     <label for="name">Prénom : </label>
-                    <?php 
-                        if(isset($_GET['prenom'])){
-                            echo '<input type="text" id="prenom" name="prenom" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Vador" value="'.$_GET['prenom'].'" pattern="[A-Za-z]{2,}" maxlength="20" required>';
-                        }
-                        else{
-                            echo '<input type="text" id="prenom" name="prenom" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Vador" pattern="[A-Za-z]{2,}" maxlength="20" required>';
-                        }
-                    ?>
+                    <div class="group5">
+                        <?php 
+                            if(isset($_GET['prenom'])){
+                                echo '<input type="text" id="prenom" name="prenom" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Vador" value="'.$_GET['prenom'].'" maxlength="20">';
+                            }
+                            else{
+                                echo '<input type="text" id="prenom" name="prenom" title="Entrez le prénom de la personne en commençant par une majuscule" placeholder="Vador" maxlength="20">';
+                            }
+                        ?>
+                        <p class="pclass">0/20</p>
+                    </div>
+                    
                     <label for="mobile">Téléphone portable : </label>
-                    <?php 
-                        if(isset($_GET['mobile'])){
-                            echo '<input type="tel" id="mobile" name="mobile" title="Entrez le numéro de téléphone portable de la personne" pattern="[0-9]{10}" placeholder="0623456789" value="'.$_GET['mobile'].'" maxlength="10" required>';
-                        }
-                        else{
-                            echo '<input type="tel" id="mobile" name="mobile" title="Entrez le numéro de téléphone portable de la personne" pattern="[0-9]{10}" placeholder="0623456789" maxlength="10" required>';
-                        }
-                    ?>
+                    <div class="group5">
+                        <?php 
+                            if(isset($_GET['mobile'])){
+                                echo '<input type="tel" id="mobile" name="mobile" title="Entrez le numéro de téléphone portable de la personne" placeholder="0623456789" value="'.$_GET['mobile'].'" maxlength="10">';
+                            }
+                            else{
+                                echo '<input type="tel" id="mobile" name="mobile" title="Entrez le numéro de téléphone portable de la personne" placeholder="0623456789" maxlength="10">';
+                            }
+                        ?>
+                        <p class="pclass">0/10</p>
+                    </div>
+
                     <label for="email">Adresse mail : </label>
-                    <?php 
-                        $texte = "Entrez l'adresse mail de la personne";
-                        if(isset($_GET['email'])){
-                            echo '<input type="email" id="email" name="email" title="'.$texte.'" placeholder="dark.vador@gmail.com" value="'.$_GET['email'].'" maxlength="40" required>';
-                        }
-                        else{
-                            echo '<input type="email" id="email" name="email" title="'.$texte.'" placeholder="dark.vador@gmail.com" maxlength="40" required>';
-                        }
+                    <div class="group5">
+                        <?php 
+                            $texte = "Entrez l'adresse mail de la personne";
+                            if(isset($_GET['email'])){
+                                echo '<input type="email" id="email" name="email" title="'.$texte.'" placeholder="dark.vador@gmail.com" value="'.$_GET['email'].'" maxlength="40">';
+                            }
+                            else{
+                                echo '<input type="email" id="email" name="email" title="'.$texte.'" placeholder="dark.vador@gmail.com" maxlength="40">';
+                            }
+                        ?>
+                        <p class="pclass">0/40</p>
+                    </div>
+                    <?php
                         if(isset($_GET['erreur']) && $_GET['erreur'] == "email"){
                             echo '<i class="fa-solid fa-triangle-exclamation erreur"> '.$_GET['message'].'</i>';
                         }
                     ?>
+
                     <label for="password">Mot de passe : </label>
-                    <input type="password" id='mdp' name="mdp" title="Entrez le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" required>
+                    <div class="group5">
+                        <input type="password" id="mdp" name="mdp" title="Entrez le mot de passe" placeholder="Mot de Passe" maxlength="20">
+                        <p class="pclass">0/20</p>
+                        <button type="button" name="montrer" id="montrer" onclick="montrerMdp('mdp','montrer','cacher')"><i class="fa-solid fa-eye-slash annuler"></i></button>
+                        <button hidden type="button" name="cacher" id="cacher" onclick="cacherMdp('mdp','montrer','cacher')"><i class="fa-solid fa-eye annuler"></i></button>
+                    </div>
+
                     <label for="password">Confirmer mot de passe : </label>
-                    <input type="password" id='cmdp' name="cmdp" title="Confirmer le mot de passe" placeholder="Mot de Passe" pattern="[A-Za-z]{2,}" maxlength="20" required>
+                    <div class="group5">
+                        <input type="password" id='cmdp' name="cmdp" title="Confirmer le mot de passe" placeholder="Mot de Passe" maxlength="20">
+                        <p class="pclass">0/20</p>
+                        <button type="button" name="cmontrer" id="cmontrer" onclick="montrerMdp('cmdp','cmontrer','ccacher')"><i class="fa-solid fa-eye-slash annuler"></i></button>
+                        <button hidden type="button" name="ccacher" id="ccacher" onclick="cacherMdp('cmdp','cmontrer','ccacher')"><i class="fa-solid fa-eye annuler"></i></button>
+                    </div>
                     <?php
                         if(isset($_GET['erreur']) && $_GET['erreur'] == "mdp"){
                             echo '<i class="fa-solid fa-triangle-exclamation erreur"> '.$_GET['message'].'</i>';
                         }
                     ?>
                     <a href="connexion.php" class="connectez-vous">Déjà un compte ? Connectez-vous !</a>
-                    <input type="submit" id='sauvegarder' name="sauvegarder" title="Enregistrer la personne" value="S'inscrire" required>
+                    <input type="submit" id='sauvegarder' name="sauvegarder" title="Enregistrer la personne" value="S'inscrire">
                 </div>
             </form>
         </div>
+
+        <script type="text/javascript">
+            var elements = document.querySelectorAll("input");
+            var i;
+            function nbrCaracteres(){
+                var chaine;
+                for(i=2;i<elements.length;i++){
+                    chaine = elements[i].nextElementSibling.textContent.split('/');
+                    elements[i].nextElementSibling.textContent = elements[i].value.length + "/" + chaine[1];
+                }
+            }
+            for(i=2;i<elements.length;i++){
+                elements[i].addEventListener("input",nbrCaracteres);
+            }
+            window.addEventListener("load",nbrCaracteres);
+        </script>
+
+        <script type="text/javascript">
+            function montrerMdp(id,idmontrer,idcacher){
+                var mdp = document.getElementById(id);
+                var montrer = document.getElementById(idmontrer);
+                var cacher = document.getElementById(idcacher);
+
+                mdp.type = "text";
+                montrer.hidden = true;
+                cacher.hidden = false;
+            }
+            function cacherMdp(id,idmontrer,idcacher){
+                var mdp = document.getElementById(id);
+                var montrer = document.getElementById(idmontrer);
+                var cacher = document.getElementById(idcacher);
+
+                mdp.type = "password";
+                montrer.hidden = false;
+                cacher.hidden = true;
+            }
+        </script>
     </body>
 </html>

@@ -436,6 +436,23 @@ input[type="submit"] {
     cursor: pointer;/*Pour que le bouton soit cliquable*/
 }
 
+.group5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+    font-size: 20px;
+}
+
+.pclass, .pclass1 {
+    font-size: 15px;
+}
+
+.pclass1 {
+    margin-left: 5px;
+}
+
 .inscrivez-vous, .connectez-vous {
     font-size:12px;
     color: #3095cb;
@@ -444,6 +461,7 @@ input[type="submit"] {
 .erreur {
     font-size:9px;
     color: #f58d8d;
+    margin-top: -19px;
 }
 
 /*INFORMATIONS.php*/
@@ -455,7 +473,7 @@ input[type="submit"] {
 .paragraphinformations {
     gap: 25px;
     width: 600px;
-    padding: 20px;
+    padding: 0px 0px 20px 0px;
 }
 
 @media (max-width:630px) {
@@ -735,4 +753,17 @@ a[href="../PHP/suppression.php"] {
     border: 2px solid black;
     border-radius: 10px;
     height: 25px;
+}
+
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.changerChamps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

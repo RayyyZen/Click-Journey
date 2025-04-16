@@ -9,15 +9,6 @@
     $mdp = $_POST['mdp'];
     $cmdp = $_POST['cmdp'];
 
-    if($civilite!="Monsieur" && $civilite!="Madame"){
-        header("Location: ../Pages/inscription.php?message=Champ obligatoire&erreur=civilite&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
-        exit(0);
-    }
-    else if("$mdp" != "$cmdp"){
-        header("Location: ../Pages/inscription.php?message=Les mots de passes ne sont pas identiques&erreur=mdp&civilite=".$civilite."&nom=".$nom."&prenom=".$prenom."&mobile=".$mobile."&email=".$email);
-        exit(0);
-    }
-
     $json = file_get_contents('../JSON/utilisateurs.json');
     $utilisateurs = json_decode($json, true);
 

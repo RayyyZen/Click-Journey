@@ -16,6 +16,9 @@
             echo '<script src="../JavaScript/annuler.js" type="text/javascript"></script>';
             echo '<script src="../JavaScript/tri.js" type="text/javascript"></script>';
         }
+        else if($page == "Inscription" || $page == "Connexion" || $page == "Informations"){
+            echo '<script src="../JavaScript/formulaire.js" type="text/javascript"></script>';
+        }
         echo '</head>';
     }
     
@@ -56,17 +59,21 @@
         echo '<label>Civilité :</label>';
         echo '<div class="choixradio">';
         if($_SESSION['civilite'] == "Monsieur"){
-            echo '    <input type="radio" id="monsieur" name="civilite" value="Monsieur" checked disabled>';
+            echo '    <input type="radio" id="monsieur" name="civilite" data-extra="Monsieur" value="Monsieur" checked disabled>';
             echo '    <label for="monsieur" class="civiliteLabel">Monsieur</label>';
-            echo '    <input type="radio" id="madame" name="civilite" value="Madame" disabled>';
+            echo '    <input type="radio" id="madame" name="civilite" data-extra="Monsieur" value="Madame" disabled>';
         }
         else{
-            echo '    <input type="radio" id="monsieur" name="civilite" value="Monsieur" disabled>';
+            echo '    <input type="radio" id="monsieur" name="civilite" data-extra="Madame" value="Monsieur" disabled>';
             echo '    <label for="monsieur" class="civiliteLabel">Monsieur</label>';
-            echo '    <input type="radio" id="madame" name="civilite" value="Madame" checked disabled>';
+            echo '    <input type="radio" id="madame" name="civilite" data-extra="Madame" value="Madame" checked disabled>';
         }
         echo '    <label for="madame" class="civiliteLabel">Madame</label>';
-        echo '    <i class="fa-solid fa-pen-nib"></i>';
+        echo '    <div class="changerChamps">';
+        echo '        <button type="button" id="buttoncivilite" onclick="changementCivilite()"><i class="fa-solid fa-pen-nib"></i></button>';
+        echo '        <button hidden type="submit" id="sauvegardercivilite"><i class="fa-solid fa-check"></i></button>';
+        echo '        <button hidden type="button" id="restaurercivilite" onclick="restaurerCivilite()"><i class="fa-solid fa-xmark"></i></button>';
+        echo '    </div>';
         echo '</div>';
     }
 
