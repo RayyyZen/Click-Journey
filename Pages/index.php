@@ -9,7 +9,10 @@
     ?>
 
     <body>
-        <?php afficheHorizontal(1,1); ?>
+        <?php 
+            afficheHorizontal(1,1);
+            afficherPanier();
+        ?>
 
         <div class="section">Qui sommes-nous ?</div>
 

@@ -43,22 +43,30 @@
     $prix -= $hebergement['hotel3'] + $classe['economique'];
 
     $montant = ($prix + $heber + $rep + $activ + $classe[$_POST['classe']] + $assurance[$_POST['assurance']]) * $duree->days * $_POST['personnes'];
-    
-    $_SESSION['titre'] = $_GET['nom'];
-    $_SESSION['personnes'] = $_POST['personnes'];
-    $_SESSION['depart'] = $_POST['depart'];
-    $_SESSION['retour'] = $_POST['retour'];
-    $_SESSION['classe'] = $_POST['classe'];
-    $_SESSION['assurance'] = $_POST['assurance'];
-    $_SESSION['duree'] = $duree->days;
-    $_SESSION['montant'] = $montant;
 
-    for($i=1;$i<=3;$i++){
-        $_SESSION['etape'.$i] = $etapes[$i-1];
-        $_SESSION['hebergementetape'.$i] = $_POST['hebergementetape'.$i];
-        $_SESSION['repas'.$i] = $_POST['repas'.$i];
-        $_SESSION['activites'.$i] = $_POST['activites'.$i];
+    $i = 0;
+
+    while(isset($_SESSION['id'.$i])){
+        $i++;
     }
 
-    header("Location: ../Pages/recapitulatif.php");
+    $_SESSION['id'.$i] = $i;
+    $_SESSION['panier'.$i] = 0;
+    $_SESSION['titre'.$i] = $_GET['nom'];
+    $_SESSION['personnes'.$i] = $_POST['personnes'];
+    $_SESSION['depart'.$i] = $_POST['depart'];
+    $_SESSION['retour'.$i] = $_POST['retour'];
+    $_SESSION['classe'.$i] = $_POST['classe'];
+    $_SESSION['assurance'.$i] = $_POST['assurance'];
+    $_SESSION['duree'.$i] = $duree->days;
+    $_SESSION['montant'.$i] = $montant;
+
+    for($j=1;$j<=3;$j++){
+        $_SESSION['etape'.$j.$i] = $etapes[$j-1];
+        $_SESSION['hebergementetape'.$j.$i] = $_POST['hebergementetape'.$j];
+        $_SESSION['repas'.$j.$i] = $_POST['repas'.$j];
+        $_SESSION['activites'.$j.$i] = $_POST['activites'.$j];
+    }
+
+    header('Location: ../Pages/recapitulatif.php?id='.$i);
 ?>

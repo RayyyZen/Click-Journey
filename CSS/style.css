@@ -233,21 +233,26 @@ body {
     border-radius: 20px;
 }
 
-.destination {
+.destination, .paniertab {
     display: flex;
     border-spacing: 5px;
     width: 100%;
 }
 
-.destination tr td:nth-child(odd) {
+.destination tr td:nth-child(odd), .paniertab tr td:nth-child(1) {
     width: 25%;
     height: 15%;
 }
 
-.destination tr td:nth-child(even) {
+.destination tr td:nth-child(even), .paniertab tr td:nth-child(2) {
     height: 15%;
     border-bottom: 2px solid black;
     text-align: left;
+}
+
+.paniertab tr td:nth-child(3) {
+    width: 9%;
+    height: 15%;
 }
 
 a[href="destinations.php"], .lienetapes {
@@ -470,14 +475,14 @@ input[type="submit"] {
     width: 600px;
 }
 
-.paragraphinformations {
+.paragraphinformations, .paragraphpanier {
     gap: 25px;
     width: 600px;
     padding: 0px 0px 20px 0px;
 }
 
 @media (max-width:630px) {
-    .pageinformations, .paragraphinformations, .pageetapes {
+    .pageinformations, .paragraphinformations, .pageetapes, .paragraphpanier {
         width:90%;
     }
 }
@@ -501,14 +506,17 @@ input[type="submit"] {
     background-color: #e6ddc6;
 }
 
-.paragraphinformations a {
+.paragraphinformations a, .pagepanier a {
     color: black;
-    background-color: #6bb4d6;
     height: auto;
 }
 
+.paragraphinformations a {
+    background-color: #6bb4d6;
+}
+
 /*C'est le font awesome qui simule la modification d'un champ*/
-.paragraphinformations i {
+.paragraphinformations i, .pagepanier i {
     margin-left: 3px;
     padding: 5px;
     border: 2px solid black;
@@ -516,7 +524,7 @@ input[type="submit"] {
     cursor: pointer;/*Pour qu'il soit cliquable*/
 }
 
-.paragraphinformations i:hover, .paragraphinformations i:focus {
+.paragraphinformations i:hover, .paragraphinformations i:focus, .pagepanier i:hover, .pagepanier i:focus {
     color: white;
     background-color: black;
     transform: scale(1.2); /*Agrandire la case*/
@@ -766,4 +774,40 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.panier {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;/*Pour centrer le contenu verticalement*/
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;/*Pour le mettre au premier plan*/
+    font-size: 20px;
+    
+
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 14px;
+    border-radius: 10px 10px 10px 10px;
+    border: 2px solid black;
+    font-weight: bold;
+    background-color: #3095cb;
+    cursor: pointer;
+    /*Pour rendre le bouton qui change les couleurs cliquable*/
+    box-sizing: border-box;
+    /*border-box permet d'inclure le padding et la bordure dans le height pour que les elements soient toujours alignes*/
+}
+
+.pagepanier {
+    width: 700px;
+}
+
+@media (max-width:700px) {
+    .pagepanier {
+        width:90%;
+    }
 }

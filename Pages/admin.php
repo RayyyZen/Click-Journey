@@ -1,6 +1,6 @@
 <?php
     require_once '../PHP/accespages.php';
-    accesPages("admin.php","");
+    accesPages("admin.php","","");
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,10 @@
 
     <body>
         
-        <?php afficheHorizontal(1,1); ?>
+        <?php 
+            afficheHorizontal(1,1);
+            afficherPanier();
+        ?>
 
         <div class="section pageadmin">Page Administrateur</div>
 

@@ -11,6 +11,7 @@
     <body>
         <?php 
             afficheHorizontal(1,1);
+            afficherPanier();
             afficheInfosVoyage($_GET['nom']);
         ?>
     </body>

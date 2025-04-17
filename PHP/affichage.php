@@ -38,6 +38,22 @@
             echo "<div class='inscription'> <a href='inscription.php'>S'inscrire</a> </div>";
             echo "<div class='connexion montre'> <a href='connexion.php'>Se connecter</a> </div>";
         }
+
+    }
+
+    function afficherPanier(){
+        $i = 0;
+        $panier = 0;
+        while(isset($_SESSION['panier'.$i])){
+            if($_SESSION['panier'.$i] == 1){
+                $panier = 1;
+            }
+            $i++;
+        }
+
+        if($panier == 1){
+            echo '<a href="../Pages/panier.php" class="panier"><i class="fa-solid fa-cart-shopping"></i></a>';
+        }
     }
 
     function afficheHorizontal($recherche,$icone){
@@ -242,7 +258,7 @@
         echo '</table>';
     }
 
-    function afficheEtapes($nom){
+    function afficheEtapes($nom,$id){
         $json = file_get_contents('../JSON/voyages.json');
         $tabvoyages = json_decode($json, true);
 
@@ -258,9 +274,13 @@
         $i=1;
         foreach($voyage['etapes'] as $etape){
             echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
-
             echo '<label>Hébergement :</label>';
-            echo '<select name="hebergementetape'.$i.'" id="hebergementetape'.$i.'">';
+            if($id != "" && isset($_SESSION['hebergementetape'.$i.$id])){
+                echo '<select data-extra="'.$_SESSION['hebergementetape'.$i.$id].'" name="hebergementetape'.$i.'" id="hebergementetape'.$i.'">';
+            }
+            else{
+                echo '<select name="hebergementetape'.$i.'" id="hebergementetape'.$i.'">';
+            }
             echo '  <option value="hotel3">Hôtel 3 étoiles</option>';
             echo '  <option value="hotel4">Hôtel 4 étoiles</option>';
             echo '  <option value="hotel5">Hôtel 5 étoiles</option>';
@@ -269,14 +289,24 @@
             echo '</select>';
 
             echo '<label>Repas :</label>';
-            echo '<select name="repas'.$i.'" id="repas'.$i.'">';
+            if($id != "" && isset($_SESSION['repas'.$i.$id])){
+                echo '<select data-extra="'.$_SESSION['repas'.$i.$id].'" name="repas'.$i.'" id="repas'.$i.'">';
+            }
+            else{
+                echo '<select name="repas'.$i.'" id="repas'.$i.'">';
+            }
             echo '  <option value="aucun">Aucun</option>';
             echo '  <option value="petitdejeuner">Petit-déjeuner</option>';
             echo '  <option value="allinclusive">All-inclusive</option>';
             echo '</select>';
 
             echo '<label>Activités et excursions :</label>';
-            echo '<select name="activites'.$i.'" id="activites'.$i.'">';
+            if($id != "" && isset($_SESSION['activites'.$i.$id])){
+                echo '<select data-extra="'.$_SESSION['activites'.$i.$id].'" name="activites'.$i.'" id="activites'.$i.'">';
+            }
+            else{
+                echo '<select name="activites'.$i.'" id="activites'.$i.'">';
+            }
             echo '  <option value="non">Non</option>';
             echo '  <option value="oui">Oui</option>';
             echo '</select>';
@@ -328,7 +358,7 @@
         }
     }
 
-    function afficheRecap($transaction) {
+    function afficheRecap($transaction,$id,$num) {
         if($transaction != ""){
             //Si on est dans cette condition ca veut dire qu'on a accédé au récap depuis la page d'informations
             $json = file_get_contents('../JSON/transactions.json');
@@ -344,7 +374,7 @@
                 }
             }
 
-            $voyage = $tr['voyage'];
+            $voyage = $tr['voyage'][$num];
             $etapes = $voyage['etapes'];
 
             echo 'Numéro de transaction :';
@@ -379,35 +409,36 @@
         else{
             //Si on est dans cette condition ca veut dire qu'on a accédé au récap depuis la page d'étapes
             echo 'Titre du voyage :';
-            echo '<div class="champ1">'.$_SESSION['titre'].'</div>';
+            echo '<div class="champ1">'.$_SESSION['titre'.$id].'</div>';
             echo 'Montant total :';
-            echo '<div class="champ">'.$_SESSION['montant'].'€</div>';
+            echo '<div class="champ">'.$_SESSION['montant'.$id].'€</div>';
             echo 'Nombre de personnes :';
-            echo '<div class="champ">'.$_SESSION['personnes'].'</div>';
+            echo '<div class="champ">'.$_SESSION['personnes'.$id].'</div>';
             echo 'Date de départ :';
-            echo '<div class="champ">'.$_SESSION['depart'].'</div>';
+            echo '<div class="champ">'.$_SESSION['depart'.$id].'</div>';
             echo 'Date de retour :';
-            echo '<div class="champ">'.$_SESSION['retour'].'</div>';
+            echo '<div class="champ">'.$_SESSION['retour'.$id].'</div>';
             echo 'Durée du voyage :';
-            echo '<div class="champ">'.$_SESSION['duree'].' jours</div>';
+            echo '<div class="champ">'.$_SESSION['duree'.$id].' jours</div>';
             echo 'Classe du vol :';
-            echo (afficheChamp($_SESSION['classe']));
+            echo (afficheChamp($_SESSION['classe'.$id]));
             echo 'Assurance voyage :';
-            echo (afficheChamp($_SESSION['assurance']));
+            echo (afficheChamp($_SESSION['assurance'.$id]));
 
             for($i=1;$i<=3;$i++){
-                echo '<p class="titreetapes">Etape '.$i.' : '.$_SESSION['etape'.$i].'</p>';
+                echo '<p class="titreetapes">Etape '.$i.' : '.$_SESSION['etape'.$i.$id].'</p>';
                 echo 'Hébergement :';
-                echo (afficheChamp($_SESSION['hebergementetape'.$i]));
+                echo (afficheChamp($_SESSION['hebergementetape'.$i.$id]));
                 echo 'Repas :';
-                echo (afficheChamp($_SESSION['repas'.$i]));
+                echo (afficheChamp($_SESSION['repas'.$i.$id]));
                 echo 'Activités et excursions :';
-                echo (afficheChamp($_SESSION['activites'.$i]));
+                echo (afficheChamp($_SESSION['activites'.$i.$id]));
             }
             
-            require_once '../PHP/paiement.php';
-            payer($_SESSION['montant']);
-            echo "<a href='../Pages/etapes.php?nom=".$_SESSION['titre']."&depart=".$_SESSION['depart']."&retour=".$_SESSION['retour']."&personnes=".$_SESSION['personnes']."' class='lienretour'>Retour</a>";
+            //require_once '../PHP/paiement.php';
+            //payer($_SESSION['montant'.$id]);
+            echo "<a href='../PHP/ajoutpanier.php?id=".$id."' class='lienretour'>Ajouter au panier</a>";
+            echo "<a href='../Pages/etapes.php?id=".$id."&nom=".$_SESSION['titre'.$id]."' class='lienretour'>Retour</a>";
         }
     }
 
@@ -421,8 +452,11 @@
 
         foreach($transactions as $tr){
             if($tr['utilisateur'] == $_SESSION['email'] && $tr['status'] == "accepted"){
-                $voy = $tr['voyage'];
-                echo '<a href="../Pages/recapitulatif.php?transaction='.$tr['transaction'].'">'.$voy['titre'].'</a>';
+                $i = 0;
+                foreach($tr['voyage'] as $voy){
+                    echo '<a href="../Pages/recapitulatif.php?transaction='.$tr['transaction'].'&num='.$i.'">'.$voy['titre'].'</a>';
+                    $i++;
+                }
             }
         }
     }

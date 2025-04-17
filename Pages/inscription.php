@@ -1,6 +1,6 @@
 <?php
     require_once '../PHP/accespages.php';
-    accesPages("inscription.php","");
+    accesPages("inscription.php","","");
 ?>
 
 <!DOCTYPE html>

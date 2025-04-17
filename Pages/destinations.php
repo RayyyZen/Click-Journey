@@ -9,7 +9,10 @@
     ?>
 
     <body>
-        <?php afficheHorizontal(1,1); ?>
+        <?php 
+            afficheHorizontal(1,1);
+            afficherPanier();
+        ?>
 
         <div class="section">Destinations</div>
 
@@ -121,6 +124,6 @@
                 element.addEventListener('change', triVoyages);
                 window.addEventListener('load', triVoyages);
             </script>
-            
+
     </body>
 </html>

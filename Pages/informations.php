@@ -1,6 +1,6 @@
 <?php
     require_once '../PHP/accespages.php';
-    accesPages("informations.php","");
+    accesPages("informations.php","","");
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,10 @@
     ?>
 
     <body>
-        <?php afficheHorizontal(1,1); ?>
+        <?php 
+            afficheHorizontal(1,1);
+            afficherPanier();
+        ?>
 
         <div class="section pageinformations">Informations</div>
 
