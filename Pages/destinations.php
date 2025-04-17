@@ -89,8 +89,6 @@
                 </select>
             </div>
 
-            
-
             <script type="text/javascript">
                 if(document.getElementById("dureeGet") != null){
                     document.getElementById("duree").value = document.getElementById("dureeGet").value;
@@ -119,11 +117,10 @@
             <script type="text/javascript">
                 var element = document.getElementById("trier");
                 var elementvoyages = document.getElementById("voyages");
-
                 triVoyages();
-
                 element.addEventListener('change', triVoyages);
                 window.addEventListener('load', triVoyages);
             </script>
+            
     </body>
 </html>

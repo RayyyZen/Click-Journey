@@ -16,8 +16,12 @@
             echo '<script src="../JavaScript/annuler.js" type="text/javascript"></script>';
             echo '<script src="../JavaScript/tri.js" type="text/javascript"></script>';
         }
-        else if($page == "Inscription" || $page == "Connexion" || $page == "Informations"){
+        else if($page == "Inscription" || $page == "Connexion"){
             echo '<script src="../JavaScript/formulaire.js" type="text/javascript"></script>';
+        }
+        else if($page == "Informations"){
+            echo '<script src="../JavaScript/formulaire.js" type="text/javascript"></script>';
+            echo '<script src="../JavaScript/informations.js" type="text/javascript"></script>';
         }
         echo '</head>';
     }

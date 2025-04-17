@@ -118,7 +118,7 @@ function appliquerCouleur() {
             element.style.backgroundColor = "rgb(107, 180, 214)";
         }
         var elmt = document.querySelector('.titreutilisateurs');
-        if(elmt != NULL){
+        if(elmt != null){
             elmt.style.background = "rgb(48, 149, 203)";
         }
     }

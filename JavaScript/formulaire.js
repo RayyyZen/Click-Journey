@@ -170,3 +170,34 @@ function formulaireInformations(){
 
     return true;
 }
+
+function nbrCaracteres(){
+    var chaine;
+    for(i=0;i<elements.length;i++){
+        var p = elements[i].nextElementSibling;
+        if(p != null && (p.className == "pclass" || p.className == "pclass1")){
+            chaine = p.textContent.split('/');
+            p.textContent = elements[i].value.length + "/" + chaine[1];
+        }
+    }
+}
+
+function montrerMdp(id,idmontrer,idcacher){
+    var mdp = document.getElementById(id);
+    var montrer = document.getElementById(idmontrer);
+    var cacher = document.getElementById(idcacher);
+
+    mdp.type = "text";
+    montrer.hidden = true;
+    cacher.hidden = false;
+}
+
+function cacherMdp(id,idmontrer,idcacher){
+    var mdp = document.getElementById(id);
+    var montrer = document.getElementById(idmontrer);
+    var cacher = document.getElementById(idcacher);
+
+    mdp.type = "password";
+    montrer.hidden = false;
+    cacher.hidden = true;
+}

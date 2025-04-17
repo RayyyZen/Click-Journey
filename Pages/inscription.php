@@ -45,7 +45,7 @@
                         }
                     ?>
 
-                    <label for="lastname">Nom : </label>
+                    <label for="nom">Nom : </label>
                     <div class="group5">
                         <?php 
                             if(isset($_GET['nom'])){
@@ -58,7 +58,7 @@
                         <p class="pclass">0/20</p>
                     </div>
                     
-                    <label for="name">Prénom : </label>
+                    <label for="prenom">Prénom : </label>
                     <div class="group5">
                         <?php 
                             if(isset($_GET['prenom'])){
@@ -103,7 +103,7 @@
                         }
                     ?>
 
-                    <label for="password">Mot de passe : </label>
+                    <label for="mdp">Mot de passe : </label>
                     <div class="group5">
                         <input type="password" id="mdp" name="mdp" title="Entrez le mot de passe" placeholder="Mot de Passe" maxlength="20">
                         <p class="pclass">0/20</p>
@@ -111,7 +111,7 @@
                         <button hidden type="button" name="cacher" id="cacher" onclick="cacherMdp('mdp','montrer','cacher')"><i class="fa-solid fa-eye annuler"></i></button>
                     </div>
 
-                    <label for="password">Confirmer mot de passe : </label>
+                    <label for="cmdp">Confirmer mot de passe : </label>
                     <div class="group5">
                         <input type="password" id='cmdp' name="cmdp" title="Confirmer le mot de passe" placeholder="Mot de Passe" maxlength="20">
                         <p class="pclass">0/20</p>
@@ -132,38 +132,14 @@
         <script type="text/javascript">
             var elements = document.querySelectorAll("input");
             var i;
-            function nbrCaracteres(){
-                var chaine;
-                for(i=2;i<elements.length;i++){
-                    chaine = elements[i].nextElementSibling.textContent.split('/');
-                    elements[i].nextElementSibling.textContent = elements[i].value.length + "/" + chaine[1];
+            for(i=0;i<elements.length;i++){
+                var p = elements[i].nextElementSibling;
+                if(p != null && (p.className == "pclass" || p.className == "pclass1")){
+                    elements[i].addEventListener("input",nbrCaracteres);
                 }
-            }
-            for(i=2;i<elements.length;i++){
-                elements[i].addEventListener("input",nbrCaracteres);
             }
             window.addEventListener("load",nbrCaracteres);
         </script>
 
-        <script type="text/javascript">
-            function montrerMdp(id,idmontrer,idcacher){
-                var mdp = document.getElementById(id);
-                var montrer = document.getElementById(idmontrer);
-                var cacher = document.getElementById(idcacher);
-
-                mdp.type = "text";
-                montrer.hidden = true;
-                cacher.hidden = false;
-            }
-            function cacherMdp(id,idmontrer,idcacher){
-                var mdp = document.getElementById(id);
-                var montrer = document.getElementById(idmontrer);
-                var cacher = document.getElementById(idcacher);
-
-                mdp.type = "password";
-                montrer.hidden = false;
-                cacher.hidden = true;
-            }
-        </script>
     </body>
 </html>
