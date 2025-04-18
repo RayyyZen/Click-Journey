@@ -19,7 +19,7 @@
         else if($page == "Inscription" || $page == "Connexion"){
             echo '<script src="../JavaScript/formulaire.js" type="text/javascript"></script>';
         }
-        else if($page == "Informations"){
+        else if($page == "Informations" || $page == "Admin"){
             echo '<script src="../JavaScript/formulaire.js" type="text/javascript"></script>';
             echo '<script src="../JavaScript/informations.js" type="text/javascript"></script>';
         }
@@ -120,27 +120,35 @@
                 echo '<tr>';
                 echo '    <td>';
                 if($_SESSION['email'] == $util['email']){
-                    echo '        <a href="../PHP/boutonadmin.php?action=etoile&email='.$util['email'].'" class="fa-solid fa-star boutonadmin"></a>';
+                    echo '        <a id="etoile/'.$util['numero'].'" href="../PHP/boutonadmin.php?action=etoile&email='.$util['email'].'" class="fa-solid fa-star boutonadmin"></a>';
                 }
                 if($tableau == "Admin" && $_SESSION['email'] != $util['email']){
-                    echo '        <a href="../PHP/boutonadmin.php?action=retrograder&email='.$util['email'].'" class="fa-solid fa-circle-user boutonadmin"></a>';
+                    echo '        <a id="retrograder/'.$util['numero'].'" href="../PHP/boutonadmin.php?action=retrograder&email='.$util['email'].'" class="fa-solid fa-circle-user boutonadmin"></a>';
                 }
                 if($tableau == "Utilisateur"){
-                    echo '        <a href="../PHP/boutonadmin.php?action=promouvoir&email='.$util['email'].'" class="fa-solid fa-hammer boutonadmin"></a>';
+                    echo '        <a  id="promouvoir/'.$util['numero'].'"href="../PHP/boutonadmin.php?action=promouvoir&email='.$util['email'].'" class="fa-solid fa-hammer boutonadmin"></a>';
                 }
                 if($tableau != "Banni" && $_SESSION['email'] != $util['email']){
-                    echo '        <a href="../PHP/boutonadmin.php?action=bannir&email='.$util['email'].'" class="fa-regular fa-trash-can boutonadmin"></a>';
+                    echo '        <a id="bannir/'.$util['numero'].'" href="../PHP/boutonadmin.php?action=bannir&email='.$util['email'].'" class="fa-regular fa-trash-can boutonadmin"></a>';
                 }
                 if($tableau == "Banni"){
-                    echo '        <a href="../PHP/boutonadmin.php?action=debannir&email='.$util['email'].'" class="fa-solid fa-rotate-right boutonadmin"></a>';
+                    echo '        <a id="debannir/'.$util['numero'].'" href="../PHP/boutonadmin.php?action=debannir&email='.$util['email'].'" class="fa-solid fa-rotate-right boutonadmin"></a>';
                 }
                 //echo '        <a href="../PHP/boutonadmin.php?action=modifier&email='.$util['email'].'" class="fa-regular fa-pen-to-square boutonadmin"></a>';
+                echo '        <button type="button" id="button/'.$util['numero'].'" onclick="changementAdmin('.$util['numero'].')"><i class="fa-regular fa-pen-to-square"></i></button>';
+                echo '        <button hidden type="submit" id="sauvegarder/'.$util['numero'].'"><i class="fa-solid fa-check"></i></button>';
+                echo '        <button hidden type="button" id="restaurer/'.$util['numero'].'" onclick="restaurerAdmin('.$util['numero'].')"><i class="fa-solid fa-xmark"></i></button>';
                 echo '    </td>';
-                echo '    <td>'.$util['civilite'].'</td>';
-                echo '    <td>'.$util['nom'].'</td>';
-                echo '    <td>'.$util['prenom'].'</td>';
-                echo '    <td>'.$util['email'].'</td>';
-                echo '    <td>'.$util['mobile'].'</td>';
+
+                echo '    <td><select id="civilite/'.$util['numero'].'" data-extra="'.$util['civilite'].'" name="civilite" disabled>';
+                echo '        <option value="Monsieur">Monsieur</option>';
+                echo '        <option value="Madame">Madame</option>';
+                echo "    </select></td>";
+
+                echo '    <td>'.'<input type="text" id="nom/'.$util['numero'].'" name="nom" data-extra="'.$util['nom'].'" value="'.$util['nom'].'" maxlength="20" disabled>'.'</td>';
+                echo '    <td>'.'<input type="text" id="prenom/'.$util['numero'].'" name="prenom" data-extra="'.$util['prenom'].'" value="'.$util['prenom'].'" maxlength="20" disabled>'.'</td>';
+                echo '    <td>'.'<input type="text" id="email/'.$util['numero'].'" name="email" data-extra="'.$util['email'].'" value="'.$util['email'].'" maxlength="20" disabled>'.'</td>';
+                echo '    <td>'.'<input type="text" id="mobile/'.$util['numero'].'" name="mobile" data-extra="'.$util['mobile'].'" value="'.$util['mobile'].'" maxlength="10" disabled>'.'</td>';                
                 echo '</tr>';
             }
         }

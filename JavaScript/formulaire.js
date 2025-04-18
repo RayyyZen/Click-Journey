@@ -171,6 +171,59 @@ function formulaireInformations(){
     return true;
 }
 
+function formulaireAdmin(){
+    var admin = document.querySelectorAll("input");
+    var champs = Array.from(admin);
+    var nouveau = document.createElement("p");
+    nouveau.className = "fa-solid fa-triangle-exclamation erreur1";
+    nouveau.textContent = "";
+    var i;
+
+    //champs[0] le premier input, correspond a la barre de recherche
+    
+    for(i=1;i<champs.length;i++){
+        if(champs[i].disabled == false){
+            break;
+        }
+    }
+
+    if (champs[i].value.trim() == "" || /[^a-zA-Z]/.test(champs[i].value)) {
+        if(document.getElementById("erreurnom") == null){
+            nouveau.id = "erreurnom";
+            nouveau.textContent = " Nom invalide (caracteres speciaux exclus)";
+            var parent = champs[i].closest("div");
+            parent.parentNode.insertBefore(nouveau, parent.nextSibling);
+        }
+        return false;
+    }
+
+    if (champs[i+1].value.trim() == "" || /[^a-zA-Z]/.test(champs[i+1].value)) {
+        if(document.getElementById("erreurprenom") == null){
+            nouveau.id = "erreurprenom";
+            nouveau.textContent = " Prenom invalide (caracteres speciaux exclus)";
+            var parent = champs[i+1].closest("div");
+            parent.parentNode.insertBefore(nouveau, parent.nextSibling);
+        }
+        return false;
+    }
+
+    if (champs[i+3].value.trim() == "" || /[^0-9]/.test(champs[i+3].value) || champs[i+3].value.length != 10) {
+        if(document.getElementById("erreurmobile") == null){
+            nouveau.id = "erreurmobile";
+            nouveau.textContent = " Numero invalide (10 chiffres)";
+            var parent = champs[i+3].closest("div");
+            parent.parentNode.insertBefore(nouveau, parent.nextSibling);
+        }
+        return false;
+    }
+
+    champs[i+2].disabled = false;
+    champs[i+2].readonly = true;
+    //Pour plus de securite
+
+    return true;
+}
+
 function nbrCaracteres(){
     var chaine;
     for(i=0;i<elements.length;i++){

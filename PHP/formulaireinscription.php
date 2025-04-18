@@ -17,16 +17,12 @@
     }
 
     $verifmail = 1;
+    $i=0;
     foreach($utilisateurs as $util){
-        foreach($util as $key => $mail){
-            if($key == "email" && $mail == $email){
-                $verifmail=0;
-                break;
-            }
+        if($util['email'] == $email){
+            $verifmail = 0;
         }
-        if($verifmail == 0){
-            break;
-        }
+        $i++;
     }
 
     if($verifmail == 0){
@@ -38,6 +34,7 @@
     $_SESSION['dateconnexion'] = date("Y-m-j H:i:s");
 
     $nouveau = [
+        "numero" => "$i",
         "statut" => "Utilisateur",
         "civilite" => "$civilite",
         "nom" => "$nom",
@@ -54,6 +51,7 @@
 
     file_put_contents('../JSON/utilisateurs.json',$nouveaujson);
 
+    $_SESSION['numero'] = $i;
     $_SESSION['statut'] = "Utilisateur";
     $_SESSION['civilite'] = $civilite;
     $_SESSION['nom'] = $nom;

@@ -463,9 +463,18 @@ input[type="submit"] {
     color: #3095cb;
 }
 
-.erreur {
+.erreur, .erreur1 {
     font-size:9px;
     color: #f58d8d;
+}
+
+.erreur1 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.erreur {
     margin-top: -19px;
 }
 
@@ -591,6 +600,12 @@ a[href="../PHP/suppression.php"] {
 }
 /*Si l'écran fait au moins 1030px alors le paragraphe fera 1000px sinon ca sera un pourcentage pour que ca ne sorte pas de la page*/
 
+.formulaireadmin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .tablediv {
     width: 100%;
     overflow-x: auto; /*Active le scroll horizontal*/
@@ -607,14 +622,15 @@ a[href="../PHP/suppression.php"] {
 
 .tableau tr th {
     font-weight: bold;
+    font-size: 13px;
     border : solid black;
-    padding: 0px 10px 0px 10px;
+    padding: 1px 9px 1px 1px;
 }
 
 .tableau tr td {
     font-weight: 400;
     border : solid black;
-    padding: 0px 20px 0px 20px;
+    padding: 1px 9px 1px 1px;
 }
 
 #bannis {
@@ -641,6 +657,17 @@ a[href="../PHP/suppression.php"] {
     background-color: #6bb4d6;
 }
 
+#utilisateur input, #vip input, #bannis input, #utilisateur select, #vip select, #bannis select {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 13px;
+    background-color: #e6ddc6;
+}
+
 .modifier, .bannir, .promouvoir {
     display: flex;
     justify-content: center;
@@ -656,6 +683,8 @@ a[href="../PHP/suppression.php"] {
 }
 
 .titreadmins, .titreutilisateurs, .titrebannis, .titreetapes {
+    display: flex;
+    justify-content: center;
     padding: 5px;
     border: 2px solid black;
     border-radius: 2px;

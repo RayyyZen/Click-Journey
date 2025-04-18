@@ -42,9 +42,10 @@
                     <div class="group5">
                         <input type="password" id="mdp" name="mdp" title="Entrez le mot de passe" placeholder="Mot de Passe" maxlength="20"> 
                         <p class="pclass">0/20</p>
-                        <button type="button" name="montrer" id="montrer" onclick="montrerMdp('mdp','montrer','cacher')"><i class="fa-solid fa-eye-slash annuler"></i></button>
-                        <button hidden type="button" name="cacher" id="cacher" onclick="cacherMdp('mdp','montrer','cacher')"><i class="fa-solid fa-eye annuler"></i></button>
                     </div>
+                    <button type="button" name="montrer" id="montrer" onclick="montrerMdp('mdp','montrer','cacher')"><i class="fa-solid fa-eye-slash annuler"></i></button>
+                    <button hidden type="button" name="cacher" id="cacher" onclick="cacherMdp('mdp','montrer','cacher')"><i class="fa-solid fa-eye annuler"></i></button>
+                    
                     <?php
                         if(isset($_GET['erreur']) && $_GET['erreur'] == "mdp"){
                             echo '<i class="fa-solid fa-triangle-exclamation erreur"> '.$_GET['message'].'</i>';
