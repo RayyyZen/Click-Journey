@@ -20,14 +20,14 @@
 - **Sous Windows** : Téléchargez et installez **WAMP** (qui inclut PHP et Apache) à partir de [wampserver.com](https://www.wampserver.com/).
 - **Sur macOS** : Téléchargez et installez **MAMP** à partir de [mamp.info](https://www.mamp.info/).
 - **Sur Linux** : Exécutez les commandes suivantes pour installer PHP 8.3 et les extensions nécessaires :
-  ```sh
+```sh
   sudo apt update
   sudo apt install software-properties-common
   sudo add-apt-repository ppa:ondrej/php
   sudo apt update
   sudo apt install php8.3
   sudo apt install php8.3-cli php8.3-mbstring php8.3-curl php8.3-xml
-
+```
 
 2. **Cloner le répertoire :** 
 ```sh
