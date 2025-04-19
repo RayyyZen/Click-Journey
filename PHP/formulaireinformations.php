@@ -15,10 +15,11 @@
     }
 
     foreach($utilisateurs as &$util){
-        if($util['email'] == $email){
+        if($util['numero'] == $_SESSION['numero']){
             $util['civilite'] = $civilite;
             $util['nom'] = $nom;
             $util['prenom'] = $prenom;
+            $util['email'] = $email;
             $util['mobile'] = $mobile;
         }
     }
@@ -30,6 +31,7 @@
     $_SESSION['civilite'] = $civilite;
     $_SESSION['nom'] = $nom;
     $_SESSION['prenom'] = $prenom;
+    $_SESSION['email'] = $email;
     $_SESSION['mobile'] = $mobile;
 
     header("Location: ../Pages/informations.php");

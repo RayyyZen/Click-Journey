@@ -154,11 +154,21 @@ function formulaireInformations(){
         return false;
     }
 
-    if (champs[5].value.trim() == "" || /[^0-9]/.test(champs[5].value) || champs[5].value.length != 10) {
+    if (champs[5].value.trim() == "" || /[^a-zA-Z0-9@.]/.test(champs[5].value)) {
+        if(document.getElementById("erreurmail") == null){
+            nouveau.id = "erreurmail";
+            nouveau.textContent = " Mail invalide (caracteres speciaux exclus)";
+            var parent = champs[5].parentNode;
+            parent.parentNode.insertBefore(nouveau, parent.nextSibling);
+        }
+        return false;
+    }
+
+    if (champs[6].value.trim() == "" || /[^0-9]/.test(champs[6].value) || champs[6].value.length != 10) {
         if(document.getElementById("erreurmobile") == null){
             nouveau.id = "erreurmobile";
             nouveau.textContent = " Numero invalide (10 chiffres)";
-            var parent = champs[5].parentNode;
+            var parent = champs[6].parentNode;
             parent.parentNode.insertBefore(nouveau, parent.nextSibling);
         }
         return false;
@@ -187,6 +197,8 @@ function formulaireAdmin(){
         }
     }
 
+    var numero = champs[i-1].value;
+
     if (champs[i].value.trim() == "" || /[^a-zA-Z]/.test(champs[i].value)) {
         if(document.getElementById("erreurnom") == null){
             nouveau.id = "erreurnom";
@@ -207,6 +219,16 @@ function formulaireAdmin(){
         return false;
     }
 
+    if (champs[i+2].value.trim() == "" || /[^a-zA-Z0-9@.]/.test(champs[i+2].value)) {
+        if(document.getElementById("erreurmail") == null){
+            nouveau.id = "erreurmail";
+            nouveau.textContent = " Mail invalide (caracteres speciaux exclus)";
+            var parent = champs[i+2].closest("div");
+            parent.parentNode.insertBefore(nouveau, parent.nextSibling);
+        }
+        return false;
+    }
+
     if (champs[i+3].value.trim() == "" || /[^0-9]/.test(champs[i+3].value) || champs[i+3].value.length != 10) {
         if(document.getElementById("erreurmobile") == null){
             nouveau.id = "erreurmobile";
@@ -217,11 +239,55 @@ function formulaireAdmin(){
         return false;
     }
 
-    champs[i+2].disabled = false;
-    champs[i+2].readonly = true;
+    var civilite = document.getElementById("civilite/" + numero);
+    civilite.disabled = true;
+    champs[i-1].disabled = true;
+    champs[i-1].readonly = true;
     //Pour plus de securite
+    champs[i].disabled = true;
+    champs[i+1].disabled = true;
+    champs[i+2].disabled = true;
+    champs[i+3].disabled = true;
 
-    return true;
+    var etoile = document.getElementById("etoile/" + numero);
+    var retrograder = document.getElementById("retrograder/" + numero);
+    var promouvoir = document.getElementById("promouvoir/" + numero);
+    var bannir = document.getElementById("bannir/" + numero);
+    var debannir = document.getElementById("debannir/" + numero);
+
+    if(etoile != null){ etoile.style.display = "none"; }
+    if(retrograder != null){ retrograder.style.display = "none"; }
+    if(promouvoir != null){ promouvoir.style.display = "none"; }
+    if(bannir != null){ bannir.style.display = "none"; }
+    if(debannir != null){ debannir.style.display = "none"; }
+
+    var sauvegarder = document.getElementById("sauvegarder/" + numero);
+    var restaurer = document.getElementById("restaurer/" + numero);
+    var button = document.getElementById("button/" + numero);
+    var chargement = document.getElementById("chargement/" + numero);
+
+    sauvegarder.hidden = true;
+    restaurer.hidden = true;
+    button.hidden = true;
+    chargement.hidden = false;
+
+    setTimeout(() => {
+        champs[i-1].disabled = false;
+        champs[i-1].readOnly = true;
+        civilite.disabled = false;
+        civilite.readOnly = true;
+        champs[i].disabled = false;
+        champs[i].readOnly = true;
+        champs[i+1].disabled = false;
+        champs[i+1].readOnly = true;
+        champs[i+2].disabled = false;
+        champs[i+2].readOnly = true;
+        champs[i+3].disabled = false;
+        champs[i+3].readOnly = true;
+        document.querySelector(".formulaireadmin").submit();
+    }, 3000);
+
+    return false;
 }
 
 function nbrCaracteres(){

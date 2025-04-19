@@ -43,18 +43,22 @@
                         <button hidden type="button" id="restaurerprenom" onclick="restaurer('prenom','sauvegarderprenom','restaurerprenom','buttonprenom','pprenom')"><i class="fa-solid fa-xmark"></i></button>
                     </div>
 
+                    <label>Adresse mail :</label>
+                    <div class="group">
+                        <?php echo '<input type="email" id="email" name="email" data-extra="'.$_SESSION['email'].'" value='.$_SESSION['email'].' maxlength="40" disabled>'; ?>
+                        <p hidden id="pemail" class="pclass1">0/40</p>
+                        <button type="button" id="buttonemail" onclick="changement('email','sauvegarderemail','restaureremail','buttonemail','pemail')"><i class="fa-solid fa-pen-nib"></i></button>
+                        <button hidden type="submit" id="sauvegarderemail"><i class="fa-solid fa-check"></i></button>
+                        <button hidden type="button" id="restaureremail" onclick="restaurer('email','sauvegarderemail','restaureremail','buttonemail','pemail')"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
                     <label for="mobile">Téléphone :</label>
                     <div class="group">
-                        <?php echo '<input type="text" id="mobile" name="mobile" data-extra="'.$_SESSION['mobile'].'" value="'.$_SESSION['mobile'].'" maxlength="10" disabled>'; ?>
+                        <?php echo '<input type="tel" id="mobile" name="mobile" data-extra="'.$_SESSION['mobile'].'" value="'.$_SESSION['mobile'].'" maxlength="10" disabled>'; ?>
                         <p hidden id="pmobile" class="pclass1">0/10</p>
                         <button type="button" id="buttonmobile" onclick="changement('mobile','sauvegardermobile','restaurermobile','buttonmobile','pmobile')"><i class="fa-solid fa-pen-nib"></i></button>
                         <button hidden type="submit" id="sauvegardermobile"><i class="fa-solid fa-check"></i></button>
                         <button hidden type="button" id="restaurermobile" onclick="restaurer('mobile','sauvegardermobile','restaurermobile','buttonmobile','pmobile')"><i class="fa-solid fa-xmark"></i></button>
-                    </div>
-
-                    <label>Adresse mail :</label>
-                    <div class="group">
-                        <?php echo '<input type="text" id="email" name="email" value='.$_SESSION['email'].' disabled>'; ?>
                     </div>
 
                     <label>Date d'inscription :</label>
@@ -77,12 +81,17 @@
 
         <script type="text/javascript">
             var elements = document.querySelectorAll("input");
+            var boutons = document.querySelectorAll("button");
             var i;
             for(i=0;i<elements.length;i++){
                 if(elements[i].nextElementSibling != null && (elements[i].nextElementSibling.className == "pclass" || elements[i].nextElementSibling.className == "pclass1")){
                     elements[i].addEventListener("input",nbrCaracteres);
                 }
             }
+            for(i=0;i<boutons.length;i++){
+                boutons[i].addEventListener("click",nbrCaracteres);
+            }
+            //Pour quand il y a clic sur le bouton qui annule les modifs, le nombre de caracteres est mit à jour
             window.addEventListener("load",nbrCaracteres);
         </script>
 

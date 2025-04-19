@@ -39,6 +39,7 @@
         header("Location: ../Pages/connexion.php?message=Ce compte est banni&erreur=mdp&email=".$email);
     }
     else{
+        $_SESSION['numero'] = $util['numero'];
         $_SESSION['statut'] = $util['statut'];
         $_SESSION['civilite'] = $util['civilite'];
         $_SESSION['nom'] = $util['nom'];

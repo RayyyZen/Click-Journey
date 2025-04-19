@@ -39,7 +39,7 @@
                         }
                         echo '<tr>';
                         echo '<td><img src="'.$voyage['image'].'" class="image345"></td>';
-                        echo '<td>Personnes : '.$_SESSION['personnes'.$id].'<br>Départ : '.$_SESSION['depart'.$id].'<br>Retour : '.$_SESSION['retour'.$id].'<br>Durée : '.$_SESSION['duree'.$id].' jours<br>Montant : '.$_SESSION['montant'.$id].' €<br></td>';
+                        echo '<td>Personnes : '.$_SESSION['personnes'.$id].'<br>Départ : '.$_SESSION['depart'.$id].'<br>Retour : '.$_SESSION['retour'.$id].'<br>Durée : '.$_SESSION['duree'.$id].' jours<br>Montant : '.$_SESSION['montant'.$id].'€<br></td>';
                         echo '<td><a href="../PHP/supprimerpanier.php?id='.$id.'"><i class="fa-solid fa-square-minus"></i></a></td>';
                         echo '</tr>';
                         $montant += $_SESSION['montant'.$id];

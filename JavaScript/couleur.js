@@ -19,108 +19,15 @@ function trouverCookie(nomcookie) {
     return "";
 }
 
-function appliquerCouleur() {
-    //console.log(document.cookie);
+function appliquerCouleur(){
     var couleur = trouverCookie("couleur");
-    var elements = document.querySelectorAll('body *');
-    //Pour prendre touts les elements a l'interieur de la balise body
-    var body = document.getElementsByTagName("body");
-    var i;
-    var background;
-    var color;
-
+    var element = document.getElementById("css");
     //J'associe a chaque couleur bleue une couleur de noir specifique pour pouvoir passer du noir au bleu tout en sachant quelle couleur bleue a ete utilisee pour chaque truc parce qu'ils n ont pas tous le meme bleu
     if (couleur == "bis") {
-        body[0].style.backgroundImage = 'url("../Data/espace.jpg")';
-        for (i=0;i<elements.length;i++) {
-            background = window.getComputedStyle(elements[i]).backgroundColor;
-            //Pour avoir la couleur de fond de l'element
-            color = window.getComputedStyle(elements[i]).color;
-            //Pour avoir la couleur de l'element
-            switch (background) {
-                case "rgb(55, 194, 225)":
-                    elements[i].style.backgroundColor = "rgb(255, 255, 255)";
-                    break;
-                case "rgb(48, 149, 203)":
-                    elements[i].style.backgroundColor = "rgb(255, 255, 254)";
-                    break;
-                case "rgb(107, 180, 214)":
-                    elements[i].style.backgroundColor = "rgb(0, 0, 2)";
-                    break;
-                case "rgb(230, 221, 198)":
-                    elements[i].style.backgroundColor = "rgb(255, 255, 253)";
-                    break;
-                case "rgb(48, 149, 203)":
-                    elements[i].style.color = "rgb(0, 0, 1)";
-                    break;
-            }
-            
-            if(elements[i].classList.contains("section") || elements[i].matches('input[type="submit"]')){
-                elements[i].style.color = "white";
-                elements[i].style.borderColor = "white";
-            }
-            else if(elements[i].classList.contains("inscrivez-vous") || elements[i].classList.contains("connectez-vous")){
-                elements[i].style.color = "black";
-            }
-        }
-        var elements = document.querySelectorAll('.paragraphinformations a');
-        var i;
-        for(i=0;i<elements.length-1;i++){
-            elements[i].style.color = "white";
-        }
-        var element = document.querySelector('#utilisateur tr:nth-child(1)');
-        if(element != null){
-            element.style.backgroundColor = "rgb(107, 180, 214)";
-        }
-        var elmt = document.querySelector('.titreutilisateurs');
-        if(elmt != null){
-            elmt.style.background = "rgb(48, 149, 203)";
-        }
+        element.href = "../CSS/stylebis.css";
     }
     else {
-        body[0].style.backgroundImage = 'url("../Data/blue_sky.jpg")';
-        for (i=0;i<elements.length;i++) {
-            background = window.getComputedStyle(elements[i]).backgroundColor;
-            color = window.getComputedStyle(elements[i]).color;
-            switch (background) {
-                case "rgb(255, 255, 255)":
-                    elements[i].style.backgroundColor = "rgb(55, 194, 225)";
-                    break;
-                case "rgb(255, 255, 254)":
-                    elements[i].style.backgroundColor = "rgb(48, 149, 203)";
-                    break;
-                case "rgb(0, 0, 2)":
-                    elements[i].style.backgroundColor = "rgb(107, 180, 214)";
-                    break;
-                case "rgb(255, 255, 253)":
-                    elements[i].style.backgroundColor = "rgb(230, 221, 198)";
-                    break;
-                case "rgb(0, 0, 1)":
-                    elements[i].style.color = "rgb(48, 149, 203)";
-                    break;
-            }
-            
-            if(elements[i].classList.contains("section") || elements[i].matches('input[type="submit"]')){
-                elements[i].style.color = "black";
-                elements[i].style.borderColor = "rgb(107, 180, 214)";
-            }
-            else if(elements[i].classList.contains("inscrivez-vous") || elements[i].classList.contains("connectez-vous")){
-                elements[i].style.color = "rgb(48, 149, 203)";
-            }
-        }
-        var elements = document.querySelectorAll('.paragraphinformations a');
-        var i;
-        for(i=0;i<elements.length-1;i++){
-            elements[i].style.color = "black";
-        }
-        var element = document.querySelector('#utilisateur tr:nth-child(1)');
-        if(element != null){
-            element.style.backgroundColor = "rgb(107, 180, 214)";
-        }
-        var elmt = document.querySelector('.titreutilisateurs');
-        if(elmt != null){
-            elmt.style.background = "rgb(48, 149, 203)";
-        }
+        element.href = "../CSS/style.css";
     }
 }
 

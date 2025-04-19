@@ -84,11 +84,13 @@ function changementAdmin(numero){
     var civilite = document.getElementById("civilite/" + numero);
     var nom = document.getElementById("nom/" + numero);
     var prenom = document.getElementById("prenom/" + numero);
+    var email = document.getElementById("email/" + numero);
     var mobile = document.getElementById("mobile/" + numero);
 
     civilite.disabled = false;
     nom.disabled = false;
     prenom.disabled = false;
+    email.disabled = false;
     mobile.disabled = false;
 
     var etoile = document.getElementById("etoile/" + numero);
@@ -117,16 +119,19 @@ function restaurerAdmin(numero){
     var civilite = document.getElementById("civilite/" + numero);
     var nom = document.getElementById("nom/" + numero);
     var prenom = document.getElementById("prenom/" + numero);
+    var email = document.getElementById("email/" + numero);
     var mobile = document.getElementById("mobile/" + numero);
 
     civilite.disabled = true;
     nom.disabled = true;
     prenom.disabled = true;
+    email.disabled = true;
     mobile.disabled = true;
 
     civilite.value = civilite.dataset.extra;
     nom.value = nom.dataset.extra;
     prenom.value = prenom.dataset.extra;
+    email.value = email.dataset.extra;
     mobile.value = mobile.dataset.extra;
 
     var etoile = document.getElementById("etoile/" + numero);
@@ -152,8 +157,10 @@ function restaurerAdmin(numero){
     var erreurnom = document.getElementById("erreurnom");
     var erreurprenom = document.getElementById("erreurprenom");
     var erreurmobile = document.getElementById("erreurmobile");
+    var erreurmail = document.getElementById("erreurmail");
 
     if(erreurnom != null){ erreurnom.remove() ; }
     if(erreurprenom != null){ erreurprenom.remove() ; }
     if(erreurmobile != null){ erreurmobile.remove() ; }
+    if(erreurmail != null){ erreurmail.remove() ; }
 }

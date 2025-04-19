@@ -5,7 +5,7 @@
         echo '<meta charset="UTF-8">';
         echo '<meta name="description" content="Agence de voyage des lieux de tournage de la saga Star Wars">';
         echo '<meta name="author" content="Rayane M., Enzo F., Hugo N.">';
-        echo '<link rel="stylesheet" type="text/css" href="../CSS/style.css">';
+        echo '<link id="css" rel="stylesheet" type="text/css" href="../CSS/style.css">';
         echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">';
         echo '<script src="../JavaScript/couleur.js" type="text/javascript"></script>';
         if($page == "Etapes"){
@@ -108,6 +108,7 @@
 
         echo '<tr>';
         echo '    <th></th>';
+        echo '    <th>Numéro</th>';
         echo '    <th>Civilité</th>';
         echo '    <th>Nom</th>';
         echo '    <th>Prénom</th>';
@@ -119,16 +120,16 @@
             if($util['statut'] == $tableau){
                 echo '<tr>';
                 echo '    <td>';
-                if($_SESSION['email'] == $util['email']){
+                if($_SESSION['numero'] == $util['numero']){
                     echo '        <a id="etoile/'.$util['numero'].'" href="../PHP/boutonadmin.php?action=etoile&email='.$util['email'].'" class="fa-solid fa-star boutonadmin"></a>';
                 }
-                if($tableau == "Admin" && $_SESSION['email'] != $util['email']){
+                if($tableau == "Admin" && $_SESSION['numero'] != $util['numero']){
                     echo '        <a id="retrograder/'.$util['numero'].'" href="../PHP/boutonadmin.php?action=retrograder&email='.$util['email'].'" class="fa-solid fa-circle-user boutonadmin"></a>';
                 }
                 if($tableau == "Utilisateur"){
                     echo '        <a  id="promouvoir/'.$util['numero'].'"href="../PHP/boutonadmin.php?action=promouvoir&email='.$util['email'].'" class="fa-solid fa-hammer boutonadmin"></a>';
                 }
-                if($tableau != "Banni" && $_SESSION['email'] != $util['email']){
+                if($tableau != "Banni" && $_SESSION['numero'] != $util['numero']){
                     echo '        <a id="bannir/'.$util['numero'].'" href="../PHP/boutonadmin.php?action=bannir&email='.$util['email'].'" class="fa-regular fa-trash-can boutonadmin"></a>';
                 }
                 if($tableau == "Banni"){
@@ -138,7 +139,10 @@
                 echo '        <button type="button" id="button/'.$util['numero'].'" onclick="changementAdmin('.$util['numero'].')"><i class="fa-regular fa-pen-to-square"></i></button>';
                 echo '        <button hidden type="submit" id="sauvegarder/'.$util['numero'].'"><i class="fa-solid fa-check"></i></button>';
                 echo '        <button hidden type="button" id="restaurer/'.$util['numero'].'" onclick="restaurerAdmin('.$util['numero'].')"><i class="fa-solid fa-xmark"></i></button>';
+                echo '        <button hidden type="button" id="chargement/'.$util['numero'].'"><i class="fas fa-spinner fa-spin"></i></button>';
                 echo '    </td>';
+
+                echo '    <td>'.'<input type="text" id="'.$util['numero'].'" name="numero" data-extra="'.$util['numero'].'" value="'.$util['numero'].'" maxlength="1" disabled>'.'</td>';
 
                 echo '    <td><select id="civilite/'.$util['numero'].'" data-extra="'.$util['civilite'].'" name="civilite" disabled>';
                 echo '        <option value="Monsieur">Monsieur</option>';
@@ -147,8 +151,8 @@
 
                 echo '    <td>'.'<input type="text" id="nom/'.$util['numero'].'" name="nom" data-extra="'.$util['nom'].'" value="'.$util['nom'].'" maxlength="20" disabled>'.'</td>';
                 echo '    <td>'.'<input type="text" id="prenom/'.$util['numero'].'" name="prenom" data-extra="'.$util['prenom'].'" value="'.$util['prenom'].'" maxlength="20" disabled>'.'</td>';
-                echo '    <td>'.'<input type="text" id="email/'.$util['numero'].'" name="email" data-extra="'.$util['email'].'" value="'.$util['email'].'" maxlength="20" disabled>'.'</td>';
-                echo '    <td>'.'<input type="text" id="mobile/'.$util['numero'].'" name="mobile" data-extra="'.$util['mobile'].'" value="'.$util['mobile'].'" maxlength="10" disabled>'.'</td>';                
+                echo '    <td>'.'<input type="email" id="email/'.$util['numero'].'" name="email" data-extra="'.$util['email'].'" value="'.$util['email'].'" maxlength="40" disabled>'.'</td>';
+                echo '    <td>'.'<input type="tel" id="mobile/'.$util['numero'].'" name="mobile" data-extra="'.$util['mobile'].'" value="'.$util['mobile'].'" maxlength="10" disabled>'.'</td>';                
                 echo '</tr>';
             }
         }
@@ -413,6 +417,7 @@
                 echo 'Activités et excursions :';
                 echo (afficheChamp($etapes[$i-1]['activites']));
             }
+            echo "<a href='../Pages/informations.php' class='lienretour'>Retour</a>";
         }
         else{
             //Si on est dans cette condition ca veut dire qu'on a accédé au récap depuis la page d'étapes
@@ -443,8 +448,6 @@
                 echo (afficheChamp($_SESSION['activites'.$i.$id]));
             }
             
-            //require_once '../PHP/paiement.php';
-            //payer($_SESSION['montant'.$id]);
             echo "<a href='../PHP/ajoutpanier.php?id=".$id."' class='lienretour'>Ajouter au panier</a>";
             echo "<a href='../Pages/etapes.php?id=".$id."&nom=".$_SESSION['titre'.$id]."' class='lienretour'>Retour</a>";
         }

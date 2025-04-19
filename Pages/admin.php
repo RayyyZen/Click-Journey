@@ -24,7 +24,7 @@
 
             <form action="../PHP/formulaireadmin.php" method="POST" class="formulaireadmin" onsubmit="return formulaireAdmin();">
 
-                <h3 class="titreadmins">Voici la liste des Administrateurs</h3>
+                <h3 class="titreadmins">Liste des Administrateurs</h3>
 
                 <div class="tablediv">
                     <table class="tableau" id="vip">
@@ -32,7 +32,13 @@
                     </table>
                 </div>
 
-                <h3 class="titreutilisateurs">Voici la liste des Utilisateurs</h3>
+                <?php
+                    if(isset($_GET['statut']) && $_GET['statut'] == "Admin"){
+                        echo '<p class="fa-solid fa-triangle-exclamation erreur1"> '.$_GET['message'].'</p>';
+                    }
+                ?>
+
+                <h3 class="titreutilisateurs">Liste des Utilisateurs</h3>
 
                 <div class="tablediv">
                     <table class="tableau" id="utilisateur">
@@ -40,13 +46,25 @@
                     </table>
                 </div>
 
-                <h3 class="titrebannis">Voici la liste des Bannis</h3>
+                <?php
+                    if(isset($_GET['statut']) && $_GET['statut'] == "Utilisateur"){
+                        echo '<p class="fa-solid fa-triangle-exclamation erreur1"> '.$_GET['message'].'</p>';
+                    }
+                ?>
+
+                <h3 class="titrebannis">Liste des Bannis</h3>
 
                 <div class="tablediv">
                     <table class="tableau" id="bannis">
                         <?php statutUtilisateurs("Banni"); ?>
                     </table>
                 </div>
+
+                <?php
+                    if(isset($_GET['statut']) && $_GET['statut'] == "Banni"){
+                        echo '<p class="fa-solid fa-triangle-exclamation erreur1"> '.$_GET['message'].'</p>';
+                    }
+                ?>
 
             </form>
 

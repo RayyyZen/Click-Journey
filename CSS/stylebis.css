@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("../Data/blue_sky.jpg");
+    background-image: url("../Data/espace.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@ body {
     width: 100%;
     height: 60px;
     z-index: 1000;/*Pour le mettre au premier plan*/
-    background-color: #37c2e1;
+    background-color: white;
     border-bottom: 2px solid black;
 }
 
@@ -50,14 +50,14 @@ body {
     padding: 7px;
     border-radius: 10px;
     border: 2px solid black;
-    background-color: #3095cb;
+    background-color: black;
 }
 
 .recherche input[type="text"] {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    background-color: #3095cb;
-    color: black;
+    background-color: black;
+    color: white;
     width: 260px;
     padding: 5px;
     border: none;
@@ -75,13 +75,13 @@ body {
     border: 2px solid black;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    background-color: #3095cb;
+    background-color: white;
     box-sizing: border-box;
     /*border-box permet d'inclure le padding et la bordure dans le height pour que les elements soient toujours alignes*/
 }
 
 .informations a:hover, .inscription a:hover, .connexion a:hover, .deconnexion a:hover, .admin a:hover, .panier i:hover, .informations:hover a, .inscription:hover a, .connexion:hover a, .deconnexion:hover a, .admin:hover a, .panier:hover {
-    color: #3095cb;
+    color: white;
 }
 
 .informations:hover, .inscription:hover, .connexion:hover, .deconnexion:hover, .admin:hover, .panier:hover {
@@ -91,7 +91,7 @@ body {
 .couleur {
     margin-left: auto;
     cursor: pointer;
-    background: linear-gradient(to right, #3095cb 50%, white 50%);
+    background: linear-gradient(to right, white 50%, #3095cb 50%);
 }
 
 .informations, .inscription {
@@ -141,12 +141,12 @@ body {
     height: 50px;
     margin: 75px auto 0px auto;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 1px solid white;
     font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: black;
-    background-color: #6bb4d6;
+    color: white;
+    background-color: black;
 }
 
 /*Réduit la taille de la police si la largeur de l'écran est inférieure à 628px*/
@@ -176,13 +176,14 @@ body {
     height: auto;
     margin: 5px auto 0px auto;
     padding: 1px 0px 20px 11px;
+    border: 1px solid black;
     border-radius: 10px;
     box-sizing: border-box;/*Pour faire en sorte que la largeur et hauteur définies ne tiennent pas en compte de border et padding*/
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 17px;
     color: black;
-    background-color: #e6ddc6;
+    background-color: white;
 }
 
 /*Pour que même si on réduit le zoom de la page tout soit centré au milieu et pas étiré (ici c'est min-width qui est utilisé pas max-width)*/
@@ -233,16 +234,16 @@ body {
 a[href="destinations.php"] {
     display: flex;
     justify-content: center;/*Pour centrer horizontalement*/
-    color: black;
+    color: white;
     border: 2px solid black;
     border-radius: 10px;
     padding: 7px;
-    background-color: #3095cb;
+    background-color: black;
 }
 
 a[href="destinations.php"]:hover {
-    color: #3095cb;
-    background-color: black;
+    color: white;
+    background-color: rgb(110, 110, 110);
 }
 
 /*DESTINATIONS.php*/
@@ -277,8 +278,8 @@ a[href="destinations.php"]:hover {
     height: 30px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: black;
-    background-color: #3095cb;
+    color: white;
+    background-color: black;
     outline: none;
 }
 
@@ -292,7 +293,7 @@ a[href="destinations.php"]:hover {
     font-weight: bold;
     font-size: 14px;
     color: black;
-    background-color: #3095cb;
+    background-color: white;
 }
 
 .group2 {
@@ -397,7 +398,7 @@ form {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 15px;
-    background-color: #e6ddc6;
+    background-color: white;
     outline: none;
 }
 
@@ -416,8 +417,8 @@ input[type="submit"] {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 20px;
-    color: black;
-    background-color: #6bb4d6;
+    color: white;
+    background-color: black;
     cursor: pointer;/*Pour que le bouton soit cliquable*/
 }
 
@@ -440,7 +441,7 @@ input[type="submit"] {
 
 .inscrivez-vous, .connectez-vous {
     font-size:12px;
-    color: #3095cb;
+    color: black;
 }
 
 .erreur, .erreur1 {
@@ -491,21 +492,21 @@ input[type="submit"] {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 15px;
-    background-color: #e6ddc6;
+    background-color: white;
 }
 
 .paragraphinformations a {
-    color: black;
+    color: white;
     height: auto;
 }
 
 .paragraphinformations a {
-    background-color: #6bb4d6;
+    background-color: black;
 }
 
 .paragraphinformations a:hover {
-    color: #6bb4d6;
-    background-color: black;
+    color: white;
+    background-color: rgb(110, 110, 110);
 }
 
 /*C'est le font awesome qui simule la modification d'un champ*/
@@ -515,11 +516,10 @@ input[type="submit"] {
     border: 2px solid black;
     border-radius: 10px;
     cursor: pointer;/*Pour qu'il soit cliquable*/
-    background-color: #3095cb;
 }
 
 .paragraphinformations i:hover, .paragraphinformations i:focus {
-    color: #3095cb;
+    color: white;
     background-color: black;
     transform: scale(1.2); /*Agrandire la case*/
 }
@@ -547,7 +547,7 @@ input[type="radio"] {
     border-radius: 5px;
     font-weight: bold;
     color: white;
-    background-color: #6bb4d6;
+    background-color: rgb(110, 110, 110);
     cursor: pointer;
 }
 
@@ -560,7 +560,7 @@ input[type="radio"] {
 
 input[type="radio"]:checked + .civiliteLabel {
     transform: scale(1.2);/*Agrandire la case*/
-    background-color: #3095cb;
+    background-color: black;
 }
 
 a[href="../PHP/suppression.php"] {
@@ -605,7 +605,7 @@ a[href="../PHP/suppression.php"]:hover {
 }
 
 .tableau {
-    background-color: #e6ddc6;
+    background-color: white;
     border : 2px solid;
     display: inline-block;
 }
@@ -686,7 +686,7 @@ a[href="../PHP/suppression.php"]:hover {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 13px;
-    background-color: #e6ddc6;
+    background-color: white;
 }
 
 .options {
@@ -754,8 +754,8 @@ a[href="../PHP/suppression.php"]:hover {
 
 .lienretour {
     text-decoration: none;
-    color: black;
-    background-color: #3095cb;
+    color: white;
+    background-color: black;
     padding: 5px;
     border: 2px solid black;
     border-radius: 10px;
@@ -780,11 +780,11 @@ button {
 .lienetapes {
     display: flex;
     justify-content: center;/*Pour centrer horizontalement*/
-    color: black;
+    color: white;
     border: 2px solid black;
     border-radius: 10px;
     padding: 7px;
-    background-color: #3095cb;
+    background-color: black;
 }
 
 .pageetapes {
@@ -804,7 +804,8 @@ button {
     border: 2px solid black;
     border-radius: 2px;
     margin-bottom: 0px;
-    background-color: #3095cb;
+    color: white;
+    background-color: black;
 }
 
 /*PANIER.php*/
@@ -852,11 +853,10 @@ button {
     border: 2px solid black;
     border-radius: 10px;
     cursor: pointer;/*Pour qu'il soit cliquable*/
-    background-color: #3095cb;
 }
 
 .pagepanier i:hover, .pagepanier i:focus {
-    color: #3095cb;
+    color: white;
     background-color: black;
     transform: scale(1.2); /*Agrandire la case*/
 }
