@@ -1,4 +1,6 @@
 function majDateRetour(){
+    var depart = document.getElementById("depart");
+    var retour = document.getElementById("retour");
     var dateDepart = new Date(depart.value);
     var dateRetour = new Date(retour.value);
     var dateMin = new Date(dateDepart);

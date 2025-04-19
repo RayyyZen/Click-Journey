@@ -22,7 +22,6 @@ function trouverCookie(nomcookie) {
 function appliquerCouleur(){
     var couleur = trouverCookie("couleur");
     var element = document.getElementById("css");
-    //J'associe a chaque couleur bleue une couleur de noir specifique pour pouvoir passer du noir au bleu tout en sachant quelle couleur bleue a ete utilisee pour chaque truc parce qu'ils n ont pas tous le meme bleu
     if (couleur == "bis") {
         element.href = "../CSS/stylebis.css";
     }

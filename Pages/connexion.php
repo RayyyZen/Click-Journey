@@ -63,6 +63,7 @@
             for(i=0;i<elements.length;i++){
                 if(elements[i].nextElementSibling != null && (elements[i].nextElementSibling.className == "pclass" || elements[i].nextElementSibling.className == "pclass1")){
                     elements[i].addEventListener("input",nbrCaracteres);
+                    //Pour que le nombre de caractères soit mit à jour à chaque changement d'input
                 }
             }
             window.addEventListener("load",nbrCaracteres);

@@ -22,8 +22,6 @@
             afficherPanier();
         ?>
 
-        
-
         <div class="section pageetapes">Récapitulatif</div>
 
         <div class="paragraph pageetapes">

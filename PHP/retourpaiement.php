@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-
     $i = 0;
     $voy = [];
     $totalmontant = 0;
@@ -10,40 +9,40 @@
         if($_SESSION['panier'.$i] == 1){
             $etapes = [
                 [
-                    "etapetitre" => $_SESSION['etape1' . $i],
-                    "hebergement" => $_SESSION['hebergementetape1' . $i],
-                    "repas" => $_SESSION['repas1' . $i],
-                    "activites" => $_SESSION['activites1' . $i]
+                    "etapetitre" => $_SESSION['etape1'.$i],
+                    "hebergement" => $_SESSION['hebergementetape1'.$i],
+                    "repas" => $_SESSION['repas1'.$i],
+                    "activites" => $_SESSION['activites1'.$i]
                 ],
                 [
-                    "etapetitre" => $_SESSION['etape2' . $i],
-                    "hebergement" => $_SESSION['hebergementetape2' . $i],
-                    "repas" => $_SESSION['repas2' . $i],
-                    "activites" => $_SESSION['activites2' . $i]
+                    "etapetitre" => $_SESSION['etape2'.$i],
+                    "hebergement" => $_SESSION['hebergementetape2'.$i],
+                    "repas" => $_SESSION['repas2'.$i],
+                    "activites" => $_SESSION['activites2'.$i]
                 ],
                 [
-                    "etapetitre" => $_SESSION['etape3' . $i],
-                    "hebergement" => $_SESSION['hebergementetape3' . $i],
-                    "repas" => $_SESSION['repas3' . $i],
-                    "activites" => $_SESSION['activites3' . $i]
+                    "etapetitre" => $_SESSION['etape3'.$i],
+                    "hebergement" => $_SESSION['hebergementetape3'.$i],
+                    "repas" => $_SESSION['repas3'.$i],
+                    "activites" => $_SESSION['activites3'.$i]
                 ]
             ];
         
             $voyage = [
-                "titre" => $_SESSION['titre' . $i],
-                "personnes" => $_SESSION['personnes' . $i],
-                "depart" => $_SESSION['depart' . $i],
-                "retour" => $_SESSION['retour' . $i],
-                "duree" => $_SESSION['duree' . $i],
-                "classe" => $_SESSION['classe' . $i],
-                "assurance" => $_SESSION['assurance' . $i],
-                "montant" => $_SESSION['montant' . $i],
+                "titre" => $_SESSION['titre'.$i],
+                "personnes" => $_SESSION['personnes'.$i],
+                "depart" => $_SESSION['depart'.$i],
+                "retour" => $_SESSION['retour'.$i],
+                "duree" => $_SESSION['duree'.$i],
+                "classe" => $_SESSION['classe'.$i],
+                "assurance" => $_SESSION['assurance'.$i],
+                "montant" => $_SESSION['montant'.$i],
                 "etapes" => $etapes,
             ];
         
             $voy[] = $voyage;
 
-            $totalmontant += $_SESSION['montant' . $i];
+            $totalmontant += $_SESSION['montant'.$i];
         }
         $i++;
     }
@@ -51,7 +50,7 @@
     $nouveau = [
         "status" => $_GET['status'],
         "transaction" => $_GET['transaction'],
-        "utilisateur" => $_SESSION['email'],
+        "utilisateur" => $_SESSION['numero'],
         "totalmontant" => $totalmontant,
         "voyage" => $voy,
     ];

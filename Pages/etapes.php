@@ -24,7 +24,7 @@
                 <div class="formulaire">
                     <label>Nombre de personnes :</label>
                     <?php
-                        $value=1;
+                        $value = 1;
                         if(isset($_GET['id']) && isset($_SESSION['personnes'.$_GET['id']])){
                             $value = $_SESSION['personnes'.$_GET['id']];
                         }
@@ -32,7 +32,7 @@
                     ?>
                     <label>Date de départ :</label>
                     <?php
-                        $value=date("Y-m-d");
+                        $value = date("Y-m-d");
                         if(isset($_GET['id']) && isset($_SESSION['depart'.$_GET['id']])){
                             $value = $_SESSION['depart'.$_GET['id']];
                         }
@@ -40,7 +40,7 @@
                     ?>
                     <label>Date de retour :</label>
                     <?php
-                        $value=date('Y-m-d', strtotime('+ 1 days'));
+                        $value = date('Y-m-d', strtotime('+ 1 days'));
                         if(isset($_GET['id']) && isset($_SESSION['retour'.$_GET['id']])){
                             $value = $_SESSION['retour'.$_GET['id']];
                         }
@@ -48,20 +48,14 @@
                     ?>
 
                     <script type="text/javascript">
-                        var depart = document.getElementById("depart");
-                        var retour = document.getElementById("retour");
                         majDateRetour();
+                        var depart = document.getElementById("depart");
                         depart.addEventListener('change', majDateRetour);
                         //On rappelle la fonction qui checke les dates dès qu'il y a un changement de date de depart
                         window.addEventListener('load', majDateRetour);
                         //On rappelle la fonction qui checke les dates dès qu'il y a un rechargement de la page
                     </script>
 
-                    <?php
-                        if(isset($_GET['message'])){
-                            echo '<i class="fa-solid fa-triangle-exclamation erreur"> '.$_GET['message'].'</i>';
-                        }
-                    ?>
                     <label>Classe du vol :</label>
                     <?php
                         if(isset($_GET['id']) && isset($_SESSION['classe'.$_GET['id']])){
@@ -120,14 +114,14 @@
                     <script type="text/javascript">
                         var select = document.querySelectorAll("select");
                         var i;
-                        function f(){
-                        for(i=0;i<select.length;i++){
-                            if(select[i].dataset.extra){
-                                select[i].value = select[i].dataset.extra;
+                        function remplissageChamps(){
+                            for(i=0;i<select.length;i++){
+                                if(select[i].dataset.extra){
+                                    select[i].value = select[i].dataset.extra;
+                                }
                             }
                         }
-                    }
-                        window.addEventListener("load", f);
+                        window.addEventListener("load", remplissageChamps);
                     </script>
 
                     <script type="text/javascript">
@@ -136,6 +130,7 @@
                         montant();
                         for(i=0;i<champs.length;i++){
                             champs[i].addEventListener("change", montant);
+                            //La fonction est appelée dès qu'il y a un changement dans un des champs
                         }
                         window.addEventListener("load", montant);
                     </script>

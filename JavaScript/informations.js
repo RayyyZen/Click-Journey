@@ -1,6 +1,7 @@
 function changement(id,idsauvegarder,idrestaurer,idbutton,idp){
     if(document.getElementById("buttoncivilite").hidden || document.getElementById("buttonnom").hidden || document.getElementById("buttonprenom").hidden || document.getElementById("buttonmobile").hidden){
         return ;
+        //Si un changement est déjà en cours rien ne se passe
     }
     
     var input = document.getElementById(id);
@@ -29,11 +30,22 @@ function restaurer(id,idsauvegarder,idrestaurer,idbutton,idp){
     restaurer.hidden = true;
     button.hidden = false;
     p.hidden = true;
+
+    var erreurnom = document.getElementById("erreurnom");
+    var erreurprenom = document.getElementById("erreurprenom");
+    var erreurmobile = document.getElementById("erreurmobile");
+    var erreurmail = document.getElementById("erreurmail");
+
+    if(erreurnom != null){ erreurnom.remove() ; }
+    if(erreurprenom != null){ erreurprenom.remove() ; }
+    if(erreurmobile != null){ erreurmobile.remove() ; }
+    if(erreurmail != null){ erreurmail.remove() ; }
 }
 
 function changementCivilite(){
     if(document.getElementById("buttoncivilite").hidden || document.getElementById("buttonnom").hidden || document.getElementById("buttonprenom").hidden || document.getElementById("buttonmobile").hidden){
         return ;
+        //Si un changement est déjà en cours rien ne se passe
     }
     
     var inputMonsieur = document.getElementById("monsieur");
@@ -76,16 +88,17 @@ function changementAdmin(numero){
     var button = document.querySelectorAll("button");
     var i;
     for(i=0;i<button.length;i++){
-        if(button[i].hidden && button[i].id.split('/')[0] == "button"){
+        if(button[i].hidden && button[i].id.split('_')[0] == "button"){
             return ;
+            //Si un changement est déjà en cours rien ne se passe
         }
     }
 
-    var civilite = document.getElementById("civilite/" + numero);
-    var nom = document.getElementById("nom/" + numero);
-    var prenom = document.getElementById("prenom/" + numero);
-    var email = document.getElementById("email/" + numero);
-    var mobile = document.getElementById("mobile/" + numero);
+    var civilite = document.getElementById("civilite_" + numero);
+    var nom = document.getElementById("nom_" + numero);
+    var prenom = document.getElementById("prenom_" + numero);
+    var email = document.getElementById("email_" + numero);
+    var mobile = document.getElementById("mobile_" + numero);
 
     civilite.disabled = false;
     nom.disabled = false;
@@ -93,11 +106,11 @@ function changementAdmin(numero){
     email.disabled = false;
     mobile.disabled = false;
 
-    var etoile = document.getElementById("etoile/" + numero);
-    var retrograder = document.getElementById("retrograder/" + numero);
-    var promouvoir = document.getElementById("promouvoir/" + numero);
-    var bannir = document.getElementById("bannir/" + numero);
-    var debannir = document.getElementById("debannir/" + numero);
+    var etoile = document.getElementById("etoile_" + numero);
+    var retrograder = document.getElementById("retrograder_" + numero);
+    var promouvoir = document.getElementById("promouvoir_" + numero);
+    var bannir = document.getElementById("bannir_" + numero);
+    var debannir = document.getElementById("debannir_" + numero);
 
     //J'utilise ca a la place de hidden = true car hidden marche pas sur les balises a
     if(etoile != null){ etoile.style.display = "none"; }
@@ -106,9 +119,9 @@ function changementAdmin(numero){
     if(bannir != null){ bannir.style.display = "none"; }
     if(debannir != null){ debannir.style.display = "none"; }
 
-    var sauvegarder = document.getElementById("sauvegarder/" + numero);
-    var restaurer = document.getElementById("restaurer/" + numero);
-    var button = document.getElementById("button/" + numero);
+    var sauvegarder = document.getElementById("sauvegarder_" + numero);
+    var restaurer = document.getElementById("restaurer_" + numero);
+    var button = document.getElementById("button_" + numero);
 
     sauvegarder.hidden = false;
     restaurer.hidden = false;
@@ -116,11 +129,11 @@ function changementAdmin(numero){
 }
 
 function restaurerAdmin(numero){
-    var civilite = document.getElementById("civilite/" + numero);
-    var nom = document.getElementById("nom/" + numero);
-    var prenom = document.getElementById("prenom/" + numero);
-    var email = document.getElementById("email/" + numero);
-    var mobile = document.getElementById("mobile/" + numero);
+    var civilite = document.getElementById("civilite_" + numero);
+    var nom = document.getElementById("nom_" + numero);
+    var prenom = document.getElementById("prenom_" + numero);
+    var email = document.getElementById("email_" + numero);
+    var mobile = document.getElementById("mobile_" + numero);
 
     civilite.disabled = true;
     nom.disabled = true;
@@ -134,11 +147,11 @@ function restaurerAdmin(numero){
     email.value = email.dataset.extra;
     mobile.value = mobile.dataset.extra;
 
-    var etoile = document.getElementById("etoile/" + numero);
-    var retrograder = document.getElementById("retrograder/" + numero);
-    var promouvoir = document.getElementById("promouvoir/" + numero);
-    var bannir = document.getElementById("bannir/" + numero);
-    var debannir = document.getElementById("debannir/" + numero);
+    var etoile = document.getElementById("etoile_" + numero);
+    var retrograder = document.getElementById("retrograder_" + numero);
+    var promouvoir = document.getElementById("promouvoir_" + numero);
+    var bannir = document.getElementById("bannir_" + numero);
+    var debannir = document.getElementById("debannir_" + numero);
 
     if(etoile != null){ etoile.style.display = "inline"; }
     if(retrograder != null){ retrograder.style.display = "inline"; }
@@ -146,9 +159,9 @@ function restaurerAdmin(numero){
     if(bannir != null){ bannir.style.display = "inline"; }
     if(debannir != null){ debannir.style.display = "inline"; }
 
-    var sauvegarder = document.getElementById("sauvegarder/" + numero);
-    var restaurer = document.getElementById("restaurer/" + numero);
-    var button = document.getElementById("button/" + numero);
+    var sauvegarder = document.getElementById("sauvegarder_" + numero);
+    var restaurer = document.getElementById("restaurer_" + numero);
+    var button = document.getElementById("button_" + numero);
 
     sauvegarder.hidden = true;
     restaurer.hidden = true;

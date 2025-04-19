@@ -3,14 +3,6 @@
     $datedepart = new DateTime($_POST['depart']);
     $dateretour = new DateTime($_POST['retour']);
     $duree = $datedepart->diff($dateretour);
-    if($datedepart >= $dateretour){
-        header("Location: ../Pages/etapes.php?nom=".$_GET['nom']."&message=Les dates sont incohérentes&depart=".$_POST['depart']."&retour=".$_POST['retour']."&personnes=".$_POST['personnes']);
-        exit(1);
-    }
-    else if($duree->days > 30){
-        header("Location: ../Pages/etapes.php?nom=".$_GET['nom']."&message=La durée du voyage ne doit pas excéder 30 jours&depart=".$_POST['depart']."&retour=".$_POST['retour']."&personnes=".$_POST['personnes']);
-        exit(1);
-    }
     
     $json = file_get_contents('../JSON/voyages.json');
     $tabvoyages = json_decode($json, true);
@@ -48,10 +40,12 @@
 
     while(isset($_SESSION['id'.$i])){
         $i++;
+        // On cherche le prochain numéro id à remplir
     }
 
     $_SESSION['id'.$i] = $i;
     $_SESSION['panier'.$i] = 0;
+    // Le = 0 veut dire que le voyage n'est pas encore ajouté au panier
     $_SESSION['titre'.$i] = $_GET['nom'];
     $_SESSION['personnes'.$i] = $_POST['personnes'];
     $_SESSION['depart'.$i] = $_POST['depart'];

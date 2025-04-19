@@ -70,19 +70,6 @@
                         ?>
                         <p class="pclass">0/20</p>
                     </div>
-                    
-                    <label for="mobile">Téléphone portable : </label>
-                    <div class="group5">
-                        <?php 
-                            if(isset($_GET['mobile'])){
-                                echo '<input type="tel" id="mobile" name="mobile" title="Entrez le numéro de téléphone portable de la personne" placeholder="0623456789" value="'.$_GET['mobile'].'" maxlength="10">';
-                            }
-                            else{
-                                echo '<input type="tel" id="mobile" name="mobile" title="Entrez le numéro de téléphone portable de la personne" placeholder="0623456789" maxlength="10">';
-                            }
-                        ?>
-                        <p class="pclass">0/10</p>
-                    </div>
 
                     <label for="email">Adresse mail : </label>
                     <div class="group5">
@@ -102,6 +89,19 @@
                             echo '<i class="fa-solid fa-triangle-exclamation erreur"> '.$_GET['message'].'</i>';
                         }
                     ?>
+                    
+                    <label for="mobile">Téléphone portable : </label>
+                    <div class="group5">
+                        <?php 
+                            if(isset($_GET['mobile'])){
+                                echo '<input type="tel" id="mobile" name="mobile" title="Entrez le numéro de téléphone portable de la personne" placeholder="0623456789" value="'.$_GET['mobile'].'" maxlength="10">';
+                            }
+                            else{
+                                echo '<input type="tel" id="mobile" name="mobile" title="Entrez le numéro de téléphone portable de la personne" placeholder="0623456789" maxlength="10">';
+                            }
+                        ?>
+                        <p class="pclass">0/10</p>
+                    </div>
 
                     <label for="mdp">Mot de passe : </label>
                     <div class="group5">
@@ -137,6 +137,7 @@
                 var p = elements[i].nextElementSibling;
                 if(p != null && (p.className == "pclass" || p.className == "pclass1")){
                     elements[i].addEventListener("input",nbrCaracteres);
+                    //Pour que le nombre de caractères soit mit à jour à chaque changement d'input
                 }
             }
             window.addEventListener("load",nbrCaracteres);

@@ -86,12 +86,13 @@
             for(i=0;i<elements.length;i++){
                 if(elements[i].nextElementSibling != null && (elements[i].nextElementSibling.className == "pclass" || elements[i].nextElementSibling.className == "pclass1")){
                     elements[i].addEventListener("input",nbrCaracteres);
+                    //Pour que le nombre de caractères soit mit à jour à chaque changement d'input
                 }
             }
             for(i=0;i<boutons.length;i++){
                 boutons[i].addEventListener("click",nbrCaracteres);
+                //Pour quand il y a clic sur le bouton qui annule les modifs, le nombre de caracteres est mit à jour
             }
-            //Pour quand il y a clic sur le bouton qui annule les modifs, le nombre de caracteres est mit à jour
             window.addEventListener("load",nbrCaracteres);
         </script>
 

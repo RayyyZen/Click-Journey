@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+    require_once '../PHP/accespages.php';
+    accesPages("voyage.php","","");
+?>
 
 <!DOCTYPE html>
 

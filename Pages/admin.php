@@ -71,14 +71,16 @@
         </div>
 
         <script type="text/javascript">
-            function f(){
+            function civilite(){
                 var civilite = document.getElementsByName("civilite");
                 var i;
                 for(i=0;i<civilite.length;i++){
                     civilite[i].value = civilite[i].dataset.extra;
                 }
             }
-            window.addEventListener("load",f);
+            window.addEventListener("load",civilite);
+            //On fait ca pour civilité parce que civilite est un select pas un input
         </script>
+        
     </body>
 </html>

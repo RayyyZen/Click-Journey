@@ -32,6 +32,7 @@
                 if(isset($_GET['continent'])){
                     echo '<input type="hidden" id="continentGet" value="'.$_GET['continent'].'">';
                 }
+                //Ces hidden inputs servent à communiquer leur valeurs au javascript
             ?>
 
             <form action="../PHP/formulairerecherche.php" method="post" class="recherchedestinations">
@@ -118,9 +119,8 @@
             </div>
 
             <script type="text/javascript">
-                var element = document.getElementById("trier");
-                var elementvoyages = document.getElementById("voyages");
                 triVoyages();
+                var element = document.getElementById("trier");
                 element.addEventListener('change', triVoyages);
                 window.addEventListener('load', triVoyages);
             </script>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $email = $_SESSION['email'];
+    $numero = $_SESSION['numero'];
 
     $json = file_get_contents('../JSON/utilisateurs.json');
     $utilisateurs = json_decode($json, true);
@@ -9,7 +9,7 @@
         $utilisateurs = [];
     }
     foreach($utilisateurs as $key => $util){
-        if($util['email'] == $email){
+        if($util['numero'] == $numero){
             unset($utilisateurs[$key]);
             break;
         }

@@ -9,7 +9,7 @@
 
     //Le &$util à la place de $util c'est parce que dans le foreach $util est une copie donc si on le change $utilisateurs ne change pas alors que &$util le fait changer
     foreach($utilisateurs as &$util){
-        if($util['email'] == $_GET['email']){
+        if($util['numero'] == $_GET['numero']){
             switch($_GET['action']){
                 case "retrograder" :
                     $util['statut'] = "Utilisateur";

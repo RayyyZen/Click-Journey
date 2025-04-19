@@ -17,7 +17,7 @@
     }
 
     $verifmail = 1;
-    $i=0;
+    $i = 0;
     foreach($utilisateurs as $util){
         if($util['email'] == $email){
             $verifmail = 0;

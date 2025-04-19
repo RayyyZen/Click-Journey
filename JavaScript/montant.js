@@ -8,7 +8,6 @@ function montant(){
         var depart = document.getElementById("depart");
         var retour = document.getElementById("retour");
         
-
         var hebergementetape1 = document.getElementById("hebergementetape1");
         var hebergementetape2 = document.getElementById("hebergementetape2");
         var hebergementetape3 = document.getElementById("hebergementetape3");
@@ -35,16 +34,16 @@ function montant(){
         var activ = (activites[activites1.value] + activites[activites2.value] + activites[activites3.value])/3;
 
         var elementprix = document.getElementById("prix");
-        var prix = elementprix.value;
+        var prix = parseInt(elementprix.value);
 
         var elementduree = document.getElementById("duree");
-        var duree = elementduree.value;
+        var duree = parseInt(elementduree.value);
 
         prix = prix/duree;
         prix -= hebergement["hotel3"] + classe["economique"];
 
-        var montant = (prix + heber + rep + activ + classe[elementclasse.value] + assurance[elementassurance.value]) * jours * elementpersonnes.value;
+        var montant = (prix + heber + rep + activ + classe[elementclasse.value] + assurance[elementassurance.value]) * jours * parseInt(elementpersonnes.value);
 
         var confirmer = document.getElementById("save");
-        confirmer.value = "Confirmer " + montant + " €";
+        confirmer.value = "Confirmer " + montant + "€";
     }

@@ -1,4 +1,6 @@
 function triVoyages(){
+    var element = document.getElementById("trier");
+    var elementvoyages = document.getElementById("voyages");
     var i,j,chaine1,chaine2,prix1,prix2,duree1,duree2;
     var voyages = Array.from(elementvoyages.children);
     if(element == null || element.value == "trier" || voyages == null){
