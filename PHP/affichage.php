@@ -28,6 +28,7 @@
         else if($page == "Informations" || $page == "Admin"){
             echo '<script src="../JavaScript/formulaire.js" type="text/javascript"></script>';
             echo '<script src="../JavaScript/informations.js" type="text/javascript"></script>';
+            echo '<script src="../JavaScript/asynchrone.js" type="text/javascript"></script>';
         }
         echo '</head>';
     }
@@ -98,8 +99,10 @@
         echo '    <label for="madame" class="civiliteLabel">Madame</label>';
         echo '    <div class="changerChamps">';
         echo '        <button type="button" id="buttoncivilite" onclick="changementCivilite()"><i class="fa-solid fa-pen-nib"></i></button>';
-        echo '        <button hidden type="submit" id="sauvegardercivilite"><i class="fa-solid fa-check"></i></button>';
+        echo '        <button hidden type="button" id="sauvegardercivilite" onclick="soumettre(\'civilite\',\'sauvegardercivilite\',\'restaurercivilite\',\'buttoncivilite\',\'pcivilite\',\'chargementcivilite\')"><i class="fa-solid fa-check"></i></button>';
+        //J'utilise \' à la place de " parce que si je les mets il y a un probleme de syntaxe vu qu'il y a des " entre des "
         echo '        <button hidden type="button" id="restaurercivilite" onclick="restaurerCivilite()"><i class="fa-solid fa-xmark"></i></button>';
+        echo '        <button hidden type="button" id="chargementcivilite"><i class="fas fa-spinner fa-spin"></i></button>';
         echo '    </div>';
         echo '</div>';
     }
@@ -128,7 +131,8 @@
                 echo '<tr>';
                 echo '    <td>';
                 if($_SESSION['numero'] == $util['numero']){
-                    echo '        <a id="etoile_'.$util['numero'].'" href="../PHP/boutonadmin.php?action=etoile&numero='.$util['numero'].'" class="fa-solid fa-star boutonadmin"></a>';
+                    //echo '        <a id="etoile_'.$util['numero'].'" href="../PHP/boutonadmin.php?action=etoile&numero='.$util['numero'].'" class="fa-solid fa-star boutonadmin"></a>';
+                    echo '        <button type="button" id="etoile_'.$util['numero'].'"><i class="fa-solid fa-star boutonadmin"></i></button>';
                 }
                 if($tableau == "Admin" && $_SESSION['numero'] != $util['numero']){
                     echo '        <a id="retrograder_'.$util['numero'].'" href="../PHP/boutonadmin.php?action=retrograder&numero='.$util['numero'].'" class="fa-solid fa-circle-user boutonadmin"></a>';
@@ -144,7 +148,7 @@
                 }
 
                 echo '        <button type="button" id="button_'.$util['numero'].'" onclick="changementAdmin('.$util['numero'].')"><i class="fa-regular fa-pen-to-square"></i></button>';
-                echo '        <button hidden type="submit" id="sauvegarder_'.$util['numero'].'"><i class="fa-solid fa-check"></i></button>';
+                echo '        <button hidden type="button" id="sauvegarder_'.$util['numero'].'" onclick="soumettreAdmin()"><i class="fa-solid fa-check"></i></button>';
                 echo '        <button hidden type="button" id="restaurer_'.$util['numero'].'" onclick="restaurerAdmin('.$util['numero'].')"><i class="fa-solid fa-xmark"></i></button>';
                 echo '        <button hidden type="button" id="chargement_'.$util['numero'].'"><i class="fas fa-spinner fa-spin"></i></button>';
                 echo '    </td>';

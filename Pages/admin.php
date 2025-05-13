@@ -22,7 +22,7 @@
 
         <div class ="paragraph pageadmin">
 
-            <form action="../PHP/formulaireadmin.php" method="POST" class="formulaireadmin" onsubmit="return formulaireAdmin();">
+            <form action="../PHP/formulaireadmin.php" method="POST" class="formulaireadmin" id="formulaireadmin">
 
                 <h3 class="titreadmins">Liste des Administrateurs</h3>
 
@@ -32,11 +32,7 @@
                     </table>
                 </div>
 
-                <?php
-                    if(isset($_GET['statut']) && $_GET['statut'] == "Admin"){
-                        echo '<p class="fa-solid fa-triangle-exclamation erreur1"> '.$_GET['message'].'</p>';
-                    }
-                ?>
+                <div hidden id="erreurmailexistantAdmin"> <p class="fa-solid fa-triangle-exclamation erreurmail"> Mail déjà existant</p> </div>
 
                 <h3 class="titreutilisateurs">Liste des Utilisateurs</h3>
 
@@ -46,11 +42,7 @@
                     </table>
                 </div>
 
-                <?php
-                    if(isset($_GET['statut']) && $_GET['statut'] == "Utilisateur"){
-                        echo '<p class="fa-solid fa-triangle-exclamation erreur1"> '.$_GET['message'].'</p>';
-                    }
-                ?>
+                <div hidden id="erreurmailexistantUtilisateur"> <p class="fa-solid fa-triangle-exclamation erreurmail"> Mail déjà existant</p> </div>
 
                 <h3 class="titrebannis">Liste des Bannis</h3>
 
@@ -60,11 +52,7 @@
                     </table>
                 </div>
 
-                <?php
-                    if(isset($_GET['statut']) && $_GET['statut'] == "Banni"){
-                        echo '<p class="fa-solid fa-triangle-exclamation erreur1"> '.$_GET['message'].'</p>';
-                    }
-                ?>
+                <div hidden id="erreurmailexistantBanni"> <p class="fa-solid fa-triangle-exclamation erreurmail"> Mail déjà existant</p> </div>
 
             </form>
 
@@ -80,6 +68,12 @@
             }
             window.addEventListener("load",civilite);
             //On fait ca pour civilité parce que civilite est un select pas un input
+        </script>
+
+        <script type="text/javascript">
+            document.getElementById("formulaireadmin").addEventListener("submit", function(e) {
+                e.preventDefault(); //Pour éviter que la page se recharge à l'appui de la touche "ENTREE"
+            });
         </script>
         
     </body>
