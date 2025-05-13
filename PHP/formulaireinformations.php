@@ -1,6 +1,8 @@
 <?php
     session_start();
-
+    
+    sleep(3);
+    
     $civilite = $_POST['civilite'];
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
@@ -12,6 +14,13 @@
 
     if(!is_array($utilisateurs)){
         $utilisateurs = [];
+    }
+
+    foreach($utilisateurs as &$util){
+        if(($util['numero'] != $_SESSION['numero']) && ($util['email'] == $email)){
+            echo "0";
+            exit(0);
+        }
     }
 
     foreach($utilisateurs as &$util){
@@ -34,5 +43,5 @@
     $_SESSION['email'] = $email;
     $_SESSION['mobile'] = $mobile;
 
-    header("Location: ../Pages/informations.php");
+    echo "1";
 ?>

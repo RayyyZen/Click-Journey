@@ -443,18 +443,30 @@ input[type="submit"] {
     color: #3095cb;
 }
 
-.erreur, .erreur1 {
+.erreur, .erreur1, .erreurmail {
     font-size:9px;
     text-align: center;
     color: #f58d8d;
 }
 
-.erreur {
+.erreur, .erreurmail {
     margin-top: -19px;
+}
+
+.erreurmail {
+    display: none;
 }
 
 .erreur1 {
     margin: 0px auto 0px auto;
+}
+
+#erreurmailexistant {
+    margin-top: -25px;
+}
+
+#erreurmailexistantAdmin, #erreurmailexistantUtilisateur, #erreurmailexistantBanni {
+    margin: 0px auto 0px auto;/*Pour centrer horizontalement*/
 }
 
 /*INFORMATIONS.php*/

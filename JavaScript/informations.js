@@ -1,5 +1,5 @@
 function changement(id,idsauvegarder,idrestaurer,idbutton,idp){
-    if(document.getElementById("buttoncivilite").hidden || document.getElementById("buttonnom").hidden || document.getElementById("buttonprenom").hidden || document.getElementById("buttonmobile").hidden){
+    if(document.getElementById("buttoncivilite").hidden || document.getElementById("buttonnom").hidden || document.getElementById("buttonprenom").hidden || document.getElementById("buttonemail").hidden || document.getElementById("buttonmobile").hidden){
         return ;
         //Si un changement est déjà en cours rien ne se passe
     }
@@ -9,6 +9,7 @@ function changement(id,idsauvegarder,idrestaurer,idbutton,idp){
     var restaurer = document.getElementById(idrestaurer);
     var button = document.getElementById(idbutton);
     var p = document.getElementById(idp);
+    document.getElementById("erreurmailexistant").hidden = true;
 
     input.disabled = false;
     sauvegarder.hidden = false;
@@ -126,6 +127,10 @@ function changementAdmin(numero){
     sauvegarder.hidden = false;
     restaurer.hidden = false;
     button.hidden = true;
+
+    document.getElementById("erreurmailexistantAdmin").hidden = true;
+    document.getElementById("erreurmailexistantUtilisateur").hidden = true;
+    document.getElementById("erreurmailexistantBanni").hidden = true;
 }
 
 function restaurerAdmin(numero){

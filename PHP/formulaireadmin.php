@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    sleep(3);
+
     $numero = $_POST['numero'];
     $civilite = $_POST['civilite'];
     $nom = $_POST['nom'];
@@ -27,7 +29,8 @@
     }
 
     if($verifmail == 0){
-        header("Location: ../Pages/admin.php?message=Mail déjà existant&statut=".$statut);
+        echo ($statut);
+        //Je echo le statut pour avoir sa valeur en js avec xhr.responseText afin de savoir sous quel tableau écrire "Mail déjà existant"
         exit(0);
     }
 
@@ -53,5 +56,5 @@
         $_SESSION['mobile'] = $mobile;
     }
 
-    header("Location: ../Pages/admin.php");
+    echo "1";
 ?>
