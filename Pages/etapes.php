@@ -21,7 +21,7 @@
 
         <div class="paragraph pageetapes">
         <?php echo '<form action="../PHP/formulaireetapes.php?nom='.$_GET['nom'].'" method="POST">'; ?>
-                <div class="formulaire">
+                <div id="etapesformulaire" class="formulaire">
                     <label>Nombre de personnes :</label>
                     <?php
                         $value = 1;
@@ -70,8 +70,6 @@
                         <option value="buisiness">Buisiness</option>
                     </select>
 
-                    
-                
                     <label>Assurance voyage :</label>
                     <?php
                         if(isset($_GET['id']) && isset($_SESSION['assurance'.$_GET['id']])){
@@ -85,12 +83,7 @@
                         <option value="oui">Oui</option>
                     </select>
                     <?php 
-                        if(isset($_GET['id'])){
-                            afficheEtapes($_GET['nom'],$_GET['id']);
-                        }
-                        else{
-                            afficheEtapes($_GET['nom'],"");
-                        }
+                    
                         $json = file_get_contents('../JSON/voyages.json');
                         $tabvoyages = json_decode($json, true);
 
@@ -108,7 +101,10 @@
                         echo '<input type="hidden" id="prix" value="'.$prix.'">';
                         $duree = $voyage['duree'];
                         echo '<input type="hidden" id="duree" value="'.$duree.'">';
+
+                        echo '<input hidden type="text" name="montant" id="idmontant" value="'.$prix.'">';
                     ?>
+
                     <input type="submit" id='save' name="save" title="Engistrer les etapes" value="Confirmer" required>
 
                     <script type="text/javascript">
@@ -133,6 +129,19 @@
                             //La fonction est appelée dès qu'il y a un changement dans un des champs
                         }
                         window.addEventListener("load", montant);
+                    </script>
+
+                    <script type="text/javascript">
+                        <?php
+                            if(isset($_GET['id'])){
+                                echo 'setInterval(() => afficheEtapes("'.$_GET['nom'].'",'.$_GET['id'].'), 5000);';
+                                echo 'window.addEventListener("load", afficheEtapes("'.$_GET['nom'].'",'.$_GET['id'].'));';
+                            }
+                            else{
+                                echo 'setInterval(() => afficheEtapes("'.$_GET['nom'].'",""), 5000);';
+                                echo 'window.addEventListener("load", afficheEtapes("'.$_GET['nom'].'",""));';
+                            }
+                        ?>
                     </script>
                 </div>
             </form>

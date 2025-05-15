@@ -114,11 +114,11 @@ function changementAdmin(numero){
     var debannir = document.getElementById("debannir_" + numero);
 
     //J'utilise ca a la place de hidden = true car hidden marche pas sur les balises a
-    if(etoile != null){ etoile.style.display = "none"; }
-    if(retrograder != null){ retrograder.style.display = "none"; }
-    if(promouvoir != null){ promouvoir.style.display = "none"; }
-    if(bannir != null){ bannir.style.display = "none"; }
-    if(debannir != null){ debannir.style.display = "none"; }
+    if(etoile.dataset.extra == "1"){ etoile.hidden = true; }
+    if(retrograder.dataset.extra == "1"){ retrograder.hidden = true; }
+    if(promouvoir.dataset.extra == "1"){ promouvoir.hidden = true; }
+    if(bannir.dataset.extra == "1"){ bannir.hidden = true; }
+    if(debannir.dataset.extra == "1"){ debannir.hidden = true; }
 
     var sauvegarder = document.getElementById("sauvegarder_" + numero);
     var restaurer = document.getElementById("restaurer_" + numero);
@@ -131,6 +131,16 @@ function changementAdmin(numero){
     document.getElementById("erreurmailexistantAdmin").hidden = true;
     document.getElementById("erreurmailexistantUtilisateur").hidden = true;
     document.getElementById("erreurmailexistantBanni").hidden = true;
+
+    var erreurnom = document.getElementById("erreurnom");
+    var erreurprenom = document.getElementById("erreurprenom");
+    var erreurmobile = document.getElementById("erreurmobile");
+    var erreurmail = document.getElementById("erreurmail");
+
+    if(erreurnom != null){ erreurnom.remove() ; }
+    if(erreurprenom != null){ erreurprenom.remove() ; }
+    if(erreurmobile != null){ erreurmobile.remove() ; }
+    if(erreurmail != null){ erreurmail.remove() ; }
 }
 
 function restaurerAdmin(numero){
@@ -158,11 +168,11 @@ function restaurerAdmin(numero){
     var bannir = document.getElementById("bannir_" + numero);
     var debannir = document.getElementById("debannir_" + numero);
 
-    if(etoile != null){ etoile.style.display = "inline"; }
-    if(retrograder != null){ retrograder.style.display = "inline"; }
-    if(promouvoir != null){ promouvoir.style.display = "inline"; }
-    if(bannir != null){ bannir.style.display = "inline"; }
-    if(debannir != null){ debannir.style.display = "inline"; }
+    if(etoile.dataset.extra == "1"){ etoile.hidden = false; }
+    if(retrograder.dataset.extra == "1"){ retrograder.hidden = false; }
+    if(promouvoir.dataset.extra == "1"){ promouvoir.hidden = false; }
+    if(bannir.dataset.extra == "1"){ bannir.hidden = false; }
+    if(debannir.dataset.extra == "1"){ debannir.hidden = false; }
 
     var sauvegarder = document.getElementById("sauvegarder_" + numero);
     var restaurer = document.getElementById("restaurer_" + numero);

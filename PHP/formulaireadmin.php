@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    sleep(3);
+    sleep(2);
 
     $numero = $_POST['numero'];
     $civilite = $_POST['civilite'];

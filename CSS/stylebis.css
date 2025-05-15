@@ -376,7 +376,7 @@ form {
     width: 90%;
 }
 
-.formulaire {
+.formulaire, .etape, .etapeCache {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -386,6 +386,10 @@ form {
     text-align: center;
     margin-top: 10px;
     font-size: 20px;
+}
+
+.etapeCache {
+    display: none;
 }
 
 .formulaire input, .formulaire select {
@@ -699,6 +703,11 @@ a[href="../PHP/suppression.php"]:hover {
     font-weight: bold;
     font-size: 13px;
     background-color: white;
+}
+
+#utilisateur button, #vip button, #bannis button {
+    margin: 1px 0px 1px 0px;
+    padding: 0px;
 }
 
 .options {

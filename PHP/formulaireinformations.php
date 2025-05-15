@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    sleep(3);
+    sleep(2);
     
     $civilite = $_POST['civilite'];
     $nom = $_POST['nom'];

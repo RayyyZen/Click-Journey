@@ -4,29 +4,21 @@
     $i = 0;
     $voy = [];
     $totalmontant = 0;
+    $j = 1;
 
     while(isset($_SESSION['panier'.$i])) {
         if($_SESSION['panier'.$i] == 1){
-            $etapes = [
+            $etapes = [];
+            while(isset($_SESSION['hebergementetape'.$j.$i])){
+                $etapes [] = 
                 [
-                    "etapetitre" => $_SESSION['etape1'.$i],
-                    "hebergement" => $_SESSION['hebergementetape1'.$i],
-                    "repas" => $_SESSION['repas1'.$i],
-                    "activites" => $_SESSION['activites1'.$i]
-                ],
-                [
-                    "etapetitre" => $_SESSION['etape2'.$i],
-                    "hebergement" => $_SESSION['hebergementetape2'.$i],
-                    "repas" => $_SESSION['repas2'.$i],
-                    "activites" => $_SESSION['activites2'.$i]
-                ],
-                [
-                    "etapetitre" => $_SESSION['etape3'.$i],
-                    "hebergement" => $_SESSION['hebergementetape3'.$i],
-                    "repas" => $_SESSION['repas3'.$i],
-                    "activites" => $_SESSION['activites3'.$i]
-                ]
-            ];
+                    "etapetitre" => $_SESSION['etape'.$j.$i],
+                    "hebergement" => $_SESSION['hebergementetape'.$j.$i],
+                    "repas" => $_SESSION['repas'.$j.$i],
+                    "activites" => $_SESSION['activites'.$j.$i]
+                ];
+                $j++;
+            }
         
             $voyage = [
                 "titre" => $_SESSION['titre'.$i],
@@ -85,11 +77,14 @@
         unset($_SESSION['duree'.$id]);
         unset($_SESSION['montant'.$id]);
 
-        for($i=1;$i<=3;$i++){
+        $i=1;
+        while(isset($_SESSION['hebergementetape'.$i.$id])){
             unset($_SESSION['hebergementetape'.$i.$id]);
             unset($_SESSION['repas'.$i.$id]);
             unset($_SESSION['activites'.$i.$id]);
+            $i++;
         }
+
         $id++;
     }
     header("Location: ../Pages/informations.php");

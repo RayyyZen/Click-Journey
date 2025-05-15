@@ -210,5 +210,176 @@
                 ]
             }
         ]
+    },
+    {
+        "status": "accepted",
+        "transaction": "6824f0ff2e40d",
+        "utilisateur": "0",
+        "totalmontant": 212.67,
+        "voyage": [
+            {
+                "titre": "La jungle luxuriante de Kashyyyk",
+                "personnes": "1",
+                "depart": "2025-05-14",
+                "retour": "2025-05-15",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 212.67,
+                "etapes": [
+                    {
+                        "etapetitre": "Les collines de Guilin",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "Disneyland Hong-Kong",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "Chishui Waterfall",
+                        "hebergement": "hotel3",
+                        "repas": "allinclusive",
+                        "activites": "non"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "status": "accepted",
+        "transaction": "6825d4b38ba78",
+        "utilisateur": "0",
+        "totalmontant": 160,
+        "voyage": [
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-15",
+                "retour": "2025-05-16",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 160,
+                "etapes": [
+                    {
+                        "etapetitre": null,
+                        "hebergement": null,
+                        "repas": null,
+                        "activites": null
+                    },
+                    {
+                        "etapetitre": null,
+                        "hebergement": null,
+                        "repas": null,
+                        "activites": null
+                    },
+                    {
+                        "etapetitre": null,
+                        "hebergement": null,
+                        "repas": null,
+                        "activites": null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "status": "accepted",
+        "transaction": "6825d6aaaf9c4",
+        "utilisateur": "0",
+        "totalmontant": 160,
+        "voyage": [
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-15",
+                "retour": "2025-05-16",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 160,
+                "etapes": [
+                    {
+                        "etapetitre": "Ksar Ouled Soltane",
+                        "hebergement": null,
+                        "repas": null,
+                        "activites": null
+                    },
+                    {
+                        "etapetitre": "la Cantina de Chalmun",
+                        "hebergement": null,
+                        "repas": null,
+                        "activites": null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "status": "accepted",
+        "transaction": "6825d713ee094",
+        "utilisateur": "0",
+        "totalmontant": 160,
+        "voyage": [
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-15",
+                "retour": "2025-05-16",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 160,
+                "etapes": []
+            }
+        ]
+    },
+    {
+        "status": "accepted",
+        "transaction": "6825d79b8faad",
+        "utilisateur": "0",
+        "totalmontant": 172.5,
+        "voyage": [
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-15",
+                "retour": "2025-05-16",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 172.5,
+                "etapes": [
+                    {
+                        "etapetitre": "Ksar Ouled Soltane",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "l'ile de Djerba",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "la Cantina de Chalmun",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "AA",
+                        "hebergement": "hotel3",
+                        "repas": "allinclusive",
+                        "activites": "non"
+                    }
+                ]
+            }
+        ]
     }
 ]

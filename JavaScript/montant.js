@@ -1,49 +1,126 @@
 function montant(){
-        var classe = {"economique" : 10, "premium" : 20, "buisiness" : 30};
-        var hebergement = {"hotel3" : 10, "hotel4" : 20, "hotel5" : 30, "appartement" : 20, "villa" : 30};
-        var assurance = {"non" : 0, "oui" : 40};
-        var repas = {"aucun" : 0, "petitdejeuner" : 20, "allinclusive" : 50};
-        var activites = {"non" : 0, "oui" : 40};
+    var classe = {"economique" : 10, "premium" : 20, "buisiness" : 30};
+    var hebergement = {"hotel3" : 10, "hotel4" : 20, "hotel5" : 30, "appartement" : 20, "villa" : 30};
+    var assurance = {"non" : 0, "oui" : 40};
+    var repas = {"aucun" : 0, "petitdejeuner" : 20, "allinclusive" : 50};
+    var activites = {"non" : 0, "oui" : 40};
 
-        var depart = document.getElementById("depart");
-        var retour = document.getElementById("retour");
-        
-        var hebergementetape1 = document.getElementById("hebergementetape1");
-        var hebergementetape2 = document.getElementById("hebergementetape2");
-        var hebergementetape3 = document.getElementById("hebergementetape3");
+    var depart = document.getElementById("depart");
+    var retour = document.getElementById("retour");
 
-        var repas1 = document.getElementById("repas1");
-        var repas2 = document.getElementById("repas2");
-        var repas3 = document.getElementById("repas3");
+    var elementclasse = document.getElementById("classe");
+    var elementassurance = document.getElementById("assurance");
+    var elementpersonnes = document.getElementById("personnes");
 
-        var activites1 = document.getElementById("activites1");
-        var activites2 = document.getElementById("activites2");
-        var activites3 = document.getElementById("activites3");
+    var dateDepart = new Date(depart.value);
+    var dateRetour = new Date(retour.value);
 
-        var elementclasse = document.getElementById("classe");
-        var elementassurance = document.getElementById("assurance");
-        var elementpersonnes = document.getElementById("personnes");
+    var jours = Math.floor((dateRetour - dateDepart) / (1000*60*60*24));
+    var nbrElements=1,heber=0,rep=0,activ=0;
 
-        var dateDepart = new Date(depart.value);
-        var dateRetour = new Date(retour.value);
-
-        var jours = Math.floor((dateRetour - dateDepart) / (1000*60*60*24));
-
-        var heber = (hebergement[hebergementetape1.value] + hebergement[hebergementetape2.value] + hebergement[hebergementetape3.value])/3;
-        var rep = (repas[repas1.value] + repas[repas2.value] + repas[repas3.value])/3;
-        var activ = (activites[activites1.value] + activites[activites2.value] + activites[activites3.value])/3;
-
-        var elementprix = document.getElementById("prix");
-        var prix = parseInt(elementprix.value);
-
-        var elementduree = document.getElementById("duree");
-        var duree = parseInt(elementduree.value);
-
-        prix = prix/duree;
-        prix -= hebergement["hotel3"] + classe["economique"];
-
-        var montant = (prix + heber + rep + activ + classe[elementclasse.value] + assurance[elementassurance.value]) * jours * parseInt(elementpersonnes.value);
-
-        var confirmer = document.getElementById("save");
-        confirmer.value = "Confirmer " + montant + "€";
+    while(document.getElementById("hebergementetape"+nbrElements) != null){
+        heber += hebergement[document.getElementById("hebergementetape"+nbrElements).value];
+        rep += repas[document.getElementById("repas"+nbrElements).value];
+        activ += activites[document.getElementById("activites"+nbrElements).value];
+        nbrElements++;
     }
+    nbrElements--;
+    if(nbrElements == 0){
+        nbrElements = 1;
+    }
+    heber = heber / nbrElements;
+    rep = rep / nbrElements;
+    activites = activites / nbrElements;
+
+    var elementprix = document.getElementById("prix");
+    prix = parseInt(elementprix.value);
+
+    var elementduree = document.getElementById("duree");
+    var duree = parseInt(elementduree.value);
+
+    prix = prix/duree;
+    if(document.getElementById("hebergementetape"+nbrElements) != null){
+        prix -= hebergement["hotel3"];
+    }
+    prix -= classe["economique"];
+
+    var montant = (prix + heber + rep + activ + classe[elementclasse.value] + assurance[elementassurance.value]) * jours * parseInt(elementpersonnes.value);
+    montant = parseFloat(montant.toFixed(2));
+    //Pour ne prendre que les deux premiers chiffres après la virgule
+
+    var confirmer = document.getElementById("save");
+    confirmer.value = "Confirmer " + montant + "€";
+    var idmontant = document.getElementById("idmontant");
+    idmontant.value = montant;
+}
+
+function afficheEtapes(nom,id){
+    if(window.XMLHttpRequest){
+        var xhr = new XMLHttpRequest();
+    }
+    else{
+        var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+            if(xhr.status == 200){
+                var parent = document.createElement("div");
+                parent.innerHTML = xhr.responseText;
+                var enfants = parent.children;
+                var submit = document.getElementById("save");
+                var etapes = document.getElementsByName("etape");
+                var i,clone;
+                var enfantstaille = enfants.length, etapestaille = etapes.length;
+                if(enfantstaille <= etapestaille){
+                    for(i=0;i<etapestaille;i++){
+                        if(i<enfantstaille){
+                            etapes[i].querySelector("p").textContent = enfants[i].querySelector("p").textContent;
+                        }
+                        else{
+                            etapes[i].remove();
+                        }
+                    }
+                }
+                else{
+                    for(i=0;i<enfantstaille;i++){
+                        if(i<etapestaille){
+                            etapes[i].querySelector("p").textContent = enfants[i].querySelector("p").textContent;
+                        }
+                        else{
+                            clone = enfants[i].cloneNode(true);
+                            document.getElementById("etapesformulaire").insertBefore(clone,submit);
+                        }
+                    }
+                }
+                var select = document.querySelectorAll("select");
+                var i;
+                function remplissageChamps(){
+                    for(i=0;i<select.length;i++){
+                        if(select[i].dataset.extra){
+                            select[i].value = select[i].dataset.extra;
+                        }
+                    }
+                    montant();
+                }
+                window.addEventListener("load", remplissageChamps);
+
+                var champs = document.querySelectorAll("input, select");
+                var i;
+                for(i=0;i<champs.length;i++){
+                    champs[i].addEventListener("change", montant);
+                    //La fonction est appelée dès qu'il y a un changement dans un des champs
+                }
+                window.addEventListener("load", montant);
+
+                montant();
+            }
+        }
+    }
+
+    xhr.open("POST","../PHP/afficheetapes.php",true);
+    var chaine = "nom="+nom+"&id="+id;
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    //Afin de pouvoir envoyer les données en Post sous la forme "a=1&b=2...."
+    xhr.send(chaine);
+}

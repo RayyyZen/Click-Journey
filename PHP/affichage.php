@@ -116,7 +116,7 @@
             $utilisateurs = [];
         }
 
-        echo '<tr>';
+        echo '<tr id="ligne_'.$tableau.'">';
         echo '    <th></th>';
         echo '    <th>Numéro</th>';
         echo '    <th>Civilité</th>';
@@ -128,23 +128,41 @@
 
         foreach($utilisateurs as $util){
             if($util['statut'] == $tableau){
-                echo '<tr>';
+                echo '<tr data-extra="'.$util['numero'].'">';
                 echo '    <td>';
                 if($_SESSION['numero'] == $util['numero']){
-                    //echo '        <a id="etoile_'.$util['numero'].'" href="../PHP/boutonadmin.php?action=etoile&numero='.$util['numero'].'" class="fa-solid fa-star boutonadmin"></a>';
-                    echo '        <button type="button" id="etoile_'.$util['numero'].'"><i class="fa-solid fa-star boutonadmin"></i></button>';
+                    echo '        <button type="button" id="etoile_'.$util['numero'].'" data-extra="1"><i class="fa-solid fa-star"></i></button>';
                 }
+                else{
+                    echo '        <button hidden type="button" id="etoile_'.$util['numero'].'" data-extra="0"><i class="fa-solid fa-star"></i></button>';
+                }
+
                 if($tableau == "Admin" && $_SESSION['numero'] != $util['numero']){
-                    echo '        <a id="retrograder_'.$util['numero'].'" href="../PHP/boutonadmin.php?action=retrograder&numero='.$util['numero'].'" class="fa-solid fa-circle-user boutonadmin"></a>';
+                    echo '        <button type="button" id="retrograder_'.$util['numero'].'" data-extra="1" onclick="changementStatut(\'retrograder\',\''.$util['numero'].'\')"><i class="fa-solid fa-circle-user"></i></button>';
                 }
+                else{
+                    echo '        <button hidden type="button" id="retrograder_'.$util['numero'].'" data-extra="0" onclick="changementStatut(\'retrograder\',\''.$util['numero'].'\')"><i class="fa-solid fa-circle-user"></i></button>';
+                }
+
                 if($tableau == "Utilisateur"){
-                    echo '        <a  id="promouvoir_'.$util['numero'].'"href="../PHP/boutonadmin.php?action=promouvoir&numero='.$util['numero'].'" class="fa-solid fa-hammer boutonadmin"></a>';
+                    echo '        <button type="button" id="promouvoir_'.$util['numero'].'" data-extra="1" onclick="changementStatut(\'promouvoir\',\''.$util['numero'].'\')"><i class="fa-solid fa-hammer"></i></button>';
                 }
+                else{
+                    echo '        <button hidden type="button" id="promouvoir_'.$util['numero'].'" data-extra="0" onclick="changementStatut(\'promouvoir\',\''.$util['numero'].'\')"><i class="fa-solid fa-hammer"></i></button>';
+                }
+
                 if($tableau != "Banni" && $_SESSION['numero'] != $util['numero']){
-                    echo '        <a id="bannir_'.$util['numero'].'" href="../PHP/boutonadmin.php?action=bannir&numero='.$util['numero'].'" class="fa-regular fa-trash-can boutonadmin"></a>';
+                    echo '        <button type="button" id="bannir_'.$util['numero'].'" data-extra="1" onclick="changementStatut(\'bannir\',\''.$util['numero'].'\')"><i class="fa-regular fa-trash-can"></i></button>';
                 }
+                else{
+                    echo '        <button hidden type="button" id="bannir_'.$util['numero'].'" data-extra="0" onclick="changementStatut(\'bannir\',\''.$util['numero'].'\')"><i class="fa-regular fa-trash-can"></i></button>';
+                }
+
                 if($tableau == "Banni"){
-                    echo '        <a id="debannir_'.$util['numero'].'" href="../PHP/boutonadmin.php?action=debannir&numero='.$util['numero'].'" class="fa-solid fa-rotate-right boutonadmin"></a>';
+                    echo '        <button type="button" id="debannir_'.$util['numero'].'" data-extra="1" onclick="changementStatut(\'debannir\',\''.$util['numero'].'\')"><i class="fa-solid fa-rotate-right"></i></button>';
+                }
+                else{
+                    echo '        <button hidden type="button" id="debannir_'.$util['numero'].'" data-extra="0" onclick="changementStatut(\'debannir\',\''.$util['numero'].'\')"><i class="fa-solid fa-rotate-right"></i></button>';
                 }
 
                 echo '        <button type="button" id="button_'.$util['numero'].'" onclick="changementAdmin('.$util['numero'].')"><i class="fa-regular fa-pen-to-square"></i></button>';
@@ -281,66 +299,6 @@
         echo '</table>';
     }
 
-    function afficheEtapes($nom,$id){
-        $json = file_get_contents('../JSON/voyages.json');
-        $tabvoyages = json_decode($json, true);
-
-        if(!is_array($tabvoyages)){
-            $tabvoyages = [];
-        }
-
-        foreach($tabvoyages as $voyage){
-            if($voyage['titre'] == $nom){
-                break;
-            }
-        }
-        $i=1;
-        foreach($voyage['etapes'] as $etape){
-            echo '<p class="titreetapes">Etape '.$i.' : '.$etape.'</p>';
-
-            echo '<label>Hébergement :</label>';
-            if($id != "" && isset($_SESSION['hebergementetape'.$i.$id])){
-                echo '<select data-extra="'.$_SESSION['hebergementetape'.$i.$id].'" name="hebergementetape'.$i.'" id="hebergementetape'.$i.'">';
-                //Le data-extra sert à remplir le input si le client arrive sur la page d'étapes pour changer ses anciens choix
-            }
-            else{
-                echo '<select name="hebergementetape'.$i.'" id="hebergementetape'.$i.'">';
-            }
-            echo '  <option value="hotel3">Hôtel 3 étoiles</option>';
-            echo '  <option value="hotel4">Hôtel 4 étoiles</option>';
-            echo '  <option value="hotel5">Hôtel 5 étoiles</option>';
-            echo '  <option value="appartement">Appartement</option>';
-            echo '  <option value="villa">Villa</option>';
-            echo '</select>';
-
-            echo '<label>Repas :</label>';
-            if($id != "" && isset($_SESSION['repas'.$i.$id])){
-                echo '<select data-extra="'.$_SESSION['repas'.$i.$id].'" name="repas'.$i.'" id="repas'.$i.'">';
-                //Le data-extra sert à remplir le input si le client arrive sur la page d'étapes pour changer ses anciens choix
-            }
-            else{
-                echo '<select name="repas'.$i.'" id="repas'.$i.'">';
-            }
-            echo '  <option value="aucun">Aucun</option>';
-            echo '  <option value="petitdejeuner">Petit-déjeuner</option>';
-            echo '  <option value="allinclusive">All-inclusive</option>';
-            echo '</select>';
-
-            echo '<label>Activités et excursions :</label>';
-            if($id != "" && isset($_SESSION['activites'.$i.$id])){
-                echo '<select data-extra="'.$_SESSION['activites'.$i.$id].'" name="activites'.$i.'" id="activites'.$i.'">';
-                //Le data-extra sert à remplir le input si le client arrive sur la page d'étapes pour changer ses anciens choix
-            }
-            else{
-                echo '<select name="activites'.$i.'" id="activites'.$i.'">';
-            }
-            echo '  <option value="non">Non</option>';
-            echo '  <option value="oui">Oui</option>';
-            echo '</select>';
-            $i++;
-        }
-    }
-
     function afficheChamp($texte) {
         switch($texte){
             case "hotel3" :
@@ -423,7 +381,8 @@
             echo 'Assurance voyage :';
             echo (afficheChamp($voyage['assurance']));
 
-            for($i=1;$i<=3;$i++){
+            $i=1;
+            while(isset($etapes[$i-1]['hebergement'])){
                 echo '<p class="titreetapes">Etape '.$i.' : '.$etapes[$i-1]['etapetitre'].'</p>';
                 echo 'Hébergement :';
                 echo (afficheChamp($etapes[$i-1]['hebergement']));
@@ -431,6 +390,7 @@
                 echo (afficheChamp($etapes[$i-1]['repas']));
                 echo 'Activités et excursions :';
                 echo (afficheChamp($etapes[$i-1]['activites']));
+                $i++;
             }
             echo "<a href='../Pages/informations.php' class='lienretour'>Retour</a>";
         }
@@ -453,7 +413,8 @@
             echo 'Assurance voyage :';
             echo (afficheChamp($_SESSION['assurance'.$id]));
 
-            for($i=1;$i<=3;$i++){
+            $i=1;
+            while(isset($_SESSION['hebergementetape'.$i.$id])){
                 echo '<p class="titreetapes">Etape '.$i.' : '.$_SESSION['etape'.$i.$id].'</p>';
                 echo 'Hébergement :';
                 echo (afficheChamp($_SESSION['hebergementetape'.$i.$id]));
@@ -461,6 +422,7 @@
                 echo (afficheChamp($_SESSION['repas'.$i.$id]));
                 echo 'Activités et excursions :';
                 echo (afficheChamp($_SESSION['activites'.$i.$id]));
+                $i++;
             }
             
             echo "<a href='../PHP/ajoutpanier.php?id=".$id."' class='lienretour'>Ajouter au panier</a>";
