@@ -54,6 +54,18 @@ function montant(){
     idmontant.value = montant;
 }
 
+function remplissageChamps(){//Cette fonction permet de pré remplir les options si l'utilisateur a cliqué sur le bouton retour depuis la page récapitulative
+    var select = document.querySelectorAll("select");
+    var i;
+    for(i=0;i<select.length;i++){
+        if(select[i].dataset.extra){
+            select[i].value = select[i].dataset.extra;
+        }
+    }
+    montant();
+    //Pour mettre à jour le montant
+}
+
 function afficheEtapes(nom,id){
     if(window.XMLHttpRequest){
         var xhr = new XMLHttpRequest();
@@ -67,15 +79,19 @@ function afficheEtapes(nom,id){
             if(xhr.status == 200){
                 var parent = document.createElement("div");
                 parent.innerHTML = xhr.responseText;
+                //Le script php qui reçoit la requête, affiche toutes les options en HTML que je stocke dans l'élement "parent"
                 var enfants = parent.children;
                 var submit = document.getElementById("save");
                 var etapes = document.getElementsByName("etape");
+                //etapes contient les etapes qui sont actuellement affichés sur la page de réservation
                 var i,clone;
                 var enfantstaille = enfants.length, etapestaille = etapes.length;
+                //Je les stocke dans une variable parce que les deux changent pendant les boucles
                 if(enfantstaille <= etapestaille){
                     for(i=0;i<etapestaille;i++){
                         if(i<enfantstaille){
                             etapes[i].querySelector("p").textContent = enfants[i].querySelector("p").textContent;
+                            //Au cas où le nom de l'étape a changé
                         }
                         else{
                             etapes[i].remove();
@@ -86,23 +102,17 @@ function afficheEtapes(nom,id){
                     for(i=0;i<enfantstaille;i++){
                         if(i<etapestaille){
                             etapes[i].querySelector("p").textContent = enfants[i].querySelector("p").textContent;
+                            //Au cas où le nom de l'étape a changé
                         }
                         else{
                             clone = enfants[i].cloneNode(true);
+                            //Pour cloner l'étape à ajouter aux étapes déjà affichés
                             document.getElementById("etapesformulaire").insertBefore(clone,submit);
+                            //J'insère la nouvelle étape juste avant le bouton de soumission du formulaire
                         }
                     }
                 }
-                var select = document.querySelectorAll("select");
-                var i;
-                function remplissageChamps(){
-                    for(i=0;i<select.length;i++){
-                        if(select[i].dataset.extra){
-                            select[i].value = select[i].dataset.extra;
-                        }
-                    }
-                    montant();
-                }
+                
                 window.addEventListener("load", remplissageChamps);
 
                 var champs = document.querySelectorAll("input, select");

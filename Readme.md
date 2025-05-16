@@ -73,6 +73,14 @@ Plusieurs destinations sont proposés par l'agence sur les différents continent
 
 Au moment de réserver un voyage, l'utilisateur a la possibilité de la rajouter à son panier. Dès que le panier contient au moins un élément, une icône en bas à droite de la page apparaît qui permet d'accéder aux voyages du panier. Il y a une possibilité de supprimer des voyages du panier et dès que l'utilisateur est satisfait, il peut procéder au paiement de tous les voyages du panier en même temps. En cas d'échec du paiement, l'utilisateur est renvoyé à la page où se trouve son panier.
 
+### Paiement
+
+Concernant l'interface de paiement, vous pouvez utiliser une carte factice que le système accepte :
+- Titulaire : n'importe quelle valeur
+- Numéro de carte : 5555 1234 5678 9000 (Les nombres doivent être espacé)
+- Cryptogramme : 555
+- Date d'expriation : X/Y (N'importe quelles valeurs)
+
 ## License
 
 Ce projet est sous licence BSD 2-Clause. Consultez le fichier [LICENSE](LICENSE) pour plus de détails.

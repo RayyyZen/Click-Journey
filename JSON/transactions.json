@@ -381,5 +381,42 @@
                 ]
             }
         ]
+    },
+    {
+        "status": "accepted",
+        "transaction": "68272eea2e6af",
+        "utilisateur": "0",
+        "totalmontant": 1280,
+        "voyage": [
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "2",
+                "depart": "2025-05-16",
+                "retour": "2025-05-18",
+                "duree": 2,
+                "classe": "buisiness",
+                "assurance": "non",
+                "montant": 1080,
+                "etapes": [
+                    {
+                        "etapetitre": "ca",
+                        "hebergement": "hotel3",
+                        "repas": "allinclusive",
+                        "activites": "oui"
+                    }
+                ]
+            },
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-16",
+                "retour": "2025-05-17",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "oui",
+                "montant": 200,
+                "etapes": []
+            }
+        ]
     }
 ]

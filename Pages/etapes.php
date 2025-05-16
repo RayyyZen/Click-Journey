@@ -108,19 +108,8 @@
                     <input type="submit" id='save' name="save" title="Engistrer les etapes" value="Confirmer" required>
 
                     <script type="text/javascript">
-                        var select = document.querySelectorAll("select");
-                        var i;
-                        function remplissageChamps(){
-                            for(i=0;i<select.length;i++){
-                                if(select[i].dataset.extra){
-                                    select[i].value = select[i].dataset.extra;
-                                }
-                            }
-                        }
                         window.addEventListener("load", remplissageChamps);
-                    </script>
 
-                    <script type="text/javascript">
                         var champs = document.querySelectorAll("input, select");
                         var i;
                         montant();
