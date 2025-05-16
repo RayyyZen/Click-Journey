@@ -62,14 +62,10 @@ function formulaireInformations(){
     //Ca veut dire que le formulaire est bon à envoyer
 }
 
-function boutonsInformations(id,idbutton,idp,idchargement,valeur1,valeur2){
+function boutonsInformations(id,idbutton,idchargement,valeur1,valeur2){
     //Les valeurs 1 et 2 correspondent à des booléens qui en fonction de l'état de la requete permettent d'afficher ou cacher des boutons
     document.getElementById(idchargement).hidden = valeur1;
     document.getElementById(idbutton).hidden = valeur2;
-    if(id != "civilite"){
-        document.getElementById(idp).hidden = valeur1;
-        //Comme civilite n'est pas un champ de texte il n y a pas de nombre de caractères à compter
-    }
 
     var boutons = document.getElementsByTagName("button");
     var i;
@@ -92,7 +88,7 @@ function soumettre(id,idsauvegarder,idrestaurer,idbutton,idp,idchargement){
     var informations = document.querySelectorAll("input");
     for(i=0;i<informations.length;i++){
         informations[i].disabled = true;
-        //Pour désactiver tous les champs de la page d'informations lors du process
+        //Pour désactiver tous les champs de la page d'informations lors de l'envoi de la requête
     }
 
     if(window.XMLHttpRequest){
@@ -144,7 +140,7 @@ function soumettre(id,idsauvegarder,idrestaurer,idbutton,idp,idchargement){
                 }
             }
             
-            boutonsInformations(id,idbutton,idp,idchargement,true,false);
+            boutonsInformations(id,idbutton,idchargement,true,false);
 
             var erreurnom = document.getElementById("erreurnom");
             var erreurprenom = document.getElementById("erreurprenom");
@@ -158,7 +154,7 @@ function soumettre(id,idsauvegarder,idrestaurer,idbutton,idp,idchargement){
             //Pour supprimer les anciens messages d'erreurs s'ils existent
         }
         else{
-            boutonsInformations(id,idbutton,idp,idchargement,false,true);
+            boutonsInformations(id,idbutton,idchargement,false,true);
             document.getElementById("erreurmailexistant").hidden = true;
             //Pour cacher le message "Mail déjà existant" s'il est affiché
         }
@@ -198,8 +194,6 @@ function formulaireAdmin(){
         }
     }
     //Comme ca je recupere le input qui contient le nom de la personne dont je suis entrain de changer les champs
-
-    var numero = champs[i-1].value;
 
     if (champs[i].value.trim() == "" || /[^a-zA-Z]/.test(champs[i].value)) {
         if(document.getElementById("erreurnom") == null){
@@ -314,7 +308,7 @@ function soumettreAdmin(){
         if(xhr.readyState == 4){
             if(xhr.status == 200 && xhr.responseText != "1"){
                 //Si on arrive dans cette condition c'est que le mail modifié existe déjà pour un autre compte
-                //i+2 correspond au champ du mail
+                //champs[i+2] correspond au champ du mail
                 champs[i+2].value = champs[i+2].dataset.extra;
                 document.getElementById("erreurmailexistant"+xhr.responseText).hidden = false;
                 
@@ -359,6 +353,15 @@ function soumettreAdmin(){
 }
 
 function changementStatut(action,numero){
+    var boutons = document.querySelectorAll("button");
+    var i;
+    for(i=0;i<boutons.length;i++){
+        if(boutons[i].hidden && boutons[i].id.split('_')[0] == "button"){
+            return ;
+            //Si un changement est déjà en cours rien ne se passe
+        }
+    }
+
     var bouton = document.getElementById(action+"_"+numero).parentNode;
     var ligne = bouton.parentNode;//C'est la ligne qui contient les informations de l'utilisateur qui va changer de tableau en fonction de l'action
     
@@ -369,7 +372,6 @@ function changementStatut(action,numero){
         var xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
-    var etoile = document.getElementById("etoile_" + numero);
     var retrograder = document.getElementById("retrograder_" + numero);
     var promouvoir = document.getElementById("promouvoir_" + numero);
     var bannir = document.getElementById("bannir_" + numero);

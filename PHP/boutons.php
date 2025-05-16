@@ -1,5 +1,4 @@
 <?php
-    
     sleep(2);
 
     $action = $_POST['action'];

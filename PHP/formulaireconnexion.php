@@ -21,6 +21,7 @@
         if($util['email'] == $email && $util['mdp'] == $mdp){
             $compteExistant = 1;
             $util['connexion'] = date("Y-m-j H:i:s");
+            //Je mets la date actuelle comme date de dernière connexion
             break;
         }
         else if($util['email'] == $email && $util['mdp'] != $mdp){

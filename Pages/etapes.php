@@ -101,15 +101,15 @@
                         echo '<input type="hidden" id="prix" value="'.$prix.'">';
                         $duree = $voyage['duree'];
                         echo '<input type="hidden" id="duree" value="'.$duree.'">';
+                        //Ces inputs permettent au javascript d'accéder à leurs valeurs
 
                         echo '<input hidden type="text" name="montant" id="idmontant" value="'.$prix.'">';
+                        //Ce input permet d'envoyer au serveur le montant total
                     ?>
 
                     <input type="submit" id='save' name="save" title="Engistrer les etapes" value="Confirmer" required>
 
                     <script type="text/javascript">
-                        window.addEventListener("load", remplissageChamps);
-
                         var champs = document.querySelectorAll("input, select");
                         var i;
                         montant();
@@ -123,12 +123,16 @@
                     <script type="text/javascript">
                         <?php
                             if(isset($_GET['id'])){
-                                echo 'setInterval(() => afficheEtapes("'.$_GET['nom'].'",'.$_GET['id'].'), 5000);';
-                                echo 'window.addEventListener("load", afficheEtapes("'.$_GET['nom'].'",'.$_GET['id'].'));';
+                                echo 'window.addEventListener("load", () => afficheEtapes("'.$_GET['nom'].'", "'.$_GET['id'].'", "1"));';
+                                //Le "1" donné en paramètre signifie que la page vient de se recharger et donc il faut appeler remplissageChamps()
+                                echo 'setInterval(() => afficheEtapes("'.$_GET['nom'].'","'.$_GET['id'].'", "0"), 5000);';
+                                //Appelle la fonction afficheEtapes() chaque 5 secondes pour voir s'il y a eu un ajout, une suppression ou un changement d'étapes
                             }
                             else{
-                                echo 'setInterval(() => afficheEtapes("'.$_GET['nom'].'",""), 5000);';
-                                echo 'window.addEventListener("load", afficheEtapes("'.$_GET['nom'].'",""));';
+                                echo 'window.addEventListener("load", () => afficheEtapes("'.$_GET['nom'].'", "", "1"));';
+                                //Le "1" donné en paramètre signifie que la page vient de se recharger et donc il faut appeler remplissageChamps()
+                                echo 'setInterval(() => afficheEtapes("'.$_GET['nom'].'","","0"), 5000);';
+                                //Appelle la fonction afficheEtapes() chaque 5 secondes pour voir s'il y a eu un ajout, une suppression ou un changement d'étapes
                             }
                         ?>
                     </script>

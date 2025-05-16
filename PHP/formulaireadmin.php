@@ -30,7 +30,7 @@
 
     if($verifmail == 0){
         echo ($statut);
-        //Je echo le statut pour avoir sa valeur en js avec xhr.responseText afin de savoir sous quel tableau écrire "Mail déjà existant"
+        //J'affiche le statut pour avoir sa valeur en js avec xhr.responseText afin de savoir sous quel tableau écrire "Mail déjà existant"
         exit(0);
     }
 

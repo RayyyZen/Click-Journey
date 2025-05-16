@@ -113,6 +113,7 @@
                         }
                         else{
                             afficheVoyages('','','','');
+                            //Ca va afficher tous les voyages
                         }
                     ?>
                 </ul>

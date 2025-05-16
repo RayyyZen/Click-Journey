@@ -3,6 +3,7 @@ function triVoyages(){
     var elementvoyages = document.getElementById("voyages");
     var i,j,chaine1,chaine2,prix1,prix2,duree1,duree2;
     var voyages = Array.from(elementvoyages.children);
+    //la variable "voyages" contient tous les voyages affichés sur la page
     if(element == null || element.value == "trier" || voyages == null){
         return ;
     }
@@ -11,6 +12,7 @@ function triVoyages(){
         for(j=0;j<voyages.length;j++){
             if(i!=j){
                 chaine1 = voyages[i].id.split(',');
+                //Voir l'id des voyages dans la fonction afficheVoyages() dans le fichier affichage.php
                 prix1 = parseInt(chaine1[0]);
                 duree1 = parseInt(chaine1[1]);
 

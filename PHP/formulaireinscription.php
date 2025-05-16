@@ -30,8 +30,8 @@
         exit(0);
     }
 
-    $_SESSION['dateinscription'] = date("Y-m-j H:i:s");
-    $_SESSION['dateconnexion'] = date("Y-m-j H:i:s");
+    $_SESSION['dateinscription'] = date("Y-m-j H:i:s");//Date actuelle
+    $_SESSION['dateconnexion'] = date("Y-m-j H:i:s");//Date actuelle
 
     $nouveau = [
         "numero" => "$i",

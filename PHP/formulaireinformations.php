@@ -19,6 +19,7 @@
     foreach($utilisateurs as &$util){
         if(($util['numero'] != $_SESSION['numero']) && ($util['email'] == $email)){
             echo "0";
+            //J'affiche 0 pour avoir cette valeur dans le xhr.textContent afin de savoir que le mail changé existe déjà pour un autre compte
             exit(0);
         }
     }

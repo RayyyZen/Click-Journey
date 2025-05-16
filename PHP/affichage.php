@@ -11,6 +11,7 @@
         echo '<meta charset="UTF-8">';
         echo '<meta name="description" content="Agence de voyage des lieux de tournage de la saga Star Wars">';
         echo '<meta name="author" content="Rayane M., Enzo F., Hugo N.">';
+        echo '<link rel="icon" type="image/png" href="../Data/Star_Tour_Logo.jpg">';
         echo '<link id="css" rel="stylesheet" type="text/css" href="'.$css.'">';
         echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">';
         echo '<script src="../JavaScript/couleur.js" type="text/javascript"></script>';
@@ -34,7 +35,7 @@
     }
     
     function afficheIcones(){
-        if(isset($_SESSION['nom'])){
+        if(isset($_SESSION['nom'])){//Si l'utilisateur est connecté
             echo '<div class="informations"> <a href="informations.php" class="fa-solid fa-user"></a> </div>';
             echo '<div class="deconnexion"> <a href="../PHP/deconnexion.php" class="fa-solid fa-right-from-bracket"></a> </div>';
             if($_SESSION['statut'] == "Admin"){
@@ -58,6 +59,7 @@
             }
             $i++;
         }
+        //On checke s'il y a au moins 1 voyage dans le panier
 
         if($panier == 1){
             echo '<a href="../Pages/panier.php" class="panier"><i class="fa-solid fa-cart-shopping"></i></a>';
@@ -117,6 +119,7 @@
         }
 
         echo '<tr id="ligne_'.$tableau.'">';
+        //Le id me sert quand il y a clic sur un bouton qui change le statut d'un utilisateur et donc il faut l'insérer dans un autre tableau dans l'ordre croissant des identifiants
         echo '    <th></th>';
         echo '    <th>Numéro</th>';
         echo '    <th>Civilité</th>';
@@ -164,6 +167,8 @@
                 else{
                     echo '        <button hidden type="button" id="debannir_'.$util['numero'].'" data-extra="0" onclick="changementStatut(\'debannir\',\''.$util['numero'].'\')"><i class="fa-solid fa-rotate-right"></i></button>';
                 }
+
+                //Les data-extra = "1" veulent dire que sur la ligne concernant cet utilisateur, les boutons qui ont cette propriété doivent être affichés
 
                 echo '        <button type="button" id="button_'.$util['numero'].'" onclick="changementAdmin('.$util['numero'].')"><i class="fa-regular fa-pen-to-square"></i></button>';
                 echo '        <button hidden type="button" id="sauvegarder_'.$util['numero'].'" onclick="soumettreAdmin()"><i class="fa-solid fa-check"></i></button>';
@@ -228,6 +233,7 @@
             if(rechercheVoyages($voyage,$recherche) && dureeVoyages($voyage,$duree) && prixVoyages($voyage,$prix) && continentVoyages($voyage,$continent)){
                 //Pour les versions anciennes de PHP il faut remplacer la fonction str_contains() par strpos()
                 echo '<li id="'.$voyage['prix'].','.$voyage['duree'].','.$i.'">';
+                //L'id me permet de trier les voyages en fonction du prix et de la durée
                 echo '    <a href="../Pages/voyage.php?nom='.$voyage['titre'].'" class="endroit">';
                 echo '        <img src="'.$voyage['image'].'" class="imagedestination">';
                 echo '        <p class=titredestination>'.$voyage['titre'].'</p>';
@@ -242,7 +248,7 @@
         }
     }
 
-    function afficheInfosVoyage($nom){
+    function afficheInfosVoyage($nom){//C'est la fonction qui affiche un voyage dans la page voyage.php
         $json = file_get_contents('../JSON/voyages.json');
         $tabvoyages = json_decode($json, true);
 
@@ -274,7 +280,7 @@
         echo '</div>';
     }
 
-    function affiche3voyages(){
+    function affiche3voyages(){//C'est la fonction qui affiche 3 voyages dans la page index.php
         $json = file_get_contents('../JSON/voyages.json');
         $tabvoyages = json_decode($json, true);
 
@@ -430,7 +436,7 @@
         }
     }
 
-    function afficheReservations(){
+    function afficheReservations(){//Cette fonction affiche les réservations d'un utilisateur dans la page informations.php
         $json = file_get_contents('../JSON/transactions.json');
         $transactions = json_decode($json, true);
 

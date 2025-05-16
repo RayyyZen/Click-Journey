@@ -66,7 +66,7 @@ function remplissageChamps(){//Cette fonction permet de pré remplir les options
     //Pour mettre à jour le montant
 }
 
-function afficheEtapes(nom,id){
+function afficheEtapes(nom,id,value){
     if(window.XMLHttpRequest){
         var xhr = new XMLHttpRequest();
     }
@@ -112,9 +112,9 @@ function afficheEtapes(nom,id){
                         }
                     }
                 }
-                
-                window.addEventListener("load", remplissageChamps);
-
+                if(value == 1){//Si c'est vrai alors la page vient de se recharger donc il faut remplir le champ en fonction de ce qui a deja ete rempli
+                    remplissageChamps();
+                }
                 var champs = document.querySelectorAll("input, select");
                 var i;
                 for(i=0;i<champs.length;i++){

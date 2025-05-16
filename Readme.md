@@ -75,7 +75,7 @@ Au moment de réserver un voyage, l'utilisateur a la possibilité de la rajouter
 
 ### Paiement
 
-Concernant l'interface de paiement, vous pouvez utiliser une carte factice que le système accepte :
+Le site comporte aussi une interface de paiement par carte bancaire (CY Bank). On peut y accéder en cliquant sur le bouton "Payer" après avoir fini de remplir son panier. Vous pouvez utiliser une carte factice que le système accepte :
 - Titulaire : n'importe quelle valeur
 - Numéro de carte : 5555 1234 5678 9000 (Les nombres doivent être espacé)
 - Cryptogramme : 555

@@ -418,5 +418,188 @@
                 "etapes": []
             }
         ]
+    },
+    {
+        "status": "accepted",
+        "transaction": "682785d2e750e",
+        "utilisateur": 9,
+        "totalmontant": 67350,
+        "voyage": [
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "2",
+                "depart": "2025-05-16",
+                "retour": "2025-05-17",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 400,
+                "etapes": [
+                    {
+                        "etapetitre": "la Cantina de Chalmun",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "oui"
+                    }
+                ]
+            },
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "6",
+                "depart": "2025-05-16",
+                "retour": "2025-06-15",
+                "duree": 30,
+                "classe": "buisiness",
+                "assurance": "oui",
+                "montant": 66600,
+                "etapes": [
+                    {
+                        "etapetitre": "l'ile de Djerba",
+                        "hebergement": "villa",
+                        "repas": "allinclusive",
+                        "activites": "oui"
+                    },
+                    {
+                        "etapetitre": "la Cantina de Chalmun",
+                        "hebergement": "villa",
+                        "repas": "allinclusive",
+                        "activites": "non"
+                    }
+                ]
+            },
+            {
+                "titre": "Les paysages extr\u00eames de Starkiller Base",
+                "personnes": "1",
+                "depart": "2025-05-16",
+                "retour": "2025-05-17",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 350,
+                "etapes": []
+            }
+        ]
+    },
+    {
+        "status": "denied",
+        "transaction": "68278f9aca272",
+        "utilisateur": "0",
+        "totalmontant": 372,
+        "voyage": [
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-16",
+                "retour": "2025-05-17",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "oui",
+                "montant": 200,
+                "etapes": []
+            },
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-16",
+                "retour": "2025-05-17",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 172,
+                "etapes": [
+                    {
+                        "etapetitre": "a",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "Ksar Ouled Soltane",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "l'ile de Djerba",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "la Cantina de Chalmun",
+                        "hebergement": "appartement",
+                        "repas": "allinclusive",
+                        "activites": "non"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "status": "accepted",
+        "transaction": "68278fb05ce66",
+        "utilisateur": "0",
+        "totalmontant": 372,
+        "voyage": [
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-16",
+                "retour": "2025-05-17",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "oui",
+                "montant": 200,
+                "etapes": []
+            },
+            {
+                "titre": "Le d\u00e9sert de Tatooine",
+                "personnes": "1",
+                "depart": "2025-05-16",
+                "retour": "2025-05-17",
+                "duree": 1,
+                "classe": "economique",
+                "assurance": "non",
+                "montant": 172,
+                "etapes": [
+                    {
+                        "etapetitre": "a",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "Ksar Ouled Soltane",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "l'ile de Djerba",
+                        "hebergement": "hotel3",
+                        "repas": "aucun",
+                        "activites": "non"
+                    },
+                    {
+                        "etapetitre": "la Cantina de Chalmun",
+                        "hebergement": "appartement",
+                        "repas": "allinclusive",
+                        "activites": "non"
+                    }
+                ]
+            }
+        ]
     }
 ]

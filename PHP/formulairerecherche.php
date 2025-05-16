@@ -3,6 +3,7 @@
     $duree = "duree";
     $prix = "prix";
     $continent = "continent";
+    //La fonction trim() enleve les espaces
     if(trim($_POST['recherche']) == ""){
         $recherche = "";
     }
