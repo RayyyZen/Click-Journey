@@ -152,6 +152,16 @@ function soumettre(id,idsauvegarder,idrestaurer,idbutton,idp,idchargement){
             if(erreurmobile != null){ erreurmobile.remove() ; }
             if(erreurmail != null){ erreurmail.remove() ; }
             //Pour supprimer les anciens messages d'erreurs s'ils existent
+
+            var boutonsModifier = document.querySelectorAll("button");
+            var i;
+            for(i=1;i<boutonsModifier.length;i++){//boutonsModifier[0] correspond au bouton de changement de thème de couleurs
+                if(boutonsModifier[i].children[0].classList.contains("desactive")){
+                    boutonsModifier[i].children[0].classList.add("active");
+                    boutonsModifier[i].children[0].classList.remove("desactive");
+                }
+                //A la fin de la requête je remets si nécessaire la classe "active" aux balises "i" car c'est la classe qui a des attributs sur son :hover
+            }
         }
         else{
             boutonsInformations(id,idbutton,idchargement,false,true);

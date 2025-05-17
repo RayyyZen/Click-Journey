@@ -100,11 +100,11 @@
         }
         echo '    <label for="madame" class="civiliteLabel">Madame</label>';
         echo '    <div class="changerChamps">';
-        echo '        <button type="button" id="buttoncivilite" onclick="changementCivilite()"><i class="fa-solid fa-pen-nib"></i></button>';
-        echo '        <button hidden type="button" id="sauvegardercivilite" onclick="soumettre(\'civilite\',\'sauvegardercivilite\',\'restaurercivilite\',\'buttoncivilite\',\'pcivilite\',\'chargementcivilite\')"><i class="fa-solid fa-check"></i></button>';
+        echo '        <button type="button" id="buttoncivilite" onclick="changementCivilite()"><i class="fa-solid fa-pen-nib active"></i></button>';
+        echo '        <button hidden type="button" id="sauvegardercivilite" onclick="soumettre(\'civilite\',\'sauvegardercivilite\',\'restaurercivilite\',\'buttoncivilite\',\'pcivilite\',\'chargementcivilite\')"><i class="fa-solid fa-check active"></i></button>';
         //J'utilise \' à la place de " parce que si je les mets il y a un probleme de syntaxe vu qu'il y a des " entre des "
-        echo '        <button hidden type="button" id="restaurercivilite" onclick="restaurerCivilite()"><i class="fa-solid fa-xmark"></i></button>';
-        echo '        <button hidden type="button" id="chargementcivilite"><i class="fas fa-spinner fa-spin"></i></button>';
+        echo '        <button hidden type="button" id="restaurercivilite" onclick="restaurerCivilite()"><i class="fa-solid fa-xmark active"></i></button>';
+        echo '        <button hidden type="button" id="chargementcivilite"><i class="fas fa-spinner fa-spin active"></i></button>';
         echo '    </div>';
         echo '</div>';
     }

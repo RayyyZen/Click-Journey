@@ -5,6 +5,15 @@ function boutonsModifier(id,value){
         if(boutonsModifier[i].id != "chargement"+id && boutonsModifier[i].id != "sauvegarder"+id && boutonsModifier[i].id != "restaurer"+id){
             boutonsModifier[i].disabled = value;
             //Désactiver ou activer tous les boutons de changement
+            if(value == true){
+                boutonsModifier[i].children[0].classList.remove("active");
+                boutonsModifier[i].children[0].classList.add("desactive");
+                //Pour éviter que les champs désactivés s'agrandissent (:hover) quand on passe dessus la souris
+            }
+            else{
+                boutonsModifier[i].children[0].classList.add("active");
+                boutonsModifier[i].children[0].classList.remove("desactive");
+            }
         }
     }
 }
@@ -152,7 +161,7 @@ function boutonsChangement(numero,value1,value2){
 function changementAdmin(numero){
     var button = document.querySelectorAll("button");
     var i,verif=1;
-    for(i=0;i<button.length;i++){
+    for(i=1;i<button.length;i++){//button[0] correspond au bouton de changement de thème de couleurs
         if(button[i].hidden && button[i].id.split('_')[0] == "button"){
             verif = 0;
         }

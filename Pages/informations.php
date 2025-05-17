@@ -29,30 +29,30 @@
                     <div class="group">
                         <?php echo '<input type="text" id="nom" name="nom" data-extra="'.$_SESSION['nom'].'" value="'.$_SESSION['nom'].'" maxlength="20" disabled>'; ?>
                         <p hidden id="pnom" class="pclass1">0/20</p>
-                        <button type="button" id="buttonnom" onclick="changement('nom','sauvegardernom','restaurernom','buttonnom','pnom')"><i class="fa-solid fa-pen-nib"></i></button>
-                        <button hidden type="button" id="sauvegardernom" onclick="soumettre('nom','sauvegardernom','restaurernom','buttonnom','pnom','chargementnom')"><i class="fa-solid fa-check"></i></button>
-                        <button hidden type="button" id="restaurernom" onclick="restaurer('nom','sauvegardernom','restaurernom','buttonnom','pnom')"><i class="fa-solid fa-xmark"></i></button>
-                        <button hidden type="button" id="chargementnom"><i class="fas fa-spinner fa-spin"></i></button>
+                        <button type="button" id="buttonnom" onclick="changement('nom','sauvegardernom','restaurernom','buttonnom','pnom')"><i class="fa-solid fa-pen-nib active"></i></button>
+                        <button hidden type="button" id="sauvegardernom" onclick="soumettre('nom','sauvegardernom','restaurernom','buttonnom','pnom','chargementnom')"><i class="fa-solid fa-check active"></i></button>
+                        <button hidden type="button" id="restaurernom" onclick="restaurer('nom','sauvegardernom','restaurernom','buttonnom','pnom')"><i class="fa-solid fa-xmark active"></i></button>
+                        <button hidden type="button" id="chargementnom"><i class="fas fa-spinner fa-spin active"></i></button>
                     </div>
 
                     <label for="prenom">Prénom :</label>
                     <div class="group">
                         <?php echo '<input type="text" id="prenom" name="prenom" data-extra="'.$_SESSION['prenom'].'" value="'.$_SESSION['prenom'].'" maxlength="20" disabled>'; ?>
                         <p hidden id="pprenom" class="pclass1">0/20</p>
-                        <button type="button" id="buttonprenom" onclick="changement('prenom','sauvegarderprenom','restaurerprenom','buttonprenom','pprenom')"><i class="fa-solid fa-pen-nib"></i></button>
-                        <button hidden type="button" id="sauvegarderprenom" onclick="soumettre('prenom','sauvegarderprenom','restaurerprenom','buttonprenom','pprenom','chargementprenom')"><i class="fa-solid fa-check"></i></button>
-                        <button hidden type="button" id="restaurerprenom" onclick="restaurer('prenom','sauvegarderprenom','restaurerprenom','buttonprenom','pprenom')"><i class="fa-solid fa-xmark"></i></button>
-                        <button hidden type="button" id="chargementprenom"><i class="fas fa-spinner fa-spin"></i></button>
+                        <button type="button" id="buttonprenom" onclick="changement('prenom','sauvegarderprenom','restaurerprenom','buttonprenom','pprenom')"><i class="fa-solid fa-pen-nib active"></i></button>
+                        <button hidden type="button" id="sauvegarderprenom" onclick="soumettre('prenom','sauvegarderprenom','restaurerprenom','buttonprenom','pprenom','chargementprenom')"><i class="fa-solid fa-check active"></i></button>
+                        <button hidden type="button" id="restaurerprenom" onclick="restaurer('prenom','sauvegarderprenom','restaurerprenom','buttonprenom','pprenom')"><i class="fa-solid fa-xmark active"></i></button>
+                        <button hidden type="button" id="chargementprenom"><i class="fas fa-spinner fa-spin active"></i></button>
                     </div>
 
                     <label>Adresse mail :</label>
                     <div class="group">
                         <?php echo '<input type="email" id="email" name="email" data-extra="'.$_SESSION['email'].'" value='.$_SESSION['email'].' maxlength="40" disabled>'; ?>
                         <p hidden id="pemail" class="pclass1">0/40</p>
-                        <button type="button" id="buttonemail" onclick="changement('email','sauvegarderemail','restaureremail','buttonemail','pemail')"><i class="fa-solid fa-pen-nib"></i></button>
-                        <button hidden type="button" id="sauvegarderemail" onclick="soumettre('email','sauvegarderemail','restaureremail','buttonemail','pemail','chargementemail')"><i class="fa-solid fa-check"></i></button>
-                        <button hidden type="button" id="restaureremail" onclick="restaurer('email','sauvegarderemail','restaureremail','buttonemail','pemail')"><i class="fa-solid fa-xmark"></i></button>
-                        <button hidden type="button" id="chargementemail"><i class="fas fa-spinner fa-spin"></i></button>
+                        <button type="button" id="buttonemail" onclick="changement('email','sauvegarderemail','restaureremail','buttonemail','pemail')"><i class="fa-solid fa-pen-nib active"></i></button>
+                        <button hidden type="button" id="sauvegarderemail" onclick="soumettre('email','sauvegarderemail','restaureremail','buttonemail','pemail','chargementemail')"><i class="fa-solid fa-check active"></i></button>
+                        <button hidden type="button" id="restaureremail" onclick="restaurer('email','sauvegarderemail','restaureremail','buttonemail','pemail')"><i class="fa-solid fa-xmark active"></i></button>
+                        <button hidden type="button" id="chargementemail"><i class="fas fa-spinner fa-spin active"></i></button>
                     </div>
                     <div hidden id="erreurmailexistant"> <p class="fa-solid fa-triangle-exclamation erreurmail"> Mail déjà existant</p> </div>
                     
@@ -60,10 +60,10 @@
                     <div class="group">
                         <?php echo '<input type="tel" id="mobile" name="mobile" data-extra="'.$_SESSION['mobile'].'" value="'.$_SESSION['mobile'].'" maxlength="10" disabled>'; ?>
                         <p hidden id="pmobile" class="pclass1">0/10</p>
-                        <button type="button" id="buttonmobile" onclick="changement('mobile','sauvegardermobile','restaurermobile','buttonmobile','pmobile')"><i class="fa-solid fa-pen-nib"></i></button>
-                        <button hidden type="button" id="sauvegardermobile" onclick="soumettre('mobile','sauvegardermobile','restaurermobile','buttonmobile','pmobile','chargementmobile')"><i class="fa-solid fa-check"></i></button>
-                        <button hidden type="button" id="restaurermobile" onclick="restaurer('mobile','sauvegardermobile','restaurermobile','buttonmobile','pmobile')"><i class="fa-solid fa-xmark"></i></button>
-                        <button hidden type="button" id="chargementmobile"><i class="fas fa-spinner fa-spin"></i></button>
+                        <button type="button" id="buttonmobile" onclick="changement('mobile','sauvegardermobile','restaurermobile','buttonmobile','pmobile')"><i class="fa-solid fa-pen-nib active"></i></button>
+                        <button hidden type="button" id="sauvegardermobile" onclick="soumettre('mobile','sauvegardermobile','restaurermobile','buttonmobile','pmobile','chargementmobile')"><i class="fa-solid fa-check active"></i></button>
+                        <button hidden type="button" id="restaurermobile" onclick="restaurer('mobile','sauvegardermobile','restaurermobile','buttonmobile','pmobile')"><i class="fa-solid fa-xmark active"></i></button>
+                        <button hidden type="button" id="chargementmobile"><i class="fas fa-spinner fa-spin active"></i></button>
                     </div>
 
                     <label>Date d'inscription :</label>

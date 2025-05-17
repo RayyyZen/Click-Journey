@@ -525,7 +525,7 @@ input[type="submit"] {
 }
 
 /*C'est le font awesome qui simule la modification d'un champ*/
-.paragraphinformations i {
+.active, .desactive {
     margin-left: 3px;
     padding: 5px;
     border: 2px solid black;
@@ -534,7 +534,7 @@ input[type="submit"] {
     background-color: #3095cb;
 }
 
-.paragraphinformations i:hover, .paragraphinformations i:focus {
+.active:hover, .active:focus {
     color: #3095cb;
     background-color: black;
     transform: scale(1.2); /*Agrandire la case*/
